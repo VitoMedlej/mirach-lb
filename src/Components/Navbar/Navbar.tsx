@@ -11,7 +11,7 @@ import { useEffect, useState} from 'react';
 
 import SearchModal from './SearchModal';
 import Link from 'next/link';
-import {Badge, Divider, Typography} from '@mui/material';
+import {Badge, Button, Container, Divider, Typography} from '@mui/material';
 // import { loadState } from '../../Utils/LocalstorageFn';
 import {useRouter} from 'next/navigation';
 // import {AiOutlinePhone, AiOutlineSearch, AiOutlineMenu} from 'react-icons/ai'
@@ -56,13 +56,13 @@ export default function Navbar() {
     return ( <>
      <Box
      id='navy'
-    className='center auto relative   bg flex'
+    className='center auto   relative bg flex'
         sx={{
             zIndex:12,
         flexWrap: 'wrap',
                 width:'100%',
                 boxShadow:'none',
-        background:'white',
+        background:'transparent',
         border: 'none',
         px:0,
         flexGrow: 1
@@ -71,230 +71,48 @@ export default function Navbar() {
         <AppBar
      id='navy2'
 
-    className='center relative  flex'
+    className='center col relative   flex'
 
             sx={{
 
                 boxShadow:'none',
 
-                background:'white',
+                background:'transparent',
             // maxWidth: 'lg',
                 width:'100%',
             margin: '0 auto',
         }}>
-            {/* <Box className='center text-center' sx={{background:'#0f0f0f',width:'100%',py:.25}}>
-                <Typography className='clr' component='h1' sx={{py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
+            <Box className='center text-center' sx={{background:'white',width:'100%',py:.25}}>
+                <Typography className='' component='h1' sx={{color:'#0f0f0f',py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
             FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
                 </Typography>
-            </Box> */}
-            <Toolbar
-     id='navy3'
+            </Box>
+      <Toolbar className='flex relative center items-center' sx={{py:1,background:'black'}}>
+        
+        <Box className='' sx={{
+            position:{xs:'relative',sm:'absolute'},
+            right:{xs:'0%',sm:'50%'},
+        
+        transform:{sm:'translateX(50%)'},width:{xs:'90px',sm:'auto'},height:'100%'}}>
+            <img src="https://ucarecdn.com/14b57f62-b549-4e2f-8685-1bc72625ecc8/conslogo.PNG" alt="" className="img" />
+        </Box>
 
-    className='center relative  flex  w100  auto'
+        <Box className="flex flex1 flex-end">
 
-                sx={{
-                
-                background:'white',
-                    maxWidth:'xl',
-                px:'0 !important',
-                
-                flexWrap: 'wrap'
-            }}> 
-                  <Link className='flex center  aling-center items-center '  href='/' color='inherit'>
+        <Link href='/' className='' style={{paddingRight:'1em'}} >
+            <Box className='cursor pointer flex center items-center' sx={{width:'20px'}}>
+                <img style={{filter:'invert(1)'}} src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="" className="img" />
+            </Box>
+        </Link>
+        <Link href='/' className='' >
+            <Box className='cursor pointer flex center items-center' sx={{width:'20px'}}>
+                <img style={{filter:'invert(1)'}} src="https://cdn-icons-png.flaticon.com/128/1656/1656850.png" alt="" className="img" />
+            </Box>
+        </Link>
+        </Box>
+      </Toolbar>
+        <NavButtom/>
 
-<Box className='flex'
-    sx={{
-    mx: {
-        sm: '1em'
-    },
-    width:{xs:'90px',sm: '90px'}
-}}>
-    <img
-        className='img'
-        src={`https://ucarecdn.com/c8d1ab72-6c9d-467d-8490-50fdb40b7232/366441923_244599284598073_1399144749403339248_n.jpg`}
-        alt="diy_crafts_diamond_painting logo"/>
-</Box>
-</Link>
-                <Box
-                    sx={{
-                    px:1,
-                    display:{xs:'flex',md:'none'},
-
-                    flex: 1,
-                    flexWrap: 'wrap',
-                    justifyContent: {
-                        xs: 'right',
-                    },
-                 
-                }}>
- 
-                    <Box
-                        sx={{
-                        display: {
-                            xs: 'flex'
-                        },
-                        // justifyContent: 'end'
-                    }}
-                        className='flex right'>
-                             
-                        
-                             
-                             {/* <Btn
-                            onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-                            sx={{
-                                margin : '8px',padding:0,
-                            color: 'black',
-
-                            // margin: '0.1em',
-                        }}>
-                            {text('العربية','English')}
-                        </Btn> */}
-                        {/* <IconButton
-                            onClick={() => setOpenModal(!openModal)}
-                            sx={{
-                            color: 'black'
-                        }}>
-
-                                <CiSearch color='black'/>
-                          
-                        </IconButton> */}
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-
-                            // onClick={() => router.push('/collection/products')}
-                            sx={{
-                                margin : '8px',padding:0,
-                            color: 'black'
-                        }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
-
-                                <CiShoppingCart color='black'/>
-                            {/* </Badge> */}
-                            {/* <Typography>
-                                Cart
-                            </Typography> */}
-                        </IconButton>
-    <IconButton
-                            onClick={() => setOpen(!open)}
-                            size="large"
-                            edge="start"
-                            aria-label="menu"
-                            sx={{
-                            margin : '8px',padding:0,
-                            color: 'black',
-                            // margin: '0.1em',
-                            // display: {
-                            //     md: 'none'
-                            // }
-                        }}>
-                            <IoIosMenu color='black'/>
-                        </IconButton>
-                   
-   {/* <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} target='_blank' className='flex decor-none' rel='noopener'>
-
-                        <IconButton
-                            onClick={() => setCartOpen(!cartOpen)}
-                            sx={{
-                            color: 'black'
-                        }}>
-                     
-                            <AiOutlinePhone color='black'/>
-
-                        </IconButton>
-    </a> */}
-                    
-                    </Box>
-
-                </Box>
-                <Box sx={{width:'100%',maxWidth:'800px',mb:{xs:1,sm:0}}}>
-<SearchInput/>
-                </Box>
-
-<NavButtom/>
-
-
-  {/* <SearchInput/> */}
-  {/* <SearchInput
-mobile
-                    />  */}
-
-                <Box
-                    sx={{
-                    px:1,
-                    display:{xs:'none',md:'flex'},
-
-                    // flex: 1,
-                    flexWrap: 'wrap',
-                    // justifyContent: {
-                    //     xs: 'right',
-                    //     sm: 'end'
-                    // },
-                 
-                }}>
- 
-                    <Box
-                        sx={{
-                        display: {
-                            xs: 'flex'
-                        },
-                        // justifyContent: 'end'
-                    }}
-                        className='flex right'>
- 
-
-                               {/* <Btn
-                            onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-                            sx={{
-                                margin : '8px',padding:0,
-                            color: 'black',
-
-                            // margin: '0.1em',
-                        }}>
-                            {text('English','Arabic')}
-                        </Btn> */}
-                        {/* <IconButton
-                            onClick={() => setOpenModal(!openModal)}
-                            sx={{
-                            color: 'black'
-                        }}>
-
-                                <CiSearch color='black'/>
-                          
-                        </IconButton> */}
-
-                        <IconButton
-                          onClick={() => setCartOpen(!cartOpen)}
-                        // onClick={() => router.push('/cart')}
-                            sx={{
-                            color: 'black'
-                        }}>
-                            {/* <Badge color='primary' badgeContent={`${localCart.length || '0'}`}> */}
-                                <CiShoppingCart color='black'/>
-                            {/* </Badge> */}
-                          
-                            </IconButton>
-
-
-
-
-                            {/* <IconButton
-                            onClick={() => setOpen(!open)}
-                            edge="start"
-                            aria-label="menu"
-                            sx={{
-                            color: 'black',
-                            // margin: '0.1em',
-                         
-                        }}>
-                            <IoIosMenu color='black'/>
-                        </IconButton> */}
-                    
-                    </Box>
-
-                </Box>
-<SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
-             
-            </Toolbar>
         </AppBar>
     </Box> 
 

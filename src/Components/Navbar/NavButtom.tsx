@@ -12,19 +12,21 @@ const NavButtom = () => {
 
   return (
     <Box
-        className=' wrap  space-evenly'
+        className=' items-center wrap   space-evenly'
         sx={{
             flex:1,
             position:'relative',
-        // width: '100%',
+        width: '100%',
+        background:'black',
+        // maxWidth:'lg',/
         mx: 0,
         display : {xs:'none',md:'flex'}
     }}>
         <Container
-            className='flex   '
+            className='flex center  '
             sx={{
+                maxWidth:'lg',
             justifyContent: 'flex-start',
-            maxWidth: 'lg',
             overflow:'hidden',
             py:1.5,
 
@@ -34,10 +36,10 @@ const NavButtom = () => {
                     Sale
                     </Typography>
                 </Link> */}
-                <Link className='black decor-none ' href={`/collection/products`}>
+                <Link className='white decor-none ' href={`/collection/products`}>
 
 <Typography 
-className=' cursor center flex gap1 black decor-none captialize'
+className=' cursor center flex gap1 white decor-none captialize'
 id="button"
 component='h1' sx={{width:'max-content',
 mx:'1em',
@@ -54,11 +56,11 @@ COLLECTION
     `Artistic Creations`,
     `Creative Crafts`,
     `Home Decor`].map(i=>{
-        return <Link key={i} className='black decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
+        return <Link key={i} className='white decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
         component='h1'
-        className=' cursor center flex gap1 black decor-none captialize'
+        className=' cursor center flex gap1 white decor-none captialize'
         id="button"
         sx={{width:'max-content',
         mx:'1em',
@@ -70,10 +72,10 @@ COLLECTION
     })
 }
 
-{/* <Link className='black decor-none ' href={`/organic herbs/products`}>
+{/* <Link className='white decor-none ' href={`/organic herbs/products`}>
 
 <Typography 
-className=' cursor center flex gap1 black decor-none captialize'
+className=' cursor center flex gap1 white decor-none captialize'
 id="button"
 component='p' sx={{width:'max-content',
 mx:'1em',
@@ -83,10 +85,10 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Organic Herbs
 </Typography>
 </Link>
-<Link className='black decor-none ' href={`/natural supplements/products`}>
+<Link className='white decor-none ' href={`/natural supplements/products`}>
 
 <Typography 
-className=' cursor center flex gap1 black decor-none captialize'
+className=' cursor center flex gap1 white decor-none captialize'
 id="button"
 component='p' sx={{width:'max-content',
 mx:'1em',
@@ -99,10 +101,10 @@ Natural Supplements
 
 
 
-{/* <Link className='black decor-none ' href={`/about`}>
+{/* <Link className='white decor-none ' href={`/about`}>
 
 <Typography 
-className=' cursor center flex gap1 black decor-none '
+className=' cursor center flex gap1 white decor-none '
 id="button"
 component='p' sx={{width:'max-content',
 mx:'1em',
@@ -113,10 +115,10 @@ About Us
 </Typography>
 </Link> */}
 
-{/* <Link className='black decor-none uppercase' href={`/new-arrivals/products`}>
+{/* <Link className='white decor-none uppercase' href={`/new-arrivals/products`}>
 
 <Typography 
-className=' cursor center flex gap1 black decor-none uppercase'
+className=' cursor center flex gap1 white decor-none uppercase'
 id="button"
 component='p' sx={{width:'max-content',
 alignItems: 'center',
@@ -126,10 +128,10 @@ fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
 New Arrivals
 </Typography>
 </Link> */}
-                {/* <Link className='black decor-none uppercase' href={`/birds/products`}>
+                {/* <Link className='white decor-none uppercase' href={`/birds/products`}>
 
                 <Typography 
-      className=' cursor center flex gap1 black decor-none uppercase'
+      className=' cursor center flex gap1 white decor-none uppercase'
         id="button"
         component='p' sx={{width:'max-content',
         mx:'1em',

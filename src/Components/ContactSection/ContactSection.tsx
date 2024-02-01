@@ -63,7 +63,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='black' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/diy_crafts_diamond_painting/?utm_source=qr&igsh=MXF1ZDhsMmk5dGl4eA%3D%3D"}>
+                        {<a className='black' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/Conceptual/?utm_source=qr&igsh=MXF1ZDhsMmk5dGl4eA%3D%3D"}>
 
 
                             <Typography

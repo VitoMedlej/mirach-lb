@@ -74,8 +74,16 @@ h1 {
   color: #eef6f9 !important;
 }
 
+.flex-end {
+  justify-content: flex-end;
+}
+
 .flex {
   display: flex;
+}
+
+.flex1 {
+  flex: 1;
 }
 
 .shadow {
