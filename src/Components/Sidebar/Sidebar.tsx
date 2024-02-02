@@ -95,11 +95,10 @@ useEffect(()=>{
           {
            [
             
-            `Craft Supplies`,
-            `DIY Kits`,
-            `Artistic Creations`,
-            `Creative Crafts`,
-            `Home Decor`,
+            `Oversized Outfits`,
+            `Casual Comfort`,
+            `Sporty Streets`,
+            `Trendy Threads`
           ].map(i=>{
               return    <ListItem
               key={i}

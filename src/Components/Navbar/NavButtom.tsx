@@ -51,11 +51,10 @@ COLLECTION
 </Link>
 
 {
-    [   `Craft Supplies`,
-    `DIY Kits`,
-    `Artistic Creations`,
-    `Creative Crafts`,
-    `Home Decor`].map(i=>{
+    [  `Oversized Outfits`,
+        `Casual Comfort`,
+        `Sporty Streets`,
+        `Trendy Threads`].map(i=>{
         return <Link key={i} className='white decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 
