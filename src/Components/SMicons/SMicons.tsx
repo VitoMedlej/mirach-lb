@@ -10,7 +10,7 @@ const sm = [
         Icon:'https://www.svgrepo.com/show/520798/instagram.svg',
         href:'https://www.instagram.com/Conceptuallb?igsh=MXFreTZkbGI5ejlteA%3D%3D&utm_source=qr'
     },
-    {Icon:'https://www.svgrepo.com/show/506628/whatsapp.svg',href:'https://wa.me/+96170082014'},
+    {Icon:'https://www.svgrepo.com/show/506628/whatsapp.svg',href:'https://wa.me/+96170970636'},
     {Icon:'https://www.svgrepo.com/show/494202/facebook.svg',href:'https://www.facebook.com/Conceptuallb?mibextid=LQQJ4d'},
   
  ]
