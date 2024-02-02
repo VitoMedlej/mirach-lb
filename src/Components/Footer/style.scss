@@ -1,7 +1,7 @@
 footer {
 
   .container {
-      background: white;
+      background: rgb(0, 0, 0);
       max-width: 1200px;
       margin: 0 auto;
       padding: 1em;
@@ -26,7 +26,7 @@ footer {
           min-width: 170px;
           li {
               a {
-                  color :#262626d0;
+                  color :#e2e2e2d0;
                   text-decoration: none !important;
               }
               padding: .14em 0;
@@ -35,17 +35,17 @@ footer {
               font-weight: 500;
               padding: 0 0 .65em 0;
               font-size: 1.1em;
-              color:rgba(0, 0, 0, 0.87);font-weight: 600 !important;
+              color:rgba(241, 241, 241, 0.87) !important;font-weight: 600 !important;
           }
       }
   }
   .footer-p {
-      color:rgba(46, 46, 46, 0.635);
+    color:rgba(241, 241, 241, 0.87);
   }
   .site-footer__bottom {
       div {
           p{
-          
+            color:rgba(241, 241, 241, 0.87);
       align-items: center;
       text-align: center;
       width: 100%;

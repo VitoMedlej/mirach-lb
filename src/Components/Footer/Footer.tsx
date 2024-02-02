@@ -8,8 +8,8 @@ import SMicons from '../SMicons/SMicons';
 
 
 const Footer = () => (
-  <footer className="site-footer " style={{color:'black',background:'white'}}>
-    <div className="container " style={{color:'black',background:'white'}}>
+  <footer className="site-footer " style={{color:'white',background:'black'}}>
+    <div className="container " style={{color:'white',background:'black'}}>
       <div className="site-footer__top ">
         <div className="site-footer__description">
           <div className='logos cursor'>
@@ -18,10 +18,12 @@ const Footer = () => (
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-            <img className='img ' src='https://ucarecdn.com/14b57f62-b549-4e2f-8685-1bc72625ecc8/conslogo.PNG' alt="Pets Town Lebanon Logo" />
+            <img className='img contain'
+            
+            src='https://ucarecdn.com/14b57f62-b549-4e2f-8685-1bc72625ecc8/conslogo.PNG' alt="Pets Town Lebanon Logo" />
             </Link>
           </div>
-          <Typography component='h1' sx={{ fontSize: '.85em',color:"2b2b2b" }}  className='footer-p '>
+          <Typography component='p' sx={{ fontSize: '.85em',color:"white" }}  className='footer-p '>
           Welcome to DIY Crafts Diamond Painting, where creativity knows no bounds. Explore our curated collection of diamond painting kits designed to inspire and captivate. Whether you&apos;re a seasoned artist or just starting your creative journey, our kits provide a perfect blend of relaxation and artistic satisfaction. Order now and embark on a dazzling adventure of self-expression!
           </Typography>
           <SMicons/>
@@ -40,23 +42,23 @@ const Footer = () => (
         <iframe style={{height:'100%',width:'100%',border:0}} frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Beirut,+Lebanon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
         </div> */}
           <ul className=' ul-white'>
-            <li className='link-title'>
-              <h1>
+            <li className='white link-title'>
+              <h1 style={{color:'white'}}>
 
               Site links
               </h1>
               </li>
-            <li><Link  href="/">
+            <li ><Link   href="/">
               Home</Link></li>
             <li><Link href="/collection/products">All Products</Link></li> 
             <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="https://wa.me/+96170082014">+96170082014</Link></li>
+            <li><Link href="https://wa.me/+96170082014">WhatsApp Us</Link></li>
           </ul>
      
           <ul  className='ul-white' style={{color:'black'}}>
             <li className='link-title'>
-            <h1>
+            <h1 style={{color:'white'}}>
 
               Contact
             </h1>
@@ -74,11 +76,11 @@ const Footer = () => (
   
       </div>
     </div>
-
-    <div className="site-footer__bottom " style={{color:'black',borderTop:"1px solid #0000001f"}}>
-      <div className="container " style={{color:'black'}}>
+        <Divider color='gray'></Divider>
+    <div className="site-footer__bottom " style={{color:'white',borderTop:"1px solid #0000001f"}}>
+      <div className="container " style={{color:'white'}}>
         <p>Website Developed By{' '}
-          <a style={{ color: 'black' }} href={`${'https://www.onbeirut.com'}`}>OnBeirut Agency </a></p>
+          <a style={{ color: 'white' }} href={`${'https://www.onbeirut.com'}`}>OnBeirut Agency </a></p>
       </div>
     </div>
   </footer>

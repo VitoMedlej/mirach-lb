@@ -136,7 +136,7 @@ const ProductCard = ({
                         margin:'0 auto'
                     // borderRadius:'8',
                         ,
-                        ':hover':{color:'black !IMPORTANT',background:'#eef6f9 '}
+                        ':hover':{color:'black !IMPORTANT',background:'black '}
                 }}>
                     <Box  className="flex">
 

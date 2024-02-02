@@ -20,6 +20,10 @@ const Preloader3 = ({res}:{res:any}) => {
         img: 'https://thevybe.co/cdn/shop/files/VAR_6213_1400x.jpg?v=1688976097',
         position:'',
     }
+    ,{
+        img : 'https://irrelevantlvng.com/img/cms/IMG_1323.JPG',
+        position:'bottom',
+    }
      ])
      const redir = () => {
         router.push('/services')
@@ -45,10 +49,10 @@ const Preloader3 = ({res}:{res:any}) => {
             maxWidth:'none',
             // maxWidth: 'lg',
             minHeight:'400px',
-            maxHeight:{sm:'100%',md:'500px',lg:'600px'},
+            maxHeight:{sm:'100%',md:'500px',lg:'550px'},
             margin: '0 auto',
          
-            height : {xs:'100vh',sm:'500px',md:'100%'},
+            height : {xs:'500px',sm:'500px',md:'100%'},
              
             display: {
                 xs: 'flex'
@@ -79,7 +83,7 @@ const Preloader3 = ({res}:{res:any}) => {
                                 height: '100%',
                             width:'100%'
                         }}>
-                        <Container className='auto center text-center ' sx={{width:'100%'}} maxWidth='lg' disableGutters>
+                        {/* <Container className='auto center text-center ' sx={{width:'100%'}} maxWidth='lg' disableGutters>
                             
                       
                             <Box sx={{pointerEvents:'none',top:0,right:0,width:'100%',zIndex:1123,height:'100%',background:'black',opacity:.55}} className="absolute">
@@ -93,9 +97,6 @@ const Preloader3 = ({res}:{res:any}) => {
                                 transform:'translateY(-50%)',
                                 zIndex:123456,
                                 position:'absolute'}}>
-
-                              
-                              
                                 <Typography 
                                 className='auto'
                                 
@@ -125,7 +126,7 @@ const Preloader3 = ({res}:{res:any}) => {
                             
                                 </Box>
                             </Box>
-                            </Container>
+                            </Container> */}
                             <img
             
                                 className={`img   

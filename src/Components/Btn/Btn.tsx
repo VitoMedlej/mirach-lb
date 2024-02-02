@@ -5,20 +5,20 @@ import React from 'react'
 
 
 let style1 = {
-  color: 'black',
-  background: ' #eef6f9 ',
+  color: 'white',
+  background: ' black ',
   border:'1px solid',
-  borderRadius: '4px', 
+  borderRadius: '0', 
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
-      background: '#eef6f9',
+      background: 'white',
       color:'black',
     
   },
   display: 'flex',
-  padding: '11px 35px',
-  fontWeight: '600',
+  padding: '8px 55px',
+  fontWeight: '300',
   fontSize: '12px',
   cursor: 'pointer',
   outline: 'none',
@@ -27,18 +27,18 @@ let style2 = {
   color: 'white',
   background: 'transparent',
   border: '1px solid white',
-  borderRadius: '4px', 
+  borderRadius: '0', 
   // boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   transition: 'background 0.3s ease, transform 0.2s ease',
 
   ':hover': {
     color:'black',
-      background: '#eef6f9',
+      background: 'white',
     
   },
   display: 'flex',
-  padding: '6px 34px',
-  fontWeight: '600',
+  padding: '8px 55px',
+  fontWeight: '300',
   fontSize: '12px',
   cursor: 'pointer',
   outline: 'none',

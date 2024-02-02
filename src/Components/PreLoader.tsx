@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { Box,  Container, Grid, Typography } from "@mui/material"
+import { Box,  Container, Divider, Grid, Typography } from "@mui/material"
 // import ContactSection from './ContactSection/ContactSection'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
@@ -56,147 +56,113 @@ PreLoader = ({data,resImages}:any) => {
 
   return (
     <Box >
-      <MainCarousel resImages={resImages}/>
+      <MainCarousel res={null} />
       {/* <HomeProductCollection  products={data}/> */}
         <HomeProductsCarousel data={data} Collectiontitle={''} delay={2000}/>
-      <Grid container sx={{maxWidth:'lg',mx:'auto'}}>
-        <Grid className='flex items-center' item xs={12} md={5}>
-            <Box className=' col flex items-center' sx={{
-              background:'#eef6f9 ',
-             px:{xs:1,sm:4},py:4,
-              borderRadius:'4px',
-              transform:{md:'translateX(25%)'},
-           }}>
-            <Typography
+        <Divider light></Divider>
+       
+        <Container sx={{maxWidth:'lg',pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
+
+            <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
+                  <img src="https://ucarecdn.com/e8223403-6f3b-4db7-9f01-493999855b15/63b44409a07a410cae6f4ea935b6c361.jpg" alt="Natural Supplements Image" className="img" />
+                  <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
+                    <Typography className='center text-center' 
+                    component='h1'
+                    sx={{
+                      background:'black',
+                      px:1,
+                      mb:1,
+                      fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
+                    {text('Oversized Outfits', 'المكملات الغذائية الطبيعية')}
+
+                    </Typography>
+                    <Btn v2
+        onClick={()=>router.push(`/Oversized Outfits/products?type=all`)}
+                    
+                    sx={{mx:'auto'}}>
+                    {text('SHOP NOW', 'تسوق الآن')}
+
+                    </Btn>
+                  </Box>
+            </Box>
+            
+
+            <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
+                  <img src="https://ucarecdn.com/9dc50f11-50d3-4aa1-bfd3-3c534de5c88d/151d89709c404360bc4b6d31ca614255.jpg" alt="Natural Supplements Image" className="img" />
+                  <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
+                    <Typography className='center text-center' 
+                    component='h1'
+                    sx={{
+                      background:'black',
+                      px:1,
+                      mb:1,
+                      fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
+                    {text('Sporty Streets')}
+
+                    </Typography>
+                    <Btn v2
+        onClick={()=>router.push(`/Sporty Streets/products?type=all`)}
+                    
+                    sx={{mx:'auto'}}>
+                    {text('SHOP NOW', 'تسوق الآن')}
+
+                    </Btn>
+                  </Box>
+            </Box>
+          
+      </Container>
+      <Divider sx={{my:'4em'}} light></Divider>
+
+
+      <Box sx={{py:4,margin:'0 auto'}} className='center   '>
+           
+           <Box className="flex justify-between col auto" 
+           sx={{px:1,py:8,maxWidth:'lg'}}>
+
+<Typography
 component={'h1'}
-    className='sectionTitle   text-center box'
+    className='sectionTitle  center text-center box'
     sx={{
  
     fontSize: {
         xs: '2em',
         sm: '3em'
     },
-    padding:.5,
+    pb:.5,
     fontWeight: '900'
 }}>
  Diamond Painting is easy and fun!
 </Typography>
 <Typography
-component={'p'}
-    className='sectionTitle   text-center box'
-    sx={{
- 
-    fontSize: {
-        xs: '.8em',
-        sm: '1em'
-    },
-    padding:.5,
-    fontWeight: '300'
-}}>
-Explore our curated collection of diamond painting kits designed to inspire and captivate. 
-</Typography>
-            </Box>
-        </Grid>
-        <Grid item xs={12} md={7}>
-          <Box className='auto' sx={{width:'95%',height:'100%'}}>
-            <img style={{borderRadius:'4px'}} src="https://www.diamondartclub.com/cdn/shop/products/panda-valley-diamond-art-painting-28849132699841.jpg?v=1618161449&width=4058" alt="" className="img" />
-          </Box>
-        </Grid>
-      </Grid>
-
-      <Grid container sx={{my:{xs:6,sm:12},maxWidth:'lg',mx:'auto'}}>
-      <Grid item xs={12} md={7}>
-          <Box className='auto' sx={{width:'95%',height:'100%'}}>
-            <img style={{borderRadius:'4px'}} src="https://files.ekmcdn.com/d43ebb/images/diamond-dotz-diamond-painting-kit-kitty-basket-1-249415-p.webp" alt="" className="img" />
-          </Box>
-        </Grid>
-        
-        <Grid className='flex items-center' item xs={12} md={5}>
-            <Box className=' col flex items-center' sx={{
-              background:'#eef6f9 ',
-             px:{xs:1,sm:4},py:4,
-              borderRadius:'4px',
-              transform:{md:'translateX(-25%)'},
-           }}>
-            <Typography
 component={'h1'}
-    className='sectionTitle   text-center box'
+    className='sectionTitle  center text-center box'
     sx={{
  
     fontSize: {
-        xs: '2em',
-        sm: '3em'
+        xs: '1em',
+        sm: '1.1em'
     },
-    padding:.5,
-    fontWeight: '900'
+    fontWeight: '200'
 }}>
- Lebanon&apos;s Shining DIY Trend
+Relax and unwind as you seamlessly create your own stunning diamond art.
 </Typography>
-<Typography
-component={'p'}
-    className='sectionTitle   text-center box'
-    sx={{
- 
-    fontSize: {
-        xs: '.8em',
-        sm: '1em'
-    },
-    padding:.5,
-    fontWeight: '300'
-}}>
-Elevate your crafting game with DIY Crafts Diamond Painting. Join the trend sweeping Lebanon—easy, enjoyable, and dazzling creativity at your fingertips.
-</Typography>
-            </Box>
-        </Grid>
-     
-      </Grid>
 
-      <Perks/>
-
-      <Box className='bg'>
-            <Container sx={{py:8}} className='flex row wrap justify-around space-around'>
-              {[{
-                img:'https://www.diamonddotz.com/image/banners/greeting-cards.jpg',
-                category:'Greeting Cards'
-              },
-              {
-                img:'https://www.diamonddotz.com/image/banners/dotz-box.jpg',
-                category:'DOTZ BOX'
-              },
-              {
-                img:'https://www.diamonddotz.com/image/banners/accessories.jpg',
-                category:'Freestyle Accessories'
-              },
-              {
-                img:'https://www.diamonddotz.com/image/banners/dotzies.jpg',
-                category:'DOTZIES Kits for kids'
-              }
-              
-              ].map(i=>{ return    <Box sx={{my:2,height:{xs:'100%'},maxWidth:'550px',width:{xs:"95%",sm:'49%'}}} key={i?.category}>
-                
-                <Box sx={{height:{xs:'400px',sm:'500px',md:'600px'},width:'100%'}}>
-                      <img style={{borderRadius:'4px'}} src={`${i?.img}`} alt="" className="img" /> 
-              </Box>
-              <Box sx={{pt:1}} className='flex row justify-between space-between'>
-
-                    <Typography component='h1' sx={{fontSize:'1.5em'}} className='center'>
-                      {i?.category}
-                    </Typography>
-                    <Btn sx={{border:'none'}}>
-                      Shop Now
-                    </Btn>
-              </Box>
-                </Box>
-            })}
-            </Container>
-      </Box>
+<Btn  
+sx={{
+  background:'black',color:'white',
+  width:'fit-content',mt:2,mx:'auto'}}
+onClick={()=>router.push('/collection/products')}
+>
+   Explore More
+</Btn>
+</Box>
+</Box>
       {/* <HomeProductCollection  products={data}/> */}
+     
 
 
-    
 
         
-        <ContactSection/>
   </Box>
   )
 }
