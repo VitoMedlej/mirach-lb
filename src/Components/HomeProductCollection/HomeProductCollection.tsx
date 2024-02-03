@@ -10,8 +10,8 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
  const router = useRouter()
   return (
     <Box sx={{my:4}} className='center auto'>
-           
-           <Box className="flex justify-between col auto" sx={{px:1,pt:8,pb:4,maxWidth:'lg'}}>
+        
+         <Box className="flex justify-between col auto" sx={{px:1,pt:8,pb:4,maxWidth:'lg'}}>
 
 <Typography
 component={'h1'}
@@ -25,7 +25,7 @@ component={'h1'}
     padding:.5,
     fontWeight: '900'
 }}>
- Diamond Painting is easy and fun!
+BROWSE OUR BEST SELLING PRODUCTS
 </Typography>
 <Typography
 component={'p'}

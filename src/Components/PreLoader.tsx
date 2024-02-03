@@ -59,6 +59,8 @@ PreLoader = ({data,resImages}:any) => {
       <MainCarousel res={null} />
       {/* <HomeProductCollection  products={data}/> */}
         <HomeProductsCarousel data={data} Collectiontitle={''} delay={2000}/>
+      {/* <HomeProductCollection  products={data}/> */}
+
         <Divider light></Divider>
        
         <Container sx={{maxWidth:'lg',pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
@@ -111,13 +113,13 @@ PreLoader = ({data,resImages}:any) => {
             </Box>
           
       </Container>
-      <Divider sx={{my:'4em'}} light></Divider>
+      <Divider sx={{mt:'4em'}} light></Divider>
 
 
-      <Box sx={{py:4,margin:'0 auto'}} className='center   '>
+      <Box sx={{margin:'0 auto'}} className='center   '>
            
            <Box className="flex justify-between col auto" 
-           sx={{px:1,py:8,maxWidth:'lg'}}>
+           sx={{px:1,py:{xs:8,sm:12},maxWidth:'lg'}}>
 
 <Typography
 component={'h1'}
@@ -134,7 +136,7 @@ component={'h1'}
  Diamond Painting is easy and fun!
 </Typography>
 <Typography
-component={'h1'}
+component={'p'}
     className='sectionTitle  center text-center box'
     sx={{
  
@@ -157,7 +159,6 @@ onClick={()=>router.push('/collection/products')}
 </Btn>
 </Box>
 </Box>
-      {/* <HomeProductCollection  products={data}/> */}
      
 
 
