@@ -131,12 +131,12 @@ const ProductCard = ({
                         addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
                     v2
                     sx={{
-                        color:'black !important',
+                        color:'white !important',
 
                         margin:'0 auto'
                     // borderRadius:'8',
                         ,
-                        ':hover':{color:'black !IMPORTANT',background:'black '}
+                        ':hover':{color:'white !IMPORTANT',background:'white '}
                 }}>
                     <Box  className="flex">
 

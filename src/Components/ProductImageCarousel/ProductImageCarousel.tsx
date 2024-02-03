@@ -14,16 +14,17 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
 import { Box } from "@mui/material";
 
-export default function App({images}:{images:string[] | []| undefined}) {
+export default function App({images,index,setSwiper}:{setSwiper?:any,index?:number,images:string[] | []| undefined}) {
   return (
     <>
       <Swiper
+      onSwiper={setSwiper}
         spaceBetween={30}
         effect={"fade"}
         autoplay={
           {delay:2000}
         }
-        navigation={true}
+        navigation={false}
         pagination={{
           clickable: true,
         }}
@@ -33,7 +34,7 @@ export default function App({images}:{images:string[] | []| undefined}) {
 {
           images && images.map(img=>{
             return    <SwiperSlide key={img}>
-              <Box sx={{height:{xs:'500px',md:'600px'}}}>
+              <Box sx={{height:{xs:'400px',md:'500px',lg:'600'}}}>
 
             <img className='img contain' src={`${img}`} alt={'Product Image'} />
               </Box>

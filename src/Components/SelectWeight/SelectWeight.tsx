@@ -26,6 +26,7 @@ if (!sizes) {
       <FormControl fullWidth>
         <InputLabel id="weight-label">Sizes</InputLabel>
         <Select
+        variant='outlined'
         size='small'
           labelId="weight-label"
           id="weight-select"
@@ -35,7 +36,7 @@ if (!sizes) {
         >
           {sizes && sizes?.map((option : any) => (
             <MenuItem key={option.size} value={option.size}>
-              {option.size}g
+              {option.size}
             </MenuItem>
           ))}
         </Select>

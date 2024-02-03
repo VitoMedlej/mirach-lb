@@ -78,7 +78,7 @@ Browse our best selling products
                 data={data && data.length > 0 && data?.slice(0,25) || []}/>
             </Box>
             <Btn 
-sx={{width:'fit-content',border:'1px solid black ',mt:1,mx:'auto'}}
+sx={{width:'fit-content',background:'transparent',color:'black',border:'1px solid white ',mt:1,mx:'auto'}}
 onClick={()=>router.push('/collection/products')}
 >
    Explore More

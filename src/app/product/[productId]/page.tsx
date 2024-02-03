@@ -25,7 +25,7 @@ const Index = () => {
     const {addToCart}= useCart()
     const [loading,setLoading] = useState(false)
     const [selectedQuantity,setSelectedQuantity] = useState(1)
-    // const [productselectedSize,setproductselectedSize] = useState('')
+    const [productselectedColor,setproductselectedColor] = useState('')
 
     const [data,setData] = useState<{
       product: IProduct | any ;
@@ -38,6 +38,7 @@ const Index = () => {
     const multiWeight = data?.product?.sizes && data?.product?.sizes?.length > 0 
     ? data?.product?.sizes[0] : {price: data?.product?.price, size:data?.product?.size }
     const [selectedSize, setselectedSize] = useState(multiWeight);
+    console.log('data: ', data);
     
        const InitialFetch = async () => {
         try {
@@ -68,83 +69,102 @@ const Index = () => {
         return  ()=> setLoading(false)
 
       }, [])
+      const [swiper, setSwiper] = useState<any>(null);
 
+      const goToSlide  = (index: number) => {
+        if (swiper) {
+          swiper?.slideTo(index);
+        }
+      };
   return (
      
     
       <Box sx={{mt:4}}>
  
 {!loading && data?.product !== undefined && data?.product?.title ?  <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
-       <Grid  item xs={12}  md={7} >
-         <ProductImageCarousel images={data?.product?.images}/>
-   
+<Grid  item xs={12}  md={6} >
+         <ProductImageCarousel setSwiper={setSwiper} images={data?.product?.images}/>
+        <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
+
+          {data?.product?.images && data?.product?.images?.length > 1 && data?.product?.images?.map((i:any,index:number)=>{
+            return <Box
+            onClick={()=>goToSlide(Number(index))}
+            className='cursor pointer' key={i} sx={{width:`${95 / data?.product?.images?.length}%` ,
+            minHeight:'20%',
+            minWidth:'20%',
+            maxWidth:'200px',
+            maxHeight:'200px',
+         height: `${95 / data?.product?.images?.length}%` }}>
+                <img src={i} alt="" className="img" />
+              </Box>
+          })}
+        
+                </Box>
        </Grid>
        <Grid sx={{
         // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:400,pt:1,fontSize:{xs:'2em',sm:'2.25sem',md:'3em'}}}>
+             <Typography component={'h1'} sx={{fontWeight:600,pt:1,fontSize:{xs:'1.8em',sm:'2em',md:'2em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
-           { data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
+           {/* { data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
                In Stock
              </Typography>
             : 
             <Typography className='red' component={'h1'} sx={{color:'red',fontSize:'1.25em',fontWeight:300}}>
                Out of stock
              </Typography>
-            }
+            } */}
           {data?.product?.inStock !== false &&   <Typography 
-                 component={'h1'} sx={{my:.25,fontWeight:500,color:'green',fontSize:{xs:'1em',sm:'1.55em'}}}>
+                 component={'h1'} sx={{my:.25,fontWeight:500,fontSize:{xs:'1em',sm:'1.55em'}}}>
                  ${
                  selectedSize?.price ||
                  data?.product?.price || 0}
              </Typography>}
-             
-            
+             Size:
+               <SelectWeight
+              selectedSize={selectedSize}
+              setselectedSize={setselectedSize}
+              sizes={data?.product?.sizes || [{price:Number(data?.product?.price),size:data?.product?.size}]}/> 
          </Box>
    
       
          
             {data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
               <Box sx={{width:{xs:'max-content'}}}>
-
+              Quantity:
              <QuantityPicker 
                     onChange={(e:number)=>{setSelectedQuantity(e)}}
                     
                     min={1} max={10} value={selectedQuantity}/>
               </Box>
-              {/* <SelectWeight
-              selectedSize={selectedSize}
-              setselectedSize={setselectedSize}
-              sizes={data?.product?.sizes || [{price:Number(data?.product?.price),size:parseFloat(data?.product?.size)}]}/> */}
+            
              <Btn 
                      onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size},true,true)}
              
               sx={{gap:.5,
                 borderRadius:0,
-             width:{xs:'95%',sm:'95%'}}}>
-                 <Typography component='h1'>
-                 ADD TO CART
-
-                 </Typography>
-                 <AiOutlineShoppingCart  fontSize={'medium'}/>
+             width:{xs:'100%',sm:'100%'}}}>
+                 ADD TO CART • ${
+                 selectedSize?.price ||
+                 data?.product?.price || 0}
+                
              </Btn>
             
 
              <a 
              className='center  text-center'
-             style={{textDecoration:'none',width:'95%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
+             style={{textDecoration:'none',width:'100%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
 
 
 <Btn      sx={{gap:.5,
                 borderRadius:0,
                 mt:1,
-                border:'none',
-                background:'white',color:'green',
+                border:'1px solid black',
+                background:'white',color:'black',
              width:{xs:'100%'}}}>
-                 WHATSAPP 
-                 <BsWhatsapp fontSize={'medium'}/>
+                 BUY IT NOW 
              </Btn>
              </a>
           
@@ -171,7 +191,7 @@ const Index = () => {
             
          </Box>} */}
 
-         {/* { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
+         { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
                  <Typography >
                  <strong>Colors:</strong>{' '}
                  </Typography>
@@ -181,13 +201,13 @@ const Index = () => {
                 data?.product?.colors.map((color : string)=>{
                   
                   return <Box className='cursor' key={color}
-                  onClick={()=>setproductselectedSize(color)}
-                  sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === productselectedSize ? 'blue':'transparent'}`}}></Box>
+                  onClick={()=>setproductselectedColor(color)}
+                  sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === productselectedColor ? 'blue':'transparent'}`}}></Box>
                  }) }
              </Box>
               
              
-         </Box>} */}
+         </Box>}
            { data?.product?.Category && <Box >
              <Box >
                  <Typography >
@@ -203,6 +223,7 @@ const Index = () => {
              </Typography>
          </Box>
        </Grid>
+       <Divider sx={{my:2}}></Divider>
          {/* <ProductReview/>  */}
        <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
    </Grid> : <Box className='flex auto center align-center' sx={{py:15}}>
