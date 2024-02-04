@@ -103,7 +103,7 @@ export default function TemporaryDrawer() {
                         width:{xs:'99%',sm:'400px'},
                     }}>
                        <Btn 
-                       sx={{width:'90%',mx:1
+                       sx={{width:'100%',mx:1
                     ,borderRadius:0,
                     }}
                        onClick={()=>{setCartOpen(false),router.push('/checkout')}}
@@ -113,10 +113,11 @@ export default function TemporaryDrawer() {
                         <Btn
                          
                         sx={{
-                            width:'90%',
+                            width:'100%',
                             mx:1
                     ,borderRadius:0,
-                   
+                        color:'black',
+                        border:'1px solid black',
                     background:'none',
                           my:1,
                             }}

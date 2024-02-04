@@ -24,9 +24,7 @@ const Index = () => {
  
     const {addToCart}= useCart()
     const [loading,setLoading] = useState(false)
-    const [selectedQuantity,setSelectedQuantity] = useState(1)
-    const [productselectedColor,setproductselectedColor] = useState('')
-
+    
     const [data,setData] = useState<{
       product: IProduct | any ;
       moreProducts: IProduct[] | never[];
@@ -35,6 +33,11 @@ const Index = () => {
       product : null,
       moreProducts : []
     })
+    let hasMultipleColors =  data?.product?.colors && data?.product?.colors?.length > 0 ? data?.product?.colors[0] : []
+    const [selectedQuantity,setSelectedQuantity] = useState(1)
+    const [productselectedColor,setproductselectedColor] = useState(hasMultipleColors)
+
+    
     const multiWeight = data?.product?.sizes && data?.product?.sizes?.length > 0 
     ? data?.product?.sizes[0] : {price: data?.product?.price, size:data?.product?.size }
     const [selectedSize, setselectedSize] = useState(multiWeight);
