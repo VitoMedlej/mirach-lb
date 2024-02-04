@@ -140,8 +140,8 @@ const ProductCard = ({
                 }}>
                     <Box  className="flex">
 
-                    {sizes && sizes?.length > 0 ? 'Select Size' :  'ADD'}
-                    <BiCartAdd color='black' fontSize='20px'/>
+                    {sizes && sizes?.length > 0 ? 'Select Size' :  'ADD TO CART'}
+                  
                     </Box>
                 </Btn>
                 

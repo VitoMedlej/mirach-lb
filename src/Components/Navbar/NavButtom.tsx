@@ -36,7 +36,7 @@ const NavButtom = () => {
                     Sale
                     </Typography>
                 </Link> */}
-                <Link className='white decor-none ' href={`/collection/products`}>
+                <Link className='white decor-none ' href={`/`}>
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
@@ -46,15 +46,48 @@ mx:'1em',
 alignItems: 'center',
 
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
-COLLECTION
+Home
+</Typography>
+</Link>
+<Link className='white decor-none ' href={`/#shop`}>
+
+<Typography 
+className=' cursor center flex gap1 white decor-none captialize'
+id="button"
+component='h1' sx={{width:'max-content',
+mx:'1em',
+alignItems: 'center',
+
+fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+Shop
+</Typography>
+</Link>
+
+
+<Link className='white decor-none ' href={`/about`}>
+
+<Typography 
+className=' cursor center flex gap1 white decor-none captialize'
+id="button"
+component='h1' sx={{width:'max-content',
+mx:'1em',
+alignItems: 'center',
+
+fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+About US
 </Typography>
 </Link>
 
 {
-    [  `Oversized Outfits`,
-        `Casual Comfort`,
-        `Sporty Streets`,
-        `Trendy Threads`].map(i=>{
+    // [  `Oversized Outfits`,
+    //     `Casual Comfort`,
+    //     `Sporty Streets`,
+    //     `Trendy Threads`]
+            ['Collection',
+            `Casual Comfort`,
+            `Sporty Streets`,
+        ]
+            .map(i=>{
         return <Link key={i} className='white decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>
 
         <Typography 

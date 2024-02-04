@@ -76,15 +76,31 @@ useEffect(()=>{
 
                                 </Box>
       <List>
+
       <ListItem
           sx={{fontWeight:400}}
 
-          onClick={()=>{router.push(`/collection/products`); toggleDrawer(false)}}
+          onClick={()=>{router.push(`/`); toggleDrawer(false)}}
            disablePadding>
             <ListItemButton>
             
                   <Typography component='h1' sx={{fontWeight:600}}>
-              VIEW ALL
+            Home
+            </Typography>
+            </ListItemButton>
+  
+
+          </ListItem>
+
+      <ListItem
+          sx={{fontWeight:400}}
+
+          onClick={()=>{router.push(`/about`); toggleDrawer(false)}}
+           disablePadding>
+            <ListItemButton>
+            
+                  <Typography component='h1' sx={{fontWeight:600}}>
+              About Us
             </Typography>
             </ListItemButton>
   
@@ -94,11 +110,12 @@ useEffect(()=>{
     
           {
            [
-            
-            `Oversized Outfits`,
-            `Casual Comfort`,
-            `Sporty Streets`,
-            `Trendy Threads`
+              'Shop',
+              'Collection',   
+            // `Oversized Outfits`,
+            // `Casual Comfort`,
+            // `Sporty Streets`,
+            // `Trendy Threads`
           ].map(i=>{
               return    <ListItem
               key={i}

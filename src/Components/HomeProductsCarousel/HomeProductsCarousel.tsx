@@ -21,6 +21,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
 
     return (
         <Box
+        id='shop'
             sx={{
             maxWidth: 'lg',
             width :'99%',

@@ -1,46 +1,39 @@
+"use client"
 import * as React from 'react';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
+import { InputLabel } from '@mui/material';
+import Btn from '../Btn/Btn';
 
-export default function ProductCard({ setselectedSize,selectedSize, sizes } : any) {
-
-  const handleChange = (event:any) => {
-if (!sizes) {
-  // setselectedSize({price:price});
-  console.log('weights: ', sizes);
-
-  return
-}
-    
-    const weight = event.target.value;
-    const option = sizes.find((option:any) => option.size == weight);
+export default function ProductCard({ setselectedSize, selectedSize, sizes }: any) {
+  const handleSizeClick = (size: string) => {
+    const option = sizes.find((option: any) => option.size === size);
     setselectedSize(option);
   };
 
   return (
-    <Box className='flex items-center' sx={{ minWidth: {xs:120,lg:200} }}>
-      <FormControl fullWidth>
-        <InputLabel id="weight-label">Sizes</InputLabel>
-        <Select
-        variant='outlined'
-        size='small'
-          labelId="weight-label"
-          id="weight-select"
-          value={selectedSize?.size}
-          label="Weight"
-          onChange={handleChange}
-        >
-          {sizes && sizes?.map((option : any) => (
-            <MenuItem key={option.size} value={option.size}>
-              {option.size}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+    <Box className='flex items-center' sx={{ mx:1,minWidth: { xs: 120, lg: 200 } }}>
+        <Box className='flex row wrap'>
+          {sizes &&
+            sizes.map((option: any) => (
+              <Btn v2
+                key={option.size}
+                sx={{
+                  mx:1,
+                  px:0,py:0,
+                  border:'1px solid black',
+                  background:selectedSize?.size === option.size ? 'black' : 'transparent'
+                  ,color:selectedSize?.size === option.size ? 'white' : 'black'
+                
+                }}
+                onClick={() => handleSizeClick(option?.size)}
+              >
+                {option.size}
+              </Btn>
+            ))}
+        </Box>
+      {/* Additional content, if needed */}
       {/* <p>Price: ${selectedSize.price}</p> */}
     </Box>
   );

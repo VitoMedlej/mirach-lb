@@ -69,7 +69,7 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                     className='flex  center items-center align-center row gap1'
                     
                     sx={{fontSize:'11px',right:'5%',background:productselectedSize}}>
-                            {productselectedSize ? productselectedSize : ''}g
+                            {productselectedSize ? productselectedSize : ''}
                        </Box>}
                     </Typography>
                         </Link>

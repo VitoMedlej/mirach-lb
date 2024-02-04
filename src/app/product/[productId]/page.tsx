@@ -117,28 +117,50 @@ const Index = () => {
              </Typography>
             } */}
           {data?.product?.inStock !== false &&   <Typography 
-                 component={'h1'} sx={{my:.25,fontWeight:500,fontSize:{xs:'1em',sm:'1.55em'}}}>
+                 component={'h1'} sx={{
+          color:'green',
+                  my:.25,fontWeight:500,fontSize:{xs:'1em',sm:'1.55em'}}}>
                  ${
                  selectedSize?.price ||
                  data?.product?.price || 0}
              </Typography>}
+
+                  <Divider></Divider>
+                <Box sx={{pt:2}} className="flex row ">
+
              Size:
+             {' '}
                <SelectWeight
               selectedSize={selectedSize}
               setselectedSize={setselectedSize}
               sizes={data?.product?.sizes || [{price:Number(data?.product?.price),size:data?.product?.size}]}/> 
+              </Box>
          </Box>
    
-      
+         { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
+                 Color:
+               
+             <Box  className='flex wrap row' sx={{gap:'.1em'}}>
+                 {
+                 
+                data?.product?.colors.map((color : string)=>{
+                  
+                  return <Box className='cursor' key={color}
+                  onClick={()=>setproductselectedColor(color)}
+                  sx={{mx:1,width:'20px',height:'20px',borderRadius:'0%',background:color,border:` ${color === productselectedColor ? '1px solid black':' 0px solid transparent'}`}}></Box>
+                 }) }
+             </Box>
+              
+             
+         </Box>}     
          
-            {data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{my:2,position:'relative'}}>
-              <Box sx={{width:{xs:'max-content'}}}>
-              Quantity:
+            {data?.product?.inStock !== false ? <Box className='flex wrap ' sx={{mt:1,position:'relative'}}>
+              <Box className='flex row center items-center w100' sx={{width:{xs:'max-content',sm:'100%'}}}>
+             
              <QuantityPicker 
                     onChange={(e:number)=>{setSelectedQuantity(e)}}
                     
                     min={1} max={10} value={selectedQuantity}/>
-              </Box>
             
              <Btn 
                      onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size},true,true)}
@@ -146,11 +168,10 @@ const Index = () => {
               sx={{gap:.5,
                 borderRadius:0,
              width:{xs:'100%',sm:'100%'}}}>
-                 ADD TO CART • ${
-                 selectedSize?.price ||
-                 data?.product?.price || 0}
+                 ADD TO CART
                 
              </Btn>
+             </Box>
             
 
              <a 
@@ -191,23 +212,7 @@ const Index = () => {
             
          </Box>} */}
 
-         { data?.product?.colors && data?.product?.colors?.length > 0 && <Box className='flex' sx={{py:2}}>
-                 <Typography >
-                 <strong>Colors:</strong>{' '}
-                 </Typography>
-             <Box  className='flex wrap row' sx={{gap:'.1em'}}>
-                 {
-                 
-                data?.product?.colors.map((color : string)=>{
-                  
-                  return <Box className='cursor' key={color}
-                  onClick={()=>setproductselectedColor(color)}
-                  sx={{mx:1,width:'25px',height:'25px',borderRadius:'50%',boxShadow:'1px 1px 3px gray',background:color,border:`2px solid ${color === productselectedColor ? 'blue':'transparent'}`}}></Box>
-                 }) }
-             </Box>
-              
-             
-         </Box>}
+       
            { data?.product?.Category && <Box >
              <Box >
                  <Typography >

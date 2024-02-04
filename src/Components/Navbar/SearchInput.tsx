@@ -26,7 +26,7 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
     <Paper
     onSubmit={(e)=>handleSubmit ? handleSubmit(true) : handleSearch(e)}
       component="form"
-      className='searchinput bg'
+      className='searchinput '
       sx={{
         py:'.25em',
         mx:2,
@@ -48,7 +48,7 @@ export default function SearchInput({sx,mobile,handleSubmit,newValue}:{newValue?
     >
    
       <InputBase
-      className='bg'
+      className=''
       value={`${value}`}
       onChange={(e)=>{ 
         

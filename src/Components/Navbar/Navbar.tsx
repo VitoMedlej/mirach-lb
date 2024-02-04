@@ -89,7 +89,10 @@ export default function Navbar() {
             </Box>
       <Toolbar className='flex relative center items-center' sx={{py:1,background:'black'}}>
         
-        <Box className='' sx={{
+        <Box 
+        onClick={()=>router.push('/')}
+        
+        className='cursor pointer' sx={{
             position:{xs:'relative',sm:'absolute'},
             right:{xs:'0%',sm:'50%'},
         
@@ -99,26 +102,43 @@ export default function Navbar() {
 
         <Box className="flex flex1 flex-end">
 
-        <Link href='/' className=''  >
-            <Box className='cursor pointer flex center items-center' sx={{width:'20px'}}>
+       
+            <Box 
+    onClick={()=>setOpenModal(!openModal)}
+            
+            
+            className='cursor pointer flex center items-center' sx={{width:'20px'
+            ,padding:1
+            
+            }}>
                 <img style={{filter:'invert(1)'}} src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="" className="img" />
             </Box>
-        </Link>
-        <Link href='/' className='' style={{padding:' 0 1em '}}>
-            <Box className='cursor pointer flex center items-center' sx={{width:'20px'}}>
+       
+
+      
+            <Box
+                onClick={()=>setCartOpen(!cartOpen)}
+            className='cursor pointer flex center items-center' sx={{width:'20px'
+            ,padding:1
+            
+            }}>
                 <img style={{filter:'invert(1)'}} src="https://cdn-icons-png.flaticon.com/128/1656/1656850.png" alt="" className="img" />
             </Box>
-        </Link>
 
-        <Link href='/' className=''  style={{paddingLeft:'0'}}>
-            <Box className='cursor pointer  center items-center' sx={{width:'20px',
+
+      
+            <Box
+               onClick={()=>setOpen(!open)}
+            className='cursor pointer  center items-center' sx={{width:'20px',
+            padding:1,
                 display: {xs:'flex',sm:'none'},
         }}>
                 <img style={{filter:'invert(1)'}} src="https://cdn-icons-png.flaticon.com/128/1828/1828859.png" alt="" className="img" />
             </Box>
-        </Link>
+   
         </Box>
 
+        <SearchModal openModal={openModal} setOpenModal={setOpenModal }/>
         
       </Toolbar>
         <NavButtom/>
