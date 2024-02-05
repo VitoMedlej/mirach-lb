@@ -6,22 +6,23 @@ import React from 'react'
 
 
 const text = [
-`Welcome to / DIY CRAFTS 
-If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern our relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website, or contact us for clarification.`,
-`The use of this website is subject to the following terms of use:`,
-`Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.`,
-`Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.`,
-`This website contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.`,
-`All trademarks reproduced in this website, which are not the property of, or licensed to the operator, are acknowledged on the website.`,
-`Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.`,
-`From time to time, this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).`,
-`Your use of this website and any dispute arising out of such use of the website is subject to the laws of Republic of Lebanon.`,
-`When you place an order on our website, you may receive notifications regarding your order, its shipping, and promotional notifications from us. `,
-`Pricing`,
-`Items on sale or advertised at a discounted or reduced price are generally floor stock, and currently on hand at the time of the sale only. While we may be able to order more stock of a particular item for you, it will not generally be sold at the discounted rate but rather our normal, everyday retail price. Prices and other offers are subject to availability. Sale prices are also subject to and only available for a defined period of time and/or until on-hand stock is no longer available. Sale prices may not be available or applicable if you are wanting the item for collection at a later date.`,
-`Any backordered items that are ordered/purchased during a sale will be amended to full price, or the order cancelled at your discretion. Quantities may be also be limited to a specified number per person or per transaction. These terms are generally applied to all sales and promotions unless otherwise specified.`,
-
-
+    "Order Confirmation:\nAll orders placed on our website are subject to confirmation and acceptance by Conceptual.",
+  
+    "Returns and Exchanges:\nWe do not accept returns.\nExchange requests are applicable within 3 days of receiving the product.\nItems must be in their original condition with tags intact for exchange eligibility.",
+    
+    "Exchange Process:\nTo initiate an exchange, contact our customer service within 3 days of receiving your order.\nCustomer is responsible for all shipping costs associated with exchanges.",
+    
+    "Shipping:\nWe aim to process and dispatch orders within 3 business days.\nShipping times may vary based on location.",
+    
+    "Damaged or Defective Items:\nIn the rare event of receiving damaged or defective items, please contact us immediately for assistance.",
+    
+    "Cancellation Policy:\nOrders can be canceled within 24 hours of placement by contacting customer service.",
+    
+    "Product Availability:\nAll products are subject to availability. In the event of unavailability after order placement, we will notify you and offer alternatives or a refund.",
+    
+    "Intellectual Property:\nAll content on this website, including images and text, is the property of Conceptual",
+    
+    "Privacy Policy:\nYour privacy is important to us. Refer to our Privacy Policy for details on how we collect, use, and protect your information."
 ]
 const Index = () => {
   return (

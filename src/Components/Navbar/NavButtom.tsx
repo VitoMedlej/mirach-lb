@@ -84,8 +84,8 @@ About US
     //     `Sporty Streets`,
     //     `Trendy Threads`]
             ['Collection',
-            `Casual Comfort`,
-            `Sporty Streets`,
+            // `Casual Comfort`,
+            // `Sporty Streets`,
         ]
             .map(i=>{
         return <Link key={i} className='white decor-none ' href={`/${i.toLocaleLowerCase()}/products`}>

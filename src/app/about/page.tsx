@@ -4,11 +4,8 @@ import { Container, Box, Typography, Divider } from '@mui/material'
 import React from 'react'
 
 const text = [
-    `Your health is our top priority. We meticulously curate our product range to ensure that you have access to the highest-quality natural supplements available. From ancient remedies like ashwagandha and tongkat ali to the modern marvels of cordyceps and lion's mane mushrooms, we've assembled a premium collection that's designed to support your journey toward optimal health.`,
-    `At DIY CRAFTS, excellence is not just a goal; it's our way of life. We are committed to providing you with products that are not only effective but also safe. Our team of experts works tirelessly to source the purest and most potent ingredients from nature's bounty.`,
-    `We believe that when you choose DIY CRAFTS, you're choosing a partner on your path to a healthier and more vibrant life.`,
-    `Our commitment extends beyond your well-being. We're equally dedicated to the well-being of our planet. That's why we use eco-friendly packaging and support sustainable farming practices. We believe that by preserving the environment, we can help ensure a healthier future for generations to come.`,
-  
+ `Welcome to Conceptual, the epitome of wearable storytelling. In the vibrant heart of Beirut, Lebanon, our clothing brand takes pride in crafting distinctive streetwear styles that redefine your wardrobe. Each product is a carefully curated concept, transcending mere clothing to become a unique narrative you wear.`,
+  ` Designed and printed in the cultural mosaic of Beirut. Embrace the fusion of luxury fabrics with our street-smart designs, where comfort meets style in every thread. Conceptual invites you to step into a world where fashion is an expression, and your wardrobe becomes a canvas for diverse concepts. Join us on this journey, and let your style tell a story that goes beyond trends`
 ]
 const Index = () => {
   return (

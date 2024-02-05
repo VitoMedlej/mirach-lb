@@ -226,9 +226,14 @@ const Index = () => {
          </Box>}
 
            
-             <Typography className='gray' sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}>
+             {/* <Typography className='gray' sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}>
    {data?.product?.description}
-             </Typography>
+             </Typography> */}
+              <Typography 
+      className='gray' 
+      sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
+      dangerouslySetInnerHTML={{ __html: data?.product?.description }}
+    />
          </Box>
        </Grid>
        <Divider sx={{my:2}}></Divider>

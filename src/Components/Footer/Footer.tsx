@@ -24,7 +24,7 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='p' sx={{ fontSize: '.85em',color:"white" }}  className='footer-p '>
-          Welcome to DIY Crafts Diamond Painting, where creativity knows no bounds. Explore our curated collection of diamond painting kits designed to inspire and captivate. Whether you&apos;re a seasoned artist or just starting your creative journey, our kits provide a perfect blend of relaxation and artistic satisfaction. Order now and embark on a dazzling adventure of self-expression!
+          Welcome to Conceptual, where fashion becomes a canvas for storytelling. Our clothing brand invites you to embrace the power of narrative through each meticulously crafted piece. Let Conceptual be your guide as you navigate through a collection where every product is a unique chapter, and your style is the story waiting to be told. Explore the art of self-expression and redefine your wardrobe with Conceptual – where every garment is a statement and every detail unfolds a narrative.
           </Typography>
           <SMicons/>
 

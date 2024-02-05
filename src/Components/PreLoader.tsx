@@ -68,7 +68,7 @@ PreLoader = ({data,resImages}:any) => {
             <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
                   <img src="https://ucarecdn.com/e8223403-6f3b-4db7-9f01-493999855b15/63b44409a07a410cae6f4ea935b6c361.jpg" alt="Natural Supplements Image" className="img" />
                   <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
-                    <Typography className='center text-center' 
+                    {/* <Typography className='center text-center' 
                     component='h1'
                     sx={{
                       background:'black',
@@ -77,7 +77,7 @@ PreLoader = ({data,resImages}:any) => {
                       fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
                     {text('Oversized Outfits', 'المكملات الغذائية الطبيعية')}
 
-                    </Typography>
+                    </Typography> */}
                     <Btn v2
         onClick={()=>router.push(`/Oversized Outfits/products?type=all`)}
                     
@@ -92,7 +92,7 @@ PreLoader = ({data,resImages}:any) => {
             <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
                   <img src="https://ucarecdn.com/9dc50f11-50d3-4aa1-bfd3-3c534de5c88d/151d89709c404360bc4b6d31ca614255.jpg" alt="Natural Supplements Image" className="img" />
                   <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
-                    <Typography className='center text-center' 
+                    {/* <Typography className='center text-center' 
                     component='h1'
                     sx={{
                       background:'black',
@@ -101,7 +101,7 @@ PreLoader = ({data,resImages}:any) => {
                       fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
                     {text('Sporty Streets')}
 
-                    </Typography>
+                    </Typography> */}
                     <Btn v2
         onClick={()=>router.push(`/Sporty Streets/products?type=all`)}
                     

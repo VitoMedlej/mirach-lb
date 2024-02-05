@@ -10,12 +10,12 @@ import { Box } from '@mui/material';
 
 const FAQs = [
   {
-    "Q": "What is DIY CRAFTS and what do you sell?",
-    "A": "DIY CRAFTS is an online store devoted to providing natural supplements that promote health and wellness. Our products include premium-quality organic herbs and mushrooms such as ashwagandha, tongkat ali, cordyceps, lion’s mane, and more."
+    "Q": " Can you tell us about the story or concept behind a specific collection or design?",
+    "A": "Each collection is a narrative, and every design has a story to tell. Whether drawing inspiration from cultural influences, personal experiences, or global trends, we infuse meaning into our creations. Exploring the stories behind our designs adds depth and connection to the garments you choose to wear."
   },
   {
-    "Q": "Are your products organic?",
-    "A": "Absolutely! We only offer organic herbs and mushrooms that are sustainably sourced and processed with the utmost care. We believe that natural is better and we are committed to providing you with the highest-quality products."
+    "Q": " How do you ensure the quality of your products?",
+    "A": "At our clothing brand, quality is the cornerstone of our commitment to excellence. We meticulously ensure the superior quality of our products by utilizing a combination of a 3-thread cotton blend and luxury high-quality fabrics. This meticulous selection of materials not only enhances the comfort and durability of our garments but also contributes to a refined and premium finish."
   },
   {
     "Q": "How long does shipping take?",
