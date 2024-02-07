@@ -67,7 +67,6 @@ Shop
 {
     categories && categories.map((cate:any)=>{
             if (cate?.subcategories?.length < 1) return      <Link 
-            
             key={cate?.categoryName} className='white decor-none'
              href={`/${cate?.categoryName}/products`}>
 
@@ -83,7 +82,7 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 </Typography>
 </Link>
             ;
-        return <MenuHover
+        return <MenuHover key={cate?.categoryName}
          img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'}
          category={`${cate?.categoryName}`} subcategories={cate?.subcategories && cate?.subcategories?.length > 0 ? cate?.subcategories : []} />
           
