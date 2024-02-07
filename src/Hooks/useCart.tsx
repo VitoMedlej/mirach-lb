@@ -1,4 +1,6 @@
-import { useContext } from "react";
+"use client"
+
+// import { useContext } from "react";
 import { loadState, saveState, pushState } from "../Utils/LocalstorageFn";
 import { ICartItem } from "../Types/Types";
 import { useCartContext } from "@/context/Contexts";

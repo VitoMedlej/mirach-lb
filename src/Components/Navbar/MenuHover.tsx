@@ -4,7 +4,9 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import {AiOutlineDown} from 'react-icons/ai'
 import NestedMenuAccordion from '../Sidebar/NestedAccordion';
-const HoverMenu = ({ category, subcategories ,img } : {img:string,category: string, subcategories: string[]}) => {
+
+
+const HoverMenu = ({ category, subcategories ,img } : {img:string,category: string, subcategories: {id:number,name:string}[]}) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const handleMouseEnter = () => {
@@ -19,25 +21,27 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
       setShowMenu(false);
     }
   };
-
+  if (subcategories?.length < 1) return;
   return (
-    <Box sx={{
+    <Box className='' sx={{
       margin:'0 1em ',
       zIndex:12345678,
-
+      maxHeight:'400px',
       background:'transparent',
         }}>
     
-      <Typography 
-      className=' cursor center flex gap1 black decor-none uppercase'
+    <Typography 
+       onMouseEnter={handleMouseEnter}
+       onMouseLeave={handleMouseLeave}
+      
+        className=' cursor center flex gap1  decor-none captialize'
         id="button"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        component='p' sx={{width:'max-content',
+        component='h1' sx={{width:'max-content',
+        color:'white',
+        // mx:'1em',
         alignItems: 'center',
-        zIndex:12345678,
         
-        fontWeight:600,fontSize:{xs:'.6em',sm:'.75em'}}}>
+        fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
      {category} 
     <AiOutlineDown/> 
    </Typography>
@@ -59,31 +63,37 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
           }}
           onMouseLeave={handleMouseLeave}
         >
-          {/* <ul style={{paddingTop:7,width:'30%'}}>
+          <ul style={{paddingTop:7,width:'30%'}}>
           <Link className=' decor-none uppercase' key={category} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
 
             <li>
-            <Typography onClick={()=>setShowMenu(false)}  component='p' sx={{color:'black',width:'max-content',fontWeight:600,fontSize:{xs:'.86em',sm:'1.125em'}}}>
+            <Typography onClick={()=>setShowMenu(false)}  component='p' 
+            sx={{color:'black',width:'max-content',fontWeight:900,fontSize:{xs:'.86em',sm:'1.125em'}}}>
                 {category}
      </Typography>
             </li>
           </Link>
-            {subcategories.map((subcategory) => (
-              <li className='' key={subcategory}>
-              <Link className=' decor-none uppercase' key={subcategory} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${ subcategory.replace(/ /g, '-').toLocaleLowerCase()}`}>
+            {subcategories && subcategories.map((subcategory) => (
+              <li className='' key={subcategory?.id}>
+              <Link className='black decor-none uppercase'
+                href={`/${category?.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${ encodeURIComponent(`${subcategory?.name}`)?.toLocaleLowerCase()}`}>
                 
-     <Typography onClick={()=>setShowMenu(false)}  component='p' sx={{width:'max-content',fontWeight:300,py:.15,fontSize:{xs:'.7em',sm:'.85em'}}}>
-                {subcategory}
+     <Typography onClick={()=>setShowMenu(false)} 
+      component='p' sx={{width:'max-content',fontWeight:400,py:.15,fontSize:{xs:'.87em',sm:'1.15em'}}}>
+                {subcategory?.name}
      </Typography>
  </Link>
                 </li>
             ))}
-          </ul> */}
-        <NestedMenuAccordion/>
+          </ul>
+        {/* <NestedMenuAccordion/> */}
 
-          <Box  sx={{pointerEvents:'none',cursor:'none', width:'70%',height:'100%',minHeight:'350px'}}>
+          <Box 
+          
+          sx={{pointerEvents:'none',cursor:'none',
+           width:'70%',height:'400px'}}>
             <img src={`${img}`} alt="Category Image" className="img " />
-          </Box>
+          </Box> 
         </Box>
       )}
     </Box>

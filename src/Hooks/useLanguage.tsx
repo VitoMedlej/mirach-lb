@@ -1,5 +1,5 @@
+"use client"
 import { useLangContext } from '@/context/Contexts';
-import React from 'react'
 
 const useLanguage = () => {
     const {lang} = useLangContext();

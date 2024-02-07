@@ -54,7 +54,7 @@ const Preloader2 = ({data,totalPages}:any) => {
           price : [1,100000],
           sort : 'latest',
           type : 'All',
-          category : 'All',
+          category : category ? category : 'Collection',
           // query : '',
           
       })

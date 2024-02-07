@@ -81,7 +81,10 @@ PreLoader = ({data,resImages}:any) => {
                     <Btn v2
         onClick={()=>router.push(`/Oversized Outfits/products?type=all`)}
                     
-                    sx={{mx:'auto'}}>
+                    sx={{mx:'auto',
+                    background:'white',
+                    color:'black',
+                    }}>
                     {text('SHOP NOW', 'تسوق الآن')}
 
                     </Btn>
@@ -105,7 +108,11 @@ PreLoader = ({data,resImages}:any) => {
                     <Btn v2
         onClick={()=>router.push(`/Sporty Streets/products?type=all`)}
                     
-                    sx={{mx:'auto'}}>
+                    sx={{
+                    color:'black',
+
+                      background:'white',
+                      mx:'auto'}}>
                     {text('SHOP NOW', 'تسوق الآن')}
 
                     </Btn>
@@ -133,7 +140,7 @@ component={'h1'}
     pb:.5,
     fontWeight: '900'
 }}>
- Diamond Painting is easy and fun!
+ where fashion is more than just clothing
 </Typography>
 <Typography
 component={'p'}
@@ -146,7 +153,7 @@ component={'p'}
     },
     fontWeight: '200'
 }}>
-Relax and unwind as you seamlessly create your own stunning diamond art.
+{`Explore Conceptual's unique collection where fashion transcends mere clothing.`}
 </Typography>
 
 <Btn  

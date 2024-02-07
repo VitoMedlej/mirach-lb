@@ -11,11 +11,15 @@ import * as React from 'react';
 import SelectOneForm from './Forms/SelectOneForm';
 import { Box, MenuItem } from '@mui/material';
 import Btn from '@/Components/Btn/Btn';
-import { categories } from '@/Components/Navbar/Navbar';
+import { useCategoriesContext } from '@/context/Contexts';
+// import { categories } from '@/Components/Navbar/Navbar';
 // import SearchInput from '@/Components/Navbar/SearchInput';
 
 export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
-   
+
+
+    const {categories} = useCategoriesContext();
+    let categoryArray = categories && categories?.map((category:any) => category?.categoryName);
     const handleChange = (val: string) => {
         // setValue(();
         // let val = (event.target as HTMLInputElement).value;
@@ -49,10 +53,7 @@ export default function SimpleAccordion({handleSubmit,options,setOptions}:any) {
              title= 'Category'
             List={
             
-                ["Collection",`Oversized Outfits`,
-                `Casual Comfort`,
-                `Sporty Streets`,
-                `Trendy Threads`]
+                categoryArray
              
            }
             value={options.category}

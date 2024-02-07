@@ -17,6 +17,7 @@ import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
 import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
 import SelectWeight from '@/Components/SelectWeight/SelectWeight'
+import SizeChart from '@/Components/SizeChart/SizeChart'
 
 const Index = () => {
     const {productId} = useParams()
@@ -40,6 +41,9 @@ const Index = () => {
     
     const multiWeight = data?.product?.sizes && data?.product?.sizes?.length > 0 
     ? data?.product?.sizes[0] : {price: data?.product?.price, size:data?.product?.size }
+    
+    console.log('multiWeight: ', multiWeight);
+
     const [selectedSize, setselectedSize] = useState(multiWeight);
     console.log('data: ', data);
     
@@ -131,12 +135,15 @@ const Index = () => {
                   <Divider></Divider>
                 <Box sx={{pt:2}} className="flex row ">
 
-             Size:
+             {data?.product?.size || data?.product?.sizes ? 'Size:' : ''}
              {' '}
                <SelectWeight
               selectedSize={selectedSize}
               setselectedSize={setselectedSize}
-              sizes={data?.product?.sizes || [{price:Number(data?.product?.price),size:data?.product?.size}]}/> 
+              sizes={data?.product?.sizes && data?.product?.sizes?.length > 0 ? data?.product?.sizes : 
+                 [{price:Number(data?.product?.price),size:data?.product?.size}]
+                  
+                }/> 
               </Box>
          </Box>
    
@@ -225,7 +232,7 @@ const Index = () => {
             
          </Box>}
 
-           
+              <SizeChart/>
              {/* <Typography className='gray' sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}>
    {data?.product?.description}
              </Typography> */}

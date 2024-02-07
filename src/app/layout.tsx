@@ -8,8 +8,8 @@ import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
-    title: 'DIY Crafts: Sparkle with Diamond Painting Supplies in Lebanon',
-    description: `Explore the world of creative expression with diamond painting! Discover our exclusive collection of DIY crafts that combine relaxation and self-expression. Unleash your creativity and create breathtaking masterpieces with our high-quality diamond painting kits`,
+    title: 'Conceptual | Redefining Fashion with Narrative Expression | Lebanon Based Brand',
+    description: `Explore Conceptual, a Lebanon based brand, offering a unique collection where fashion transcends mere clothing. Discover garments that invite you to embrace the power of storytelling, allowing your style to become a canvas for self-expression. `,
     icons: {
         icon: `https://ucarecdn.com/14b57f62-b549-4e2f-8685-1bc72625ecc8/conslogo.PNG`
     }

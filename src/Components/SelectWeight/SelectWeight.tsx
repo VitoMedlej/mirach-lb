@@ -8,7 +8,7 @@ import Btn from '../Btn/Btn';
 
 export default function ProductCard({ setselectedSize, selectedSize, sizes }: any) {
   const handleSizeClick = (size: string) => {
-    const option = sizes.find((option: any) => option.size === size);
+    const option = sizes.find((option: any) => option.size?.toLocaleLowerCase() === size?.toLocaleLowerCase());
     setselectedSize(option);
   };
 
@@ -23,8 +23,8 @@ export default function ProductCard({ setselectedSize, selectedSize, sizes }: an
                   mx:1,
                   px:0,py:0,
                   border:'1px solid black',
-                  background:selectedSize?.size === option.size ? 'black' : 'transparent'
-                  ,color:selectedSize?.size === option.size ? 'white' : 'black'
+                  background:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'black' : 'transparent'
+                  ,color:selectedSize?.size?.toLocaleLowerCase() === option.size?.toLocaleLowerCase() ? 'white' : 'black'
                 
                 }}
                 onClick={() => handleSizeClick(option?.size)}

@@ -2,13 +2,15 @@
 import { Box, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
+import MenuHover from './MenuHover'
 // import MenuHover from './MenuHover'
 
 
 
 
 
-const NavButtom = () => {
+const NavButtom = ({categories}:any) => {
+    
 
   return (
     <Box
@@ -40,7 +42,7 @@ const NavButtom = () => {
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
-id="button"
+
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
@@ -49,11 +51,11 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Home
 </Typography>
 </Link>
-<Link className='white decor-none ' href={`/#shop`}>
+{/* <Link className='white decor-none ' href={`/#shop`}>
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
-id="button"
+
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
@@ -61,14 +63,42 @@ alignItems: 'center',
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Shop
 </Typography>
+</Link> */}
+{
+    categories && categories.map((cate:any)=>{
+            if (cate?.subcategories?.length < 1) return      <Link 
+            
+            key={cate?.categoryName} className='white decor-none'
+             href={`/${cate?.categoryName}/products`}>
+
+<Typography 
+className=' cursor center flex gap1 white decor-none captialize'
+
+component='h1' sx={{width:'max-content',
+mx:'1em',
+alignItems: 'center',
+
+fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+{`${cate?.categoryName}`}
+</Typography>
 </Link>
+            ;
+        return <MenuHover
+         img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'}
+         category={`${cate?.categoryName}`} subcategories={cate?.subcategories && cate?.subcategories?.length > 0 ? cate?.subcategories : []} />
+          
+    })
+}
+{/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'Shop'} subcategories={['test','tes1']} /> */}
+
+{/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'Collection'} subcategories={['22','33']} /> */}
 
 
 <Link className='white decor-none ' href={`/about`}>
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
-id="button"
+
 component='h1' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
@@ -78,12 +108,14 @@ About US
 </Typography>
 </Link>
 
-{
+{/* {
     // [  `Oversized Outfits`,
     //     `Casual Comfort`,
     //     `Sporty Streets`,
     //     `Trendy Threads`]
-            ['Collection',
+            [
+                
+                // 'Collection',
             // `Casual Comfort`,
             // `Sporty Streets`,
         ]
@@ -93,7 +125,7 @@ About US
         <Typography 
         component='h1'
         className=' cursor center flex gap1 white decor-none captialize'
-        id="button"
+        
         sx={{width:'max-content',
         mx:'1em',
         alignItems: 'center',
@@ -102,13 +134,13 @@ About US
         </Typography>
         </Link>
     })
-}
+} */}
 
 {/* <Link className='white decor-none ' href={`/organic herbs/products`}>
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
-id="button"
+
 component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
@@ -121,7 +153,7 @@ Organic Herbs
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
-id="button"
+
 component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
@@ -137,7 +169,7 @@ Natural Supplements
 
 <Typography 
 className=' cursor center flex gap1 white decor-none '
-id="button"
+
 component='p' sx={{width:'max-content',
 mx:'1em',
 alignItems: 'center',
@@ -151,7 +183,7 @@ About Us
 
 <Typography 
 className=' cursor center flex gap1 white decor-none uppercase'
-id="button"
+
 component='p' sx={{width:'max-content',
 alignItems: 'center',
 mx:'1em',
@@ -164,7 +196,7 @@ New Arrivals
 
                 <Typography 
       className=' cursor center flex gap1 white decor-none uppercase'
-        id="button"
+        
         component='p' sx={{width:'max-content',
         mx:'1em',
         alignItems: 'center',
