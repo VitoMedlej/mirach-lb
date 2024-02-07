@@ -18,6 +18,7 @@ import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicke
 import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
 import SelectWeight from '@/Components/SelectWeight/SelectWeight'
 import SizeChart from '@/Components/SizeChart/SizeChart'
+import TableVisual from '@/Components/SizeChart/TableVisual'
 
 const Index = () => {
     const {productId} = useParams()
@@ -42,7 +43,6 @@ const Index = () => {
     const multiWeight = data?.product?.sizes && data?.product?.sizes?.length > 0 
     ? data?.product?.sizes[0] : {price: data?.product?.price, size:data?.product?.size }
     
-    console.log('multiWeight: ', multiWeight);
 
     const [selectedSize, setselectedSize] = useState(multiWeight);
     console.log('data: ', data);
@@ -107,6 +107,11 @@ const Index = () => {
           })}
         
                 </Box>
+                <Box sx={{mx:'auto',width:{xs:'0px',md:'100%'},display:{xs:'none',md:' flex'}}}>
+
+          <TableVisual categories={data?.product?.chart?.categories} chartName={data?.product?.chart?.chartName}/>
+                </Box>
+
        </Grid>
        <Grid sx={{
         // border:'1px solid #00000029',
@@ -232,7 +237,14 @@ const Index = () => {
             
          </Box>}
 
-              <SizeChart/>
+             {
+             data?.product?.chart ? 
+
+             <SizeChart categories={data?.product?.chart?.categories} 
+             chartName={data?.product?.chart?.chartName}/>
+            :
+            ''
+            }
              {/* <Typography className='gray' sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}>
    {data?.product?.description}
              </Typography> */}

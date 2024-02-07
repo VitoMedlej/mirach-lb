@@ -66,9 +66,9 @@ Shop
 </Link> */}
 {
     categories && categories.map((cate:any)=>{
-            if (cate?.subcategories?.length < 1) return      <Link 
+            if (cate?.subcategories?.length == 0){ return      <Link 
             key={cate?.categoryName} className='white decor-none'
-             href={`/${cate?.categoryName}/products`}>
+             href={`/${cate?.categoryName?.toLocaleLowerCase()}/products`}>
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
@@ -80,11 +80,14 @@ alignItems: 'center',
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 {`${cate?.categoryName}`}
 </Typography>
-</Link>
-            ;
-        return <MenuHover key={cate?.categoryName}
-         img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'}
-         category={`${cate?.categoryName}`} subcategories={cate?.subcategories && cate?.subcategories?.length > 0 ? cate?.subcategories : []} />
+</Link>}
+        
+            else {
+
+                return <MenuHover key={cate?.categoryName}
+                img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'}
+                category={`${cate?.categoryName}`} subcategories={cate?.subcategories && cate?.subcategories?.length > 0 ? cate?.subcategories : []} />
+            }
           
     })
 }
