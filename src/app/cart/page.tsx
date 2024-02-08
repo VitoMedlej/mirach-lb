@@ -113,6 +113,7 @@ const Cart = () => {
                         if (!item?._id) return;
                         return <CartProduct 
                         productselectedSize={item?.productselectedSize}
+                        productselectedColor={item?.productselectedColor}
                         onChange={refetchState}
                         key={item._id}
                         img={item.img} qty={item.qty} remove={remove} title={item.title} _id={item._id} price={item.price}/>
