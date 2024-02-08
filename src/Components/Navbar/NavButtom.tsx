@@ -66,7 +66,8 @@ Shop
 </Link> */}
 {
     categories && categories.map((cate:any)=>{
-            if (cate?.subcategories?.length == 0){ return      <Link 
+            // if (cate?.subcategories?.length == 0){ return      <Link 
+                if (false){ return      <Link 
             key={cate?.categoryName} className='white decor-none'
              href={`/${cate?.categoryName?.toLocaleLowerCase()}/products`}>
 
