@@ -27,6 +27,8 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
       margin:'0 1em ',
       zIndex:12345678,
       maxHeight:'400px',
+
+      position:'relative',
       background:'transparent',
         }}>
     
@@ -51,11 +53,15 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
         className='flex '
           id="menu"
           sx={{
+            border:'1px solid black',
             zIndex:12345678,
       boxShadow: '1px 1px 3px #00000017',
             position:'absolute',
-            width: '100%',
-            minHeight: '350px',
+            // width: '100%',
+            width: 'max-content',
+            py:4,
+            px:0,
+            // minHeight: '150px',
             maxHeight:'600px',
             left:0,
             backgroundColor: 'white',
@@ -63,8 +69,8 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
           }}
           onMouseLeave={handleMouseLeave}
         >
-          <ul style={{paddingTop:7,width:'30%'}}>
-          <Link className=' decor-none uppercase' key={category} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
+          <ul style={{width:'100%',padding:0}}>
+          {/* <Link className=' decor-none uppercase' key={category} href={`/${category.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
 
             <li>
             <Typography onClick={()=>setShowMenu(false)}  component='p' 
@@ -72,14 +78,14 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
                 {category}
      </Typography>
             </li>
-          </Link>
+          </Link> */}
             {subcategories && subcategories.map((subcategory) => (
-              <li className='' key={subcategory?.id}>
-              <Link className='black decor-none uppercase'
+              <li style={{padding:' .25em 1em '}} className='' key={subcategory?.id}>
+              <Link  className='black decor-none uppercase'
                 href={`/${category?.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${ encodeURIComponent(`${subcategory?.name}`)?.toLocaleLowerCase()}`}>
                 
      <Typography onClick={()=>setShowMenu(false)} 
-      component='p' sx={{width:'max-content',fontWeight:400,py:.15,fontSize:{xs:'.87em',sm:'1.15em'}}}>
+      component='p' sx={{width:'max-content',fontWeight:600,py:.15,fontSize:{xs:'.87em',sm:'.95em'}}}>
                 {subcategory?.name}
      </Typography>
  </Link>
@@ -88,12 +94,12 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
           </ul>
         {/* <NestedMenuAccordion/> */}
 
-          <Box 
+          {/* <Box 
           
           sx={{pointerEvents:'none',cursor:'none',
            width:'70%',height:'400px'}}>
             <img src={`${img}`} alt="Category Image" className="img " />
-          </Box> 
+          </Box>  */}
         </Box>
       )}
     </Box>

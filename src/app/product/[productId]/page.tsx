@@ -107,10 +107,12 @@ const Index = () => {
           })}
         
                 </Box>
-                <Box sx={{mx:'auto',width:{xs:'0px',md:'100%'},display:{xs:'none',md:' flex'}}}>
+           {data?.product?.chart ?     <Box sx={{mx:'auto',width:{xs:'0px',md:'100%'},display:{xs:'none',md:' flex'}}}>
 
           <TableVisual categories={data?.product?.chart?.categories} chartName={data?.product?.chart?.chartName}/>
                 </Box>
+              :''  
+              }
 
        </Grid>
        <Grid sx={{

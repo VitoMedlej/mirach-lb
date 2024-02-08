@@ -29,7 +29,7 @@ const NavButtom = ({categories}:any) => {
             sx={{
                 maxWidth:'lg',
             justifyContent: 'flex-start',
-            overflow:'hidden',
+            // overflow:'hidden',
             py:1.5,
 
         }}>
