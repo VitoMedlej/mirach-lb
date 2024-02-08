@@ -61,7 +61,7 @@ export default function Checkout() {
     const handleNext = () => {
       if (info?.checkbox2 && info?.checkbox && info && info.email && info.firstName && info.lastName && info.address1 && info.phone) {
         localStorage.setItem('25VNSFKJNJKNX14hhJ52cknv',JSON.stringify({...info, name : `${info.firstName} ${info.lastName}`}))
-        saveState('2G184N24-JZ094512JIF12412',info)
+        saveState('2VI1H2OI-FJ04BJZ2X',info)
         setActiveStep(activeStep + 1);
       
       } 
@@ -75,7 +75,7 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('2VI1H2OI-FJ04BJZ2X')
+      const products = loadState('2G184N24-JZ094512JIF12412')
  
 
       const total = 10
