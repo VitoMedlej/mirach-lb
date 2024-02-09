@@ -13,7 +13,7 @@ import Btn from '../Btn/Btn';
 
 
 
-const Preloader3 = ({res}:{res:any}) => {
+const Preloader3 = () => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
       {
@@ -25,20 +25,43 @@ const Preloader3 = ({res}:{res:any}) => {
         position:'bottom',
     }
      ])
+
+
+     const fetchDataAndSetImgs = async () => {
+        try {
+    
+    
+          const response = await fetch('https://api.jsonbin.io/v3/b/65c502b2266cfc3fde879c83', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Master-Key': '$2a$10$tKlp8yokSY5sQ58K9UJosuUM4/0k2FCFKG2LqzaNegXtNdlivpIwG'
+            },
+            cache: 'no-store'
+
+          })
+          if (!response?.ok) {
+            throw new Error(`Failed to fetch data. Status: ${response?.status}`);
+          }
+    
+          const data = await response.json();
+          console.log('data: ', data);
+        if (!data?.record) return;
+          setImgs(data?.record); // Assuming 'record' is the property containing the images in the response
+        }
+        catch(e){
+          console.log('e: ', e);
+    
+        }
+       }
      const redir = () => {
         router.push('/services')
         // console.log('abc')
      }
     useEffect(() => {
-        console.log('res: ', res);
-    if (res && res?.MainCarousel && res?.MainCarousel?.length > 0) {
-        console.log('res?.MainCarousel: ', res?.MainCarousel);
-        // console.log('res: ', );
-        setImgs(res?.MainCarousel)
-    }
+        fetchDataAndSetImgs()
     }, [])
-  const {text} = useLanguage()
-    
+        
     return (
         <Box
             sx={{

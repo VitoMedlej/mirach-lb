@@ -17,16 +17,21 @@ const useCategories = () => {
       const cachedCategories = localStorage.getItem('categories');
       if (cachedCategories) {
         setCategories(JSON.parse(cachedCategories));
-        return; // Return early if categories are already cached
+        // return; // Return early if categories are already cached
       }
 
-      const response = await fetch('https://api.jsonbin.io/v3/b/65c0fe93266cfc3fde861dfb', {
+      const response = await fetch('https://api.jsonbin.io/v3/b/65c0fe93266cfc3fde861dfb',  {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'X-Master-Key': '$2a$10$FjBR4hwwu8E5waevcvrb0uWtCoiXS0JN0Ut2bxF55izDfGmh0GDUG'
-        }
-      });
+        },
+        cache: 'no-store',
+  next: {
+    revalidate: 0
+  }
+      }
+      );
 
       if (!response.ok) {
         throw new Error(`Failed to fetch data. Status: ${response.status}`);
