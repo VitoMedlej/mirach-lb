@@ -56,7 +56,7 @@ PreLoader = ({data,resImages}:any) => {
 
   return (
     <Box >
-      <MainCarousel res={null} />
+      <MainCarousel  />
       {/* <HomeProductCollection  products={data}/> */}
         <HomeProductsCarousel data={data} Collectiontitle={''} delay={2000}/>
       {/* <HomeProductCollection  products={data}/> */}
