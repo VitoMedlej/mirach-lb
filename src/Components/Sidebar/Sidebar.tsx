@@ -8,7 +8,7 @@ import {AiOutlineHeart} from 'react-icons/ai'
 import { useRouter } from 'next/navigation';
 import {AiOutlineArrowUp} from 'react-icons/ai';
 
-import { DrawerContext } from '@/context/Contexts';
+import { DrawerContext, useCategoriesContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
 import { categories } from '../Navbar/Navbar';
@@ -19,20 +19,21 @@ import Link from 'next/link';
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
   
   const {open, setOpen} = useContext(DrawerContext);
-  const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
+  // const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
+  const {categories} = useCategoriesContext();
 
-  const fetchUserAndList = async () => {
-    const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
-    if (user) {
-           let parsedUser = JSON.parse(user)
-           if (!parsedUser) {return}
-           setLocalUser(parsedUser)
-    }
-}
-useEffect(()=>{
-  fetchUserAndList()
+//   const fetchUserAndList = async () => {
+//     const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
+//     if (user) {
+//            let parsedUser = JSON.parse(user)
+//            if (!parsedUser) {return}
+//            setLocalUser(parsedUser)
+//     }
+// }
+// useEffect(()=>{
+//   fetchUserAndList()
 
-},[])
+// },[])
   const router = useRouter();
   const toggleDrawer =
     ( open: boolean) =>
@@ -109,24 +110,17 @@ useEffect(()=>{
        
     
           {
-           [
-              'Shop',
-              'Collection',   
-            // `Oversized Outfits`,
-            // `Casual Comfort`,
-            // `Sporty Streets`,
-            // `Trendy Threads`
-          ].map(i=>{
+          categories && categories?.map((cate:{categoryName:string,subcategories:any})=>{
               return    <ListItem
-              key={i}
+              key={cate?.categoryName}
               sx={{fontWeight:400}}
     
-              onClick={()=>{router.push(`/${i.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
+              onClick={()=>{router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
                disablePadding>
                 <ListItemButton>
                 
                       <Typography component='h1' sx={{fontWeight:600}}>
-                     {i.toUpperCase()}
+                     {cate?.categoryName?.toUpperCase()}
                 </Typography>
                 </ListItemButton>
       
