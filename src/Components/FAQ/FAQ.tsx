@@ -18,16 +18,16 @@ const FAQs = [
     "A": "At our clothing brand, quality is the cornerstone of our commitment to excellence. We meticulously ensure the superior quality of our products by utilizing a combination of a 3-thread cotton blend and luxury high-quality fabrics. This meticulous selection of materials not only enhances the comfort and durability of our garments but also contributes to a refined and premium finish."
   },
   {
-    "Q": "How long does shipping take?",
-    "A": "Shipping times may vary depending on your location and the shipping method you choose. We offer standard shipping which usually takes 3-5 business days within the Beirut. Please note that international shipping may take longer. You will receive a tracking number once your order has been shipped."
+    "Q": "What is the expected delivery time for orders?",
+    "A": "Within Beirut, delivery 1-3 days, while outside Beirut, it generally ranges from 2-5 days. Please note that international shipping may take longer. You will receive a tracking number once your order has been shipped."
   },
   {
-    "Q": "What is your return policy?",
-    "A": "We want you to be 100% satisfied with your purchase, so we offer a 5-day money-back guarantee on all our products. If you’re not happy with your purchase, simply contact us and we’ll be happy to assist you with a return or exchange."
+    "Q": "What is your return/exchange policy?",
+    "A": "We do not accept returns. Exchange requests are applicable within 3 days of receiving the product. Items must be in their original condition with tags intact for exchange eligibility."
   },
   {
-    "Q": "Do you offer any discounts or promotions?",
-    "A": "Yes, we do! We offer regular discounts and promotions for our loyal customers. Sign up for our newsletter to stay in the loop about our latest deals and discounts. You can also follow us on social media for exclusive offers and giveaways."
+    "Q": "How Do You Handle Sizing and Fit?",
+    "A": "At Conceptual, we understand the importance of finding the perfect fit for your style and comfort. Our clothing is designed with a slightly oversized fit to offer a relaxed and effortless look. We recommend referencing our size chart available on our website to ensure you select the best size for your measurements."
   },
 ]
 
