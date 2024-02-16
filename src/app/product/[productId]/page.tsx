@@ -88,10 +88,11 @@ const Index = () => {
     
       <Box sx={{mt:4}}>
  
-{!loading && data?.product !== undefined && data?.product?.title ?  <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
+{!loading && data?.product !== undefined && data?.product?.title ? 
+ <Grid sx={{maxWidth:'lg',mx:1,pt:{sm:15,md:15,lg:9}}} className='auto' container>
 <Grid  item xs={12}  md={6} >
          <ProductImageCarousel setSwiper={setSwiper} images={data?.product?.images}/>
-        <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
+        {/* <Box className="flex wrap justify-between between space-around" sx={{mt:1}}>
 
           {data?.product?.images && data?.product?.images?.length > 1 && data?.product?.images?.map((i:any,index:number)=>{
             return <Box
@@ -106,7 +107,7 @@ const Index = () => {
               </Box>
           })}
         
-                </Box>
+                </Box> */}
            {data?.product?.chart ?     <Box sx={{mx:'auto',width:{xs:'0px',md:'100%'},display:{xs:'none',md:' flex'}}}>
 
           <TableVisual categories={data?.product?.chart?.categories} chartName={data?.product?.chart?.chartName}/>
