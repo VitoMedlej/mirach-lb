@@ -26,9 +26,9 @@ const useCategories = () => {
           'Content-Type': 'application/json',
           'X-Master-Key': '$2a$10$FjBR4hwwu8E5waevcvrb0uWtCoiXS0JN0Ut2bxF55izDfGmh0GDUG'
         },
-        cache: 'no-store',
+        // cache: 'no-store',
   next: {
-    revalidate: 0
+    revalidate: 100
   }
       }
       );

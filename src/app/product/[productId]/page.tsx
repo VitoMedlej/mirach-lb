@@ -35,12 +35,12 @@ const Index = () => {
       product : null,
       moreProducts : []
     })
-    let hasMultipleColors =  data?.product?.colors && data?.product?.colors?.length > 0 ? data?.product?.colors[0] : []
+    let hasMultipleColors =  data?.product?.colors !== null && data?.product?.colors?.length > 0 ? data?.product?.colors[0] : []
     const [selectedQuantity,setSelectedQuantity] = useState(1)
     const [productselectedColor,setproductselectedColor] = useState(hasMultipleColors)
 
     
-    const multiWeight = data?.product?.sizes && data?.product?.sizes?.length > 0 
+    const multiWeight = data?.product?.sizes !== null && data?.product?.sizes?.length > 0 
     ? data?.product?.sizes[0] : {price: data?.product?.price, size:data?.product?.size }
     
 
