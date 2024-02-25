@@ -8,8 +8,8 @@ import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
 import { Autoplay } from 'swiper';
 
-import useLanguage from '@/Hooks/useLanguage';
-import Btn from '../Btn/Btn';
+// import useLanguage from '@/Hooks/useLanguage';
+// import Btn from '../Btn/Btn';
 
 
 
@@ -17,11 +17,15 @@ const Preloader3 = () => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
       {
-        img: 'https://thevybe.co/cdn/shop/files/VAR_6213_1400x.jpg?v=1688976097',
+        img:`https://ucarecdn.com/d723b198-f523-466d-8fba-fa88709d50bf/
+        `
+      },
+      {
+        img: 'https://ucarecdn.com/27331520-c27e-42a6-bece-56d493cd7e01/',
         position:'',
     }
     ,{
-        img : 'https://irrelevantlvng.com/img/cms/IMG_1323.JPG',
+        img : 'https://ucarecdn.com/f0b39016-75a9-4dfa-98bb-2af8e91bb295/',
         position:'bottom',
     }
      ])
@@ -37,7 +41,8 @@ const Preloader3 = () => {
               'Content-Type': 'application/json',
               'X-Master-Key': '$2a$10$tKlp8yokSY5sQ58K9UJosuUM4/0k2FCFKG2LqzaNegXtNdlivpIwG'
             },
-            cache: 'no-store'
+            // cache: 'no-store'
+            next:{revalidate:1000}
 
           })
           if (!response?.ok) {

@@ -28,7 +28,7 @@ const useCategories = () => {
         },
         // cache: 'no-store',
   next: {
-    revalidate: 100
+    revalidate: 1000
   }
       }
       );
