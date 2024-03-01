@@ -38,6 +38,7 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [orderNumber, setOrderNumber] = React.useState(null);
 
   
   const handleBack = () => {
@@ -91,7 +92,8 @@ export default function Checkout() {
             body: JSON.stringify({order:{info,products,total}})
         });
   const content = await rawResponse.json();
-  saveState('2G184N24-JZ094512JIF12412',null)
+        setOrderNumber(content?.orderNumber)
+    saveState('2G184N24-JZ094512JIF12412',null)
   saveState('2VI1H2OI-FJ04BJZ2X',null)
 
 }
@@ -131,7 +133,7 @@ export default function Checkout() {
                 Thank you for your order.
               </Typography>
               <Typography variant="subtitle1">
-                Your order number has been recorded! We will message you soon, so please stay alert.
+              {`Your order has been recorded! Your order number is ${orderNumber}. We will message you soon, so please stay alert.`}
               </Typography>
             </React.Fragment>
           ) : (
