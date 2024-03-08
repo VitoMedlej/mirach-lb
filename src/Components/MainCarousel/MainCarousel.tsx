@@ -16,18 +16,18 @@ import { Autoplay } from 'swiper';
 const Preloader3 = () => {
     const router = useRouter()
     const [imgs,setImgs] = useState([
-      {
-        img:`https://ucarecdn.com/d723b198-f523-466d-8fba-fa88709d50bf/
-        `
-      },
-      {
-        img: 'https://ucarecdn.com/27331520-c27e-42a6-bece-56d493cd7e01/',
-        position:'',
-    }
-    ,{
-        img : 'https://ucarecdn.com/f0b39016-75a9-4dfa-98bb-2af8e91bb295/',
-        position:'bottom',
-    }
+    //   {
+    //     img:`https://ucarecdn.com/d723b198-f523-466d-8fba-fa88709d50bf/
+    //     `
+    //   },
+    //   {
+    //     img: 'https://ucarecdn.com/27331520-c27e-42a6-bece-56d493cd7e01/',
+    //     position:'',
+    // }
+    // ,{
+    //     img : 'https://ucarecdn.com/f0b39016-75a9-4dfa-98bb-2af8e91bb295/',
+    //     position:'bottom',
+    // }
      ])
 
 
@@ -42,7 +42,7 @@ const Preloader3 = () => {
               'X-Master-Key': '$2a$10$tKlp8yokSY5sQ58K9UJosuUM4/0k2FCFKG2LqzaNegXtNdlivpIwG'
             },
             // cache: 'no-store'
-            next:{revalidate:1000}
+            next:{revalidate:10}
 
           })
           if (!response?.ok) {
@@ -100,11 +100,11 @@ const Preloader3 = () => {
                 modules={[Autoplay]}
                 className="mySwiper swiper">
     
-                {imgs.map((item) => {
+                {imgs && imgs.map((item:any) => {
     
                     return <SwiperSlide 
                      
-                    className='ztop  ' key={item.img}>
+                    className='ztop  ' key={`${item?.img}`}>
                         <Box
                             sx={{
                                 position:'relative',
@@ -160,7 +160,7 @@ const Preloader3 = () => {
                                 className={`img   
                                 `}
                                 // ${item?.className}
-                                src={`${item.img}`}
+                                src={`${item?.img}`}
                                 alt="Main Carousel Image"/>
            
                         </Box>
