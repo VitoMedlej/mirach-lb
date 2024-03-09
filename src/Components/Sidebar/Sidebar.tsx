@@ -21,6 +21,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
   const {open, setOpen} = useContext(DrawerContext);
   // const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
   const {categories} = useCategoriesContext();
+  console.log('categories: ', categories);
 
 //   const fetchUserAndList = async () => {
 //     const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
@@ -109,13 +110,15 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           </ListItem>
        
     
-          {
+          {/* {
           categories && categories?.map((cate:{categoryName:string,subcategories:any})=>{
               return    <ListItem
               key={cate?.categoryName}
               sx={{fontWeight:400}}
     
-              onClick={()=>{router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
+              onClick={()=>{router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}
+            
+            }
                disablePadding>
                 <ListItemButton>
                 
@@ -127,9 +130,12 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     
               </ListItem>
              })
-          }
+          } */}
 
-{/* <Accordion sx={{border:'none',boxShadow:'none',}}>
+{
+            categories?.map((cate:{categoryName:string,subcategories:any})=>{
+
+              return <Accordion key={`${cate?.categoryName}`} sx={{border:'none',boxShadow:'none',}}>
             
             <AccordionSummary
     expandIcon={<AiOutlineArrowUp />}
@@ -137,7 +143,8 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     id="panel1a-header"
   >
  <Typography component='h1' sx={{fontWeight:600}}>
-         FLAVORED HONEY
+ {cate?.categoryName?.toUpperCase()}
+
       </Typography>
   </AccordionSummary>
   <AccordionDetails>
@@ -146,36 +153,38 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
   
      disablePadding>
-<ListItem sx={{padding:0,width:'100%'}}
+<ListItem
+              key={cate?.categoryName}
+              sx={{fontWeight:400}}
+    
+              onClick={()=>{router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
+               disablePadding>
 
-onClick={()=>
-{setOpen(false);
-router.push(`/flavored honey/products`)}}
 
+<ListItemButton
+  onClick={()=>{router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}
+            
+}
 >
 
-
-<ListItemButton >
       <Typography sx={{fontWeight:300}}>
   View All
 </Typography>
 </ListItemButton>
 </ListItem>
 
-{[`Honey with Peanut`,
-`Honey with Strawberry`
-].map(i=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{cate?.subcategories?.map((a:any)=>{   return  <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);
-router.push(`/flavored honey/products?type=${encodeURIComponent(i).toLocaleLowerCase()}`)}}
+router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products?type=${encodeURIComponent(a).toLocaleLowerCase()}`)}}
 
-key={i}>
+key={a?.name}>
 
 
 <ListItemButton >
             <Typography sx={{fontWeight:300}}>
-        {i}
+        {a?.name}
       </Typography>
       </ListItemButton>
 </ListItem>
@@ -185,7 +194,10 @@ key={i}>
 
 
   </AccordionDetails>
-</Accordion> */}
+</Accordion>
+
+})
+}
 
 
                   {/* <Accordion sx={{border:'none',boxShadow:'none',}}>

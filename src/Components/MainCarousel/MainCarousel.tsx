@@ -76,11 +76,11 @@ const Preloader3 = () => {
             transform:'translateY(-1px)',
             maxWidth:'none',
             // maxWidth: 'lg',
-            minHeight:'400px',
-            maxHeight:{sm:'100%',md:'500px',lg:'550px'},
+            height: {xs:'max-content',sm:'500px',md:'100%'},
+    minHeight: {xs:'fit-content',sm:'400px'},
+            maxHeight:{sm:'fit-content',md:'500px',lg:'550px'},
             margin: '0 auto',
          
-            height : {xs:'500px',sm:'500px',md:'100%'},
              
             display: {
                 xs: 'flex'

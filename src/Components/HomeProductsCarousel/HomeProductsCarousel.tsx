@@ -59,7 +59,7 @@ component={'h1'}
     padding:.5,
     fontWeight: '900'
 }}>
-Browse our best selling products
+Browse our latest products
 </Typography>
 
 

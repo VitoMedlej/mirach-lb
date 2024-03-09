@@ -25,7 +25,7 @@ component={'h1'}
     padding:.5,
     fontWeight: '900'
 }}>
-BROWSE OUR BEST SELLING PRODUCTS
+BROWSE OUR LATEST PRODUCTS
 </Typography>
 <Typography
 component={'p'}
