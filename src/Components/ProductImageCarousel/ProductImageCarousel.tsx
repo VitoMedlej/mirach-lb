@@ -22,13 +22,16 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
         spaceBetween={30}
         effect={"fade"}
         autoplay={
-          {delay:5000}
+          {delay:50000000}
         }
         navigation={false}
         pagination={{
           clickable: true,
         }}
-        modules={[Autoplay, Pagination]}
+        modules={[
+          // Autoplay,
+          
+          Pagination]}
         className="mySwiper"
       >
 {
