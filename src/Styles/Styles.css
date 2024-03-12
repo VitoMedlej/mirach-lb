@@ -158,7 +158,7 @@ button[disabled] {
 }
 
 .swiper-button-next, .swiper-button-prev {
-  color: gray !important;
+  color: black !important;
 }
 
 .justify-between {

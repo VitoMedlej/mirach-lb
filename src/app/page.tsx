@@ -62,6 +62,7 @@ try {
       const res = await fetchData()
       // let res = {data:{featuredProducts:null}}
       
+      console.log('data: ', res?.data);
       return (
         <PreLoader resImages={resImages || null} data={res?.data?.featuredProducts}/>
        )

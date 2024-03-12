@@ -2,20 +2,21 @@
 import React from 'react'
 import { Box,  Container, Divider, Grid, Typography } from "@mui/material"
 // import ContactSection from './ContactSection/ContactSection'
-import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
+// import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
 import Perks from './Perks/Perks'
 // import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
-import Testimonials from './Testimonials/Testimonials'
+// import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
 import useLanguage from '@/Hooks/useLanguage'
-import ContactSection from './ContactSection/ContactSection'
+// import ContactSection from './ContactSection/ContactSection'
 import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
 const 
 PreLoader = ({data,resImages}:any) => {
+  console.log('dataZ: ', data);
   const router= useRouter();
   const {text} = useLanguage()
   const textsArray = [
