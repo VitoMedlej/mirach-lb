@@ -19,9 +19,9 @@ export default function ActiveLastBreadcrumb() {
         <Link
         className='gray' 
           underline="hover"
-          href={`/collection/products`}
+          href={`/collections/products`}
         >
-          {category ? category : 'Collection'}
+          {category ? category : 'collections'}
         </Link>
         {/* <Link
         className='gray' 

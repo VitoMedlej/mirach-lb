@@ -80,7 +80,7 @@ Browse our latest products
             </Box>
             <Btn 
 sx={{width:'fit-content',background:'transparent',color:'black',border:'1px solid white ',mt:1,mx:'auto'}}
-onClick={()=>router.push('/collection/products')}
+onClick={()=>router.push('/collections/products')}
 >
    Explore More
 </Btn>

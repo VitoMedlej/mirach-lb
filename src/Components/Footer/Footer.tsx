@@ -52,7 +52,7 @@ const Footer = () => (
               Home</Link></li>
               
           <li><Link href="/about">About Us</Link></li> 
-            <li><Link href="/collection/products">All Products</Link></li> 
+            <li><Link href="/collections/products">All Products</Link></li> 
             <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
             <li><Link href="https://wa.me/+96170970636">WhatsApp Us</Link></li>

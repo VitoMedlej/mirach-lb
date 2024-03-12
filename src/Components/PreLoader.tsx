@@ -161,7 +161,7 @@ component={'p'}
 sx={{
   background:'black',color:'white',
   width:'fit-content',mt:2,mx:'auto'}}
-onClick={()=>router.push('/collection/products')}
+onClick={()=>router.push('/collections/products')}
 >
    Explore More
 </Btn>

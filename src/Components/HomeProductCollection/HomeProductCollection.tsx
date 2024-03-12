@@ -44,7 +44,7 @@ Relax and unwind as you seamlessly create your own stunning diamond art.
 
 <Btn 
 sx={{width:'fit-content',border:'1px solid black c',mt:1,mx:'auto'}}
-onClick={()=>router.push('/collection/products')}
+onClick={()=>router.push('/collections/products')}
 >
    Explore More
 </Btn>

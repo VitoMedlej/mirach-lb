@@ -65,7 +65,7 @@ const Preloader2 = ({data,totalPages}:any) => {
         if (reset) {
             setnewValue('')
        
-        //    return router.push('/collection/products')
+        //    return router.push('/collections/products')
         setOptions({
             price : [1,100000],
             sort : 'latest',

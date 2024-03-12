@@ -33,7 +33,7 @@ const NavButtom = ({categories}:any) => {
             py:1.5,
 
         }}>
-{/* <Link className=' decor-none uppercase' href={`/collection/products`}>
+{/* <Link className=' decor-none uppercase' href={`/collections/products`}>
                     <Typography  component='p' sx={{width:'max-content',fontWeight:400,fontSize:{xs:'.7em',sm:'.85em'}}}>
                     Sale
                     </Typography>
@@ -94,7 +94,7 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 }
 {/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'Shop'} subcategories={['test','tes1']} /> */}
 
-{/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'Collection'} subcategories={['22','33']} /> */}
+{/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'collections'} subcategories={['22','33']} /> */}
 
 
 <Link className='white decor-none ' href={`/about`}>
@@ -118,7 +118,7 @@ About US
     //     `Trendy Threads`]
             [
                 
-                // 'Collection',
+                // 'collections',
             // `Casual Comfort`,
             // `Sporty Streets`,
         ]

@@ -59,11 +59,11 @@ export async function GET(req :NextRequest , res : NextApiResponse) {
           default:
             sortCriteria = {_id : -1};
         }
-        let filterByCate = !category || category?.toLocaleLowerCase() === 'collection' 
+        let filterByCate = !category || category?.toLocaleLowerCase() === 'collections' 
         || category?.toLocaleLowerCase() == 'all' 
         || category== 'All' 
         || category?.toLocaleLowerCase() == 'category' ? null : `${category}`.toLocaleLowerCase()
-        let filterByType = !type || type === null || type == 'All'  || type == 'all' || type == 'null' || type?.toLocaleLowerCase() == 'all' || type == 'collection'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
+        let filterByType = !type || type === null || type == 'All'  || type == 'all' || type == 'null' || type?.toLocaleLowerCase() == 'all' || type == 'collections'  ? null : `${decodeURIComponent(type)}`.toLocaleLowerCase()
         console.log('filterByType: ', filterByType);
         console.log('filterByCate: ', filterByCate);
         
