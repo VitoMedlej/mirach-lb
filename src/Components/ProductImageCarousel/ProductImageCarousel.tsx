@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 
 
 // import required modules
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import { Box } from "@mui/material";
 
 export default function App({images,index,setSwiper}:{setSwiper?:any,index?:number,images:string[] | []| undefined}) {
@@ -24,13 +24,14 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
         autoplay={
           {delay:50000000}
         }
-        navigation={false}
+        navigation={true}
         pagination={{
           clickable: true,
         }}
+        
         modules={[
           // Autoplay,
-          
+          Navigation,
           Pagination]}
         className="mySwiper"
       >

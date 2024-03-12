@@ -157,10 +157,6 @@ button[disabled] {
   opacity: 0.56;
 }
 
-.swiper-button-next, .swiper-button-prev {
-  color: black !important;
-}
-
 .justify-between {
   justify-content: space-between;
 }
