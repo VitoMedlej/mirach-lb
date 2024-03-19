@@ -97,7 +97,7 @@ const Preloader3 = () => {
                 delay: 4000,
                 disableOnInteraction: false
             }}
-                modules={[Navigation]}
+                modules={[Navigation,Autoplay]}
                 className="mySwiper swiper">
     
                 {imgs && imgs.map((item:any) => {
