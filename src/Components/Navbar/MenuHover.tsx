@@ -59,7 +59,7 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
             position:'absolute',
             // width: '100%',
             width: 'max-content',
-            py:4,
+            py:0,
             px:0,
             // minHeight: '150px',
             maxHeight:'600px',

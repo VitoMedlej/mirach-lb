@@ -55,7 +55,7 @@ const Footer = () => (
             <li><Link href="/collections/products">All Products</Link></li> 
             <li><Link href="/terms-and-conditions">Terms & Conditions</Link></li>
             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="https://wa.me/+96170970636">WhatsApp Us</Link></li>
+            <li><Link href="https://wa.me/+96170657915">WhatsApp Us</Link></li>
           </ul>
      
           <ul  className='ul-white' style={{color:'black'}}>
@@ -70,7 +70,7 @@ const Footer = () => (
             
             {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
 
-            <li><a href="https://www.instagram.com/Conceptual/" target="_blank" rel="noreferrer" >@Conceptual</a></li>
+            <li><a href="https://www.instagram.com/conceptual.wic/" target="_blank" rel="noreferrer" >@conceptual.wic</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>

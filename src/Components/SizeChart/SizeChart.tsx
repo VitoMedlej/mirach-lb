@@ -29,7 +29,7 @@ export default function SizeChart({categories,chartName}:any) {
   if (!categories || !chartName) return '';
   return (
     <Box sx={{display:{xs:'flex',md:'none'},width:{xs:'0%',md:'98%'}}}>
-      <Btn v2 sx={{color:'black',textDecoration:'underline',px:2,mx:0,fontWeight:400,mb:1}} onClick={handleOpen}>Size Chart</Btn>
+      <Btn v2 sx={{color:'black',textDecoration:'underline',px:0,mx:.5,fontWeight:400,mb:1}} onClick={handleOpen}>Size Chart</Btn>
       <Modal
         open={open}
         onClose={handleClose}

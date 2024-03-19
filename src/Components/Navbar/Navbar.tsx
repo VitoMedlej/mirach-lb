@@ -86,11 +86,11 @@ export default function Navbar() {
                 width:'100%',
             margin: '0 auto',
         }}>
-            {/* <Box className='center text-center' sx={{background:'white',width:'100%',py:.25}}>
-                <Typography className='' component='h1' sx={{color:'#0f0f0f',py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
-            FREE DELIVERY FOR ORDERS ABOVE $40. CASH ON DELIVERY. USD AT DAILY MARKET RATE.
+            <Box className='center text-center' sx={{background:'white',width:'100%',py:.25}}>
+                <Typography className='uppercase' component='h1' sx={{textTransform:'uppercase',color:'#0f0f0f',py:.2,fontSize:{xs:'.75em',sm:'.75em'}}}>
+            Our images are authentic and true-to-life, devoid of any mockups
                 </Typography>
-            </Box> */}
+            </Box>
       <Toolbar className='flex relative center items-center' sx={{py:1,background:'black'}}>
         
         <Box 

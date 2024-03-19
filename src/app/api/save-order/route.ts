@@ -14,11 +14,11 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
     const orderNumber = uuidv4();
 
     // Add the unique order number to the order object
-    order.orderNumber = orderNumber;
+    let nb = `${orderNumber}`?.split("-")[0]?.toUpperCase();
 
-    const insertReq = await client.db("CNCPT").collection("Orders").insertOne(order);
+    const insertReq = await client.db("CNCPT").collection("Orders").insertOne({...order,orderNumber:nb});
     if (insertReq.acknowledged) {         
-      return NextResponse.json({success:true, orderNumber: orderNumber});
+      return NextResponse.json({success:true, orderNumber: nb});
     }
   }
   return NextResponse.json({success:false});

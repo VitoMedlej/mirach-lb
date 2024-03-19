@@ -9,6 +9,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+// import ImageZoom from "react-image-zooom";
 
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper";

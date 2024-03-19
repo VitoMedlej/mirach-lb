@@ -45,7 +45,17 @@ const Index = () => {
     
 
     const [selectedSize, setselectedSize] = useState(multiWeight);
-    console.log('data: ', data);
+    
+    useEffect(() => {
+      
+      if (!selectedSize?.price && multiWeight?.price) {
+        console.log('selectedSize?.price && multiWeight?.price: ', selectedSize?.price, multiWeight?.price);
+        setselectedSize(multiWeight)
+        return
+      }
+    
+      
+    }, [multiWeight])
     
        const InitialFetch = async () => {
         try {

@@ -135,6 +135,8 @@ const ProductCard = ({
 
                         margin:'0 auto'
                     // borderRadius:'8',
+                    ,py:{xs:'.5em',sm:'1em'},
+                    px:{xs:'1em',sm:'3.5em',lg:'5em'}
                         ,
                         ':hover':{color:'white !IMPORTANT',background:'white '}
                 }}>

@@ -6,7 +6,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useRouter } from 'next/navigation';
-import { Autoplay } from 'swiper';
+import { Autoplay, Navigation } from 'swiper';
 
 // import useLanguage from '@/Hooks/useLanguage';
 // import Btn from '../Btn/Btn';
@@ -60,7 +60,7 @@ const Preloader3 = () => {
         }
        }
      const redir = () => {
-        router.push('/services')
+        router.push('/about')
         // console.log('abc')
      }
     useEffect(() => {
@@ -89,15 +89,15 @@ const Preloader3 = () => {
         }}>
             <Swiper
             
-                navigation={false}
+                navigation={true}
                 slidesPerView={1}
                 spaceBetween={0}
-                loop={true}
+                loop={false}
                 autoplay={{
-                delay: 3000,
+                delay: 30000000,
                 disableOnInteraction: true
             }}
-                modules={[Autoplay]}
+                modules={[Navigation]}
                 className="mySwiper swiper">
     
                 {imgs && imgs.map((item:any) => {
