@@ -76,7 +76,8 @@ Browse our latest products
                 <SwiperCarousel
                 delay={delay}
                 
-                data={data && data.length > 0 && data?.slice(0,25) || []}/>
+                data={data && data.length > 0 
+                && data?.slice(0,25) || []}/>
             </Box>
             <Btn 
 sx={{width:'fit-content',background:'transparent',color:'black',border:'1px solid white ',mt:1,mx:'auto'}}

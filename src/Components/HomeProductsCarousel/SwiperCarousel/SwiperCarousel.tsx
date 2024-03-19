@@ -1,6 +1,6 @@
 "use client"
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {FreeMode, Autoplay, Pagination} from "swiper";
+import {FreeMode, Autoplay, Pagination, Navigation} from "swiper";
 import 'swiper/css';
 import {Box} from '@mui/material';
 import ProductCard from '@/Components/ProductCard/ProductCard';
@@ -31,15 +31,16 @@ const SwiperCarousel = ({data, delay} : {
                 clickable: true,
               }}
              
-              autoplay={{
-                delay:  delay || 1000,
-                disableOnInteraction: true,
-              }}
-              navigation={false}
+            //   autoplay={{
+            //     delay:  delay || 5000,
+            //     disableOnInteraction: true,
+            //   }}
+            autoplay={false}
+              navigation={true}
             spaceBetween={10}
             slidesPerView={1}
             slidesPerGroup={1}
-            modules={[FreeMode,Autoplay, Pagination]}
+            modules={[FreeMode,Navigation, Pagination]}
             breakpoints={{
                 200 : {
                     slidesPerView:2,

@@ -92,10 +92,10 @@ const Preloader3 = () => {
                 navigation={true}
                 slidesPerView={1}
                 spaceBetween={0}
-                loop={false}
+                loop={true}
                 autoplay={{
-                delay: 30000000,
-                disableOnInteraction: true
+                delay: 4000,
+                disableOnInteraction: false
             }}
                 modules={[Navigation]}
                 className="mySwiper swiper">
