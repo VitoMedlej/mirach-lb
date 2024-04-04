@@ -27,7 +27,6 @@ export const LangContext = createContext < any > ('en');
             setCartOpen] = useState(false);
             
                 const categories = useCategories()
-                console.log('categories: context', categories);
                 const [lang,
                     setLang] = useState('en');
                         // Load language from localStorage on component mount

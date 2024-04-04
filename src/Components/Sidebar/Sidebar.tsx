@@ -177,7 +177,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
 
 onClick={()=>
 {setOpen(false);
-router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products?type=${encodeURIComponent(a).toLocaleLowerCase()}`)}}
+router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products?type=${encodeURIComponent(a?.name).toLocaleLowerCase()}`)}}
 
 key={a?.name}>
 
