@@ -9,6 +9,8 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import InnerImageZoom from 'react-inner-image-zoom';
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 // import ImageZoom from "react-image-zooom";
 
 // import required modules
@@ -36,7 +38,7 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
           Pagination]}
         className="mySwiper"
       >
-{
+{/* {
           images && images.map(img=>{
             return    <SwiperSlide key={img}>
               <Box sx={{height:{xs:'100%'}}}>
@@ -45,7 +47,17 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
               </Box>
           </SwiperSlide>
           })
-        }
+        } */}
+
+{
+   images && images.map(img=>{
+    return  <SwiperSlide key={img}>
+
+    
+    <InnerImageZoom zoomScale={0.4}  src={img} zoomSrc={img} />
+    </SwiperSlide>
+    }) 
+}
       </Swiper>
     </>
   );
