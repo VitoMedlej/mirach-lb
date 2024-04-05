@@ -54,7 +54,7 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
     return  <SwiperSlide key={img}>
 
     
-    <InnerImageZoom zoomScale={0.4}  src={img} zoomSrc={img} />
+    <InnerImageZoom zoomScale={0.5}  src={img} zoomSrc={img} />
     </SwiperSlide>
     }) 
 }
