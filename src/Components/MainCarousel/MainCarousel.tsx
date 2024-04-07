@@ -157,7 +157,7 @@ const Preloader3 = () => {
                             </Container> */}
                             <img
             
-                                className={`img   
+                                className={`img   cover 
                                 `}
                                 // ${item?.className}
                                 src={`${item?.img}`}
