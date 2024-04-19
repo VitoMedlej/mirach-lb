@@ -95,6 +95,8 @@ export default function Checkout() {
         setOrderNumber(content?.orderNumber)
     saveState('2G184N24-JZ094512JIF12412',null)
   saveState('2VI1H2OI-FJ04BJZ2X',null)
+  localStorage.setItem('isFirstOrder1', 'false');
+
 
 }
   }

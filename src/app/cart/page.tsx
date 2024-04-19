@@ -10,6 +10,7 @@ import CartProduct from '@/Components/Shared/CartProduct/CartProduct';
 import { ICartItem } from '@/Types/Types';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
 import totalCal from '@/Utils/totalCal';
+import useDiscount from '@/Hooks/useDiscount';
 
 const titleStyle = {
     fontSize: '1.3em',
@@ -62,8 +63,13 @@ const EmptyCartAlert = () => {
 
 
 const Cart = () => {
+
+    
     const [cartItems,setCartItems] = useState<ICartItem[]>([])
     const total= totalCal(cartItems) || 0; 
+    const {discountedPrice,isFirstOrder} = useDiscount(total)
+
+
     let localCart : ICartItem[] = loadState('2G184N24-JZ094512JIF12412') || []
     useEffect(() => {
         if (localCart) {
@@ -146,14 +152,19 @@ const Cart = () => {
                       justifyContent: 'space-between'
                   }}
                     className='flexed'> 
-
+{isFirstOrder &&     <Typography sx={{
+            color:'green',
+                        fontWeight: '600'
+                    }}>
+                        Get 10% off your first order!
+                        </Typography>}
 
                     <Typography sx={{
                         fontWeight: '600'
                     }}>
                     Total:{' '}
                         <span style={{color:'green'}}>
-                        ${cartItems?.length > 0 ? total + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}
+                        ${cartItems?.length > 0 ? discountedPrice + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}
                         
                     </span>
                         </Typography>
