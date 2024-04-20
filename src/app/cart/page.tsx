@@ -163,7 +163,7 @@ const Cart = () => {
 
                       
                         {<Typography sx={{
-            color:'green',
+            color:'black',
                         fontWeight: '600'
                     }}>
                          {`Delivery`}:{' '}
@@ -175,7 +175,7 @@ const Cart = () => {
                         fontWeight: '600'
                     }}>
                     {`Total`}:{' '}
-                        <span style={{color:'green'}}>
+                        <span style={{color:'black'}}>
                         ${cartItems?.length > 0 ? discountedPrice + Number(4) : 0}
                         
                     </span>
