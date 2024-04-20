@@ -156,15 +156,23 @@ const Cart = () => {
                     className='flexed'> 
 {isFirstOrder &&     <Typography sx={{
             color:'green',
+            pb:1,
                         fontWeight: '600'
                     }}>
                         Get 10% off your first order!
                         </Typography>}
 
-                      
+
+                        { discountedPrice &&    Number(discountedPrice) > 0 && <Typography sx={{
+            color:'black',
+                        fontWeight: '400'
+                    }}>
+                         {`Price after Discount`}:{' '}
+                         ${cartItems?.length > 0  && Number(discountedPrice) > 0 ? discountedPrice : 0}                     
+                        </Typography>}        
                         {<Typography sx={{
             color:'black',
-                        fontWeight: '600'
+                        fontWeight: '400'
                     }}>
                          {`Delivery`}:{' '}
                          ${cartItems?.length > 0 ? 4 : 0}                     
@@ -172,11 +180,12 @@ const Cart = () => {
 
 
                     <Typography sx={{
-                        fontWeight: '600'
-                    }}>
+                        fontWeight: '600',
+                        borderTop:'1px solid',
+                 }}>
                     {`Total`}:{' '}
                         <span style={{color:'black'}}>
-                        ${cartItems?.length > 0 ? discountedPrice + Number(4) : 0}
+                        ${cartItems?.length > 0 ? Number(discountedPrice) + Number(4) : 0}
                         
                     </span>
                         </Typography>
