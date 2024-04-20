@@ -88,6 +88,8 @@ const Cart = () => {
          saveState('2G184N24-JZ094512JIF12412', state);
          setCartItems(state);
      }
+     
+     console.log('NEXT_PUBLIC_FEE: ', process.env.NEXT_PUBLIC_FEE, typeof process.env.NEXT_PUBLIC_FEE );
     return (
         <Box sx={{
             pb: 5,
@@ -159,12 +161,22 @@ const Cart = () => {
                         Get 10% off your first order!
                         </Typography>}
 
+                      
+                        {<Typography sx={{
+            color:'green',
+                        fontWeight: '600'
+                    }}>
+                         {`Delivery`}:{' '}
+                         ${cartItems?.length > 0 ? 4 : 0}                     
+                        </Typography>}
+
+
                     <Typography sx={{
                         fontWeight: '600'
                     }}>
-                    {`Total + 4$ Delivery`}:{' '}
+                    {`Total`}:{' '}
                         <span style={{color:'green'}}>
-                        ${cartItems?.length > 0 ? discountedPrice + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}
+                        ${cartItems?.length > 0 ? discountedPrice + Number(4) : 0}
                         
                     </span>
                         </Typography>
