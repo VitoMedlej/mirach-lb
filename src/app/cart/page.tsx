@@ -162,12 +162,14 @@ const Cart = () => {
                     <Typography sx={{
                         fontWeight: '600'
                     }}>
-                    Total:{' '}
+                    {`Total + 4$ Delivery`}:{' '}
                         <span style={{color:'green'}}>
                         ${cartItems?.length > 0 ? discountedPrice + Number(process.env.NEXT_PUBLIC_FEE || 0) : 0}
                         
                     </span>
                         </Typography>
+
+                        
                     </Box>
                     <Link href='/checkout'
                     
@@ -181,7 +183,9 @@ const Cart = () => {
 
                     <Btn
                     
-                     sx={{mx:0,':hover':{background:'white',color:'black'},background:'transparent',borderRadius:'0',width:'100%',mt:1}}>Continue Shopping</Btn>
+                     sx={{mx:0,':hover':{background:'white',color:'black'},
+                     background:'white',color:'black',
+                    borderRadius:'0',width:'100%',mt:1}}>Continue Shopping</Btn>
                     </Link>
                 
                 </Box>

@@ -83,10 +83,10 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 </ListItem>} */}
             <ListItem sx={{ px: 0 }}>
 
-<ListItemText primary="Total" />
+<ListItemText primary="Total + $4 Delivery" />
 <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
   {/* ${Number(total) >= 60 ? total : Number(total) + 4} */}
-  ${Number(discountedPrice)?.toFixed(2)}
+  ${Number(discountedPrice)?.toFixed(2) + Number(4)}
 </Typography>
 </ListItem>
 <Typography variant="subtitle1" sx={{color:'green', fontWeight: 400 }}>
