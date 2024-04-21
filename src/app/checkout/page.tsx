@@ -15,6 +15,8 @@ import AddressForm from '@/Components/checkoutComponents/AddressForm';
 import ReviewForm from '@/Components/checkoutComponents/ReviewForm';
 import { server } from '@/Utils/Server';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
+import useDiscount from '@/Hooks/useDiscount';
+import totalCal from '@/Utils/totalCal';
 
 
 
@@ -38,6 +40,11 @@ const theme = createTheme();
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [orderNumber, setOrderNumber] = React.useState(null);
+  const products = loadState('2G184N24-JZ094512JIF12412')
+  const total = totalCal(products);
+  
+
+  const {isFirstOrder} = useDiscount(total)
 
   
   const handleBack = () => {
@@ -75,10 +82,9 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      const products = loadState('2G184N24-JZ094512JIF12412')
- 
+      
 
-      const total = 10
+      // const total = 10
       if (products && info && total) {
 
         // saveState('order',{info,products,total})
@@ -88,7 +94,7 @@ export default function Checkout() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({order:{info,products,total}})
+            body: JSON.stringify({order:{info,products,total,isFirstOrder}})
         });
   const content = await rawResponse.json();
         setOrderNumber(content?.orderNumber)
