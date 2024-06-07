@@ -88,11 +88,11 @@ const Index = () => {
       }, [])
       const [swiper, setSwiper] = useState<any>(null);
 
-      const goToSlide  = (index: number) => {
-        if (swiper) {
-          swiper?.slideTo(index);
-        }
-      };
+      // const goToSlide  = (index: number) => {
+      //   if (swiper) {
+      //     swiper?.slideTo(index);
+      //   }
+      // };
   return (
      
     
