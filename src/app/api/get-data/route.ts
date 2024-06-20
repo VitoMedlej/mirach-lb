@@ -8,7 +8,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
 try {
 
     const ProductsCollection = await client
-        .db("CNCPT")
+        .db("MRCH")
         .collection("Products");
     let featuredProducts : any = [];
     let products : any = []
@@ -16,7 +16,7 @@ try {
     const featuredProductsQuery = await ProductsCollection
         // .find({isFeatured: true})
         .find({})
-        .limit(20)
+        .limit(30)
     // const ProductsQuery = await ProductsCollection
     //     // .find({isFeatured: false})
     //     .find({})
@@ -53,3 +53,5 @@ catch (error) {
 
 }
 }
+
+export const revalidate = 5

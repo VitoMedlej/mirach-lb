@@ -1,80 +1,25 @@
+import PreLoader from '@/Components/PreLoader'
+import { Getcategories } from '@/Utils/Getcategories'
+import { Getproducts } from '@/Utils/Getproducts'
+import React from 'react'
 
-// "use client"
-import PreLoader from "@/Components/PreLoader"
-// import { server } from "@/Utils/Server"
-// import { IProduct } from "@/Types/Types"
-// import { server } from "@/Utils/Server"
-// import { Box,  Container, Typography } from "@mui/material"
-// import { useEffect, useState } from "react"
-// https://www..com/view_video.php?viewkey=ph637450f5f16fd
-// export default  function Home() {
+const Home = async () => {
+  const categoriesData = await Getcategories()
+  const productsData = await Getproducts()
+  const categories = categoriesData?.Categories[0]?.cateArray;
 
-const fetchData = async () => {
-  try{
-         // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ next: { revalidate: 10 } })
-         const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`,{ cache: 'no-store',next:{revalidate:0} })
-         // const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data`)
-         let res = req &&  await req.json();
-         if (res) return res
-  }
-  catch(E){
-    console.log('E: ', E);
-
-  }
-}
-  export default async  function Home() {
-//   const [data,setData] = useState< {
-//     products: IProduct[] | never[] ; 
-//     featuredProducts:IProduct[] | never[];
-// }>({
-//     products : [],
-//     featuredProducts :[]
-//   })
-
-//    const InitialFetch = async () => {
-//     try {
-  
-//       const req = await fetch(`${server}/api/get-data`,{ next: { revalidate: 400 } })
-//       const res = await req.json()
-    
-//       if (res?.success && res?.data) {
-//         setData(res?.data)
-//       }
-//       return null
-//     }
-//     catch(er) {
-//       console.log('er getAll: ', er);
-  
-//     }
-//   }
-//   useEffect(() => {
-    
-//     InitialFetch()
-
-//   }, [])
-try {
-
- 
-      // console.log('res: ', res);
-      // const reqImages = await fetch(`https://getpantry.cloud/apiv1/pantry/732d3c8c-d53a-4c4c-830c-fe9b7e021958/basket/Images`,{  cache:'no-store', next: { revalidate: 400 } })
-      // let resImages : any = await  reqImages.json();
-      let resImages : any ={}
-      const res = await fetchData()
-      // let res = {data:{featuredProducts:null}}
-      
-      console.log('data: ', res?.data);
-      return (
-        <PreLoader resImages={resImages || null} data={res?.data?.featuredProducts}/>
-       )
-}
-catch (e) {
-  console.log('e main home: ', e);
+  console.log('categories: ', categories);
   return (
-    <PreLoader resImages={null} data={null}/>
-   )
-
+    <PreLoader
+    categories={categories}
+    resImages={null}
+    data={productsData}
+  />
+  )
 }
-    
 
 
-}
+
+
+export const revalidate = 5
+export default Home

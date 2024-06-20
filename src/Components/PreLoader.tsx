@@ -15,8 +15,11 @@ import useLanguage from '@/Hooks/useLanguage'
 import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
 const 
-PreLoader = ({data,resImages}:any) => {
-  console.log('dataZ: ', data);
+PreLoader = ({data,resImages,categories}:any) => {
+  console.log('categories ', categories);
+
+
+  
   const router= useRouter();
   const {text} = useLanguage()
   const textsArray = [
@@ -56,123 +59,134 @@ PreLoader = ({data,resImages}:any) => {
   
 
   return (
-    <Box >
-      <MainCarousel  />
-      {/* <HomeProductCollection  products={data}/> */}
-        <HomeProductsCarousel data={data} Collectiontitle={''} delay={2000}/>
-      {/* <HomeProductCollection  products={data}/> */}
+<>
+{categories.map((cate:
+  {
+categoryName : string,
+img: string,
+subcategories?: string[]
+  }
+)=>{
+  return <div key={cate?.categoryName}>{cate?.categoryName}</div>
+})}
+</>
+    //     <Box >
+//       <MainCarousel  />
+//       {/* <HomeProductCollection  products={data}/> */}
+//         <HomeProductsCarousel data={data} Collectiontitle={''} delay={2000}/>
+//       {/* <HomeProductCollection  products={data}/> */}
 
-        <Divider light></Divider>
+//         <Divider light></Divider>
        
-        {/* <Container sx={{maxWidth:'lg',pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
+//         {/* <Container sx={{maxWidth:'lg',pt:12,justifyContent:'space-between'}} className='flex row wrap space-between items-between' maxWidth='xl'>
 
-            <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
-                  <img src="https://ucarecdn.com/e8223403-6f3b-4db7-9f01-493999855b15/63b44409a07a410cae6f4ea935b6c361.jpg" alt="Natural Supplements Image" className="img" />
-                  <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
-                     <Typography className='center text-center' 
-                    component='h1'
-                    sx={{
-                      background:'black',
-                      px:1,
-                      mb:1,
-                      fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
-                    {text('Oversized Outfits', 'المكملات الغذائية الطبيعية')}
+//             <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
+//                   <img src="https://ucarecdn.com/e8223403-6f3b-4db7-9f01-493999855b15/63b44409a07a410cae6f4ea935b6c361.jpg" alt="Natural Supplements Image" className="img" />
+//                   <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
+//                      <Typography className='center text-center' 
+//                     component='h1'
+//                     sx={{
+//                       background:'black',
+//                       px:1,
+//                       mb:1,
+//                       fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
+//                     {text('Oversized Outfits', 'المكملات الغذائية الطبيعية')}
 
-                    </Typography> 
-                    <Btn v2
-        onClick={()=>router.push(`/Oversized Outfits/products?type=all`)}
+//                     </Typography> 
+//                     <Btn v2
+//         onClick={()=>router.push(`/Oversized Outfits/products?type=all`)}
                     
-                    sx={{mx:'auto',
-                    background:'white',
-                    color:'black',
-                    }}>
-                    {text('SHOP NOW', 'تسوق الآن')}
+//                     sx={{mx:'auto',
+//                     background:'white',
+//                     color:'black',
+//                     }}>
+//                     {text('SHOP NOW', 'تسوق الآن')}
 
-                    </Btn>
-                  </Box>
-            </Box>
+//                     </Btn>
+//                   </Box>
+//             </Box>
             
 
-            <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
-                  <img src="https://ucarecdn.com/9dc50f11-50d3-4aa1-bfd3-3c534de5c88d/151d89709c404360bc4b6d31ca614255.jpg" alt="Natural Supplements Image" className="img" />
-                  <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
-                  <Typography className='center text-center' 
-                    component='h1'
-                    sx={{
-                      background:'black',
-                      px:1,
-                      mb:1,
-                      fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
-                    {text('Sporty Streets')}
+//             <Box className='relative flex center items-center ' sx={{mb:2, width:{xs:'100%',sm:'49%'},height:{xs:'450px',sm:'400px',md:'600px'}}}>
+//                   <img src="https://ucarecdn.com/9dc50f11-50d3-4aa1-bfd3-3c534de5c88d/151d89709c404360bc4b6d31ca614255.jpg" alt="Natural Supplements Image" className="img" />
+//                   <Box sx={{bottom:0,pb:'2em'}}  className="absolute flex center auto items-center text-center col ">
+//                   <Typography className='center text-center' 
+//                     component='h1'
+//                     sx={{
+//                       background:'black',
+//                       px:1,
+//                       mb:1,
+//                       fontSize:'2em',textShadow:' #000000c',fontWeight:700,color:'white'}}>
+//                     {text('Sporty Streets')}
 
-                    </Typography> 
-                    <Btn v2
-        onClick={()=>router.push(`/Sporty Streets/products?type=all`)}
+//                     </Typography> 
+//                     <Btn v2
+//         onClick={()=>router.push(`/Sporty Streets/products?type=all`)}
                     
-                    sx={{
-                    color:'black',
+//                     sx={{
+//                     color:'black',
 
-                      background:'white',
-                      mx:'auto'}}>
-                    {text('SHOP NOW', 'تسوق الآن')}
+//                       background:'white',
+//                       mx:'auto'}}>
+//                     {text('SHOP NOW', 'تسوق الآن')}
 
-                    </Btn>
-                  </Box>
-            </Box>
+//                     </Btn>
+//                   </Box>
+//             </Box>
           
-      </Container> */}
-      <Divider sx={{mt:'4em'}} light></Divider>
+//       </Container> */}
+//       <Divider sx={{mt:'4em'}} light></Divider>
 
 
-      <Box sx={{margin:'0 auto'}} className='center   '>
+//       <Box sx={{margin:'0 auto'}} className='center   '>
            
-           <Box className="flex justify-between col auto" 
-           sx={{px:1,py:{xs:8,sm:12},maxWidth:'lg'}}>
+//            <Box className="flex justify-between col auto" 
+//            sx={{px:1,py:{xs:8,sm:12},maxWidth:'lg'}}>
 
-<Typography
-component={'h1'}
-    className='sectionTitle  center text-center box'
-    sx={{
+// <Typography
+// component={'h1'}
+//     className='sectionTitle  center text-center box'
+//     sx={{
  
-    fontSize: {
-        xs: '2em',
-        sm: '3em'
-    },
-    pb:.5,
-    fontWeight: '900'
-}}>
- where fashion is more than just clothing
-</Typography>
-<Typography
-component={'p'}
-    className='sectionTitle  center text-center box'
-    sx={{
+//     fontSize: {
+//         xs: '2em',
+//         sm: '3em'
+//     },
+//     pb:.5,
+//     fontWeight: '900'
+// }}>
+//  where fashion is more than just clothing
+// </Typography>
+// <Typography
+// component={'p'}
+//     className='sectionTitle  center text-center box'
+//     sx={{
  
-    fontSize: {
-        xs: '1em',
-        sm: '1.1em'
-    },
-    fontWeight: '200'
-}}>
-{`Explore Conceptual's unique collection where fashion transcends mere clothing.`}
-</Typography>
+//     fontSize: {
+//         xs: '1em',
+//         sm: '1.1em'
+//     },
+//     fontWeight: '200'
+// }}>
+// {`Explore Conceptual's unique collection where fashion transcends mere clothing.`}
+// </Typography>
 
-<Btn  
-sx={{
-  background:'black',color:'white',
-  width:'fit-content',mt:2,mx:'auto'}}
-onClick={()=>router.push('/collections/products')}
->
-   Explore More
-</Btn>
-</Box>
-</Box>
+// <Btn  
+// sx={{
+//   background:'black',color:'white',
+//   width:'fit-content',mt:2,mx:'auto'}}
+// onClick={()=>router.push('/collections/products')}
+// >
+//    Explore More
+// </Btn>
+// </Box>
+// </Box>
      
 
 
 
         
-  </Box>
+//   </Box>
   )
 }
 

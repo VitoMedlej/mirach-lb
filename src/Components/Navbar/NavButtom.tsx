@@ -18,7 +18,7 @@ const NavButtom = ({categories}:any) => {
         sx={{
             flex:1,
             position:'relative',
-        width: '100%',
+        // width: '100%',
         background:'black',
         // maxWidth:'lg',/
         mx: 0,
