@@ -86,6 +86,7 @@ const ProductCard = ({
                     component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
+                        textAlign: 'left',
                         color:'black'
                     ,fontSize: {xs:'1em',sm:'1.05em',md:'1.12em'},
                     fontWeight: '500'
@@ -97,24 +98,27 @@ const ProductCard = ({
               
                {inStock !== false ?
                <>
-               <Typography
-               component='p'
-               className="clr2"
+              <Typography
+    component='p'
+    className="clr2 cursor"
     sx={{
+        ':hover':{
+            textDecoration:'underline',
+        },
         display:'flex',
         alignItems:"left",
-        mb: 0.5,
+        my: 0.5,
         fontWeight: '400',
         fontSize: { xs: '.99em', sm: '1em' },
     }}
 >
-    {newPrice ? (
-        <>
-            <s>${Number(price)?.toFixed(2)}</s> ${Number(newPrice)?.toFixed(2)}
-        </>
-    ) : (
-        `$${Number(price)?.toFixed(2)}`
-    )}
+{newPrice ? (
+    <>
+        <s style={{color:'red'}} >${Number(price)?.toFixed(2)}</s>&nbsp;&nbsp;<span>{`$${Number(newPrice)?.toFixed(2)}`}</span>
+    </>
+) : (
+    `$${Number(price)?.toFixed(2)}`
+)}
 </Typography>
                {/* <Typography
                     sx={{

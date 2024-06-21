@@ -9,14 +9,14 @@ import { useRouter } from 'next/navigation'
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
  const router = useRouter()
   return (
-    <Box sx={{my:4}} className='center auto'>
+    <Box sx={{mt:4}} className='center auto'>
         
-         <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:4,maxWidth:'lg'}}>
+         <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:0,maxWidth:'lg'}}>
 
          <Typography sx={{
     pt:{xs:2,sm:6},
     maxWidth:'1200px',
-    pb:1,
+    pb:0,
     px:1,
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
@@ -29,7 +29,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
 
 </Box>
 
-              <Box sx={{mb:2,mt:4}} className='flex wrap gap1 justify-center'>
+              <Box sx={{mb:2,mt:0}} className='flex wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 
                       return <ProductCard 
