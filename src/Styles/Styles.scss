@@ -2,19 +2,21 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Oxygen', sans-serif !important;
+    font-family: "Montserrat", sans-serif  !important;
+
    
-   ;
 
 }
 h1 {
     text-transform: uppercase;
     letter-spacing: 0px;
-    font-family: 'Oswald', sans-serif  !important;
+    font-family: "Montserrat", sans-serif  !important;
 
 }
 * ,h2,h3,h4,h5,h6 ,p,button,input,select,textarea,a{
-    font-family: 'Oxygen', sans-serif !important;
+    font-family: "Montserrat", sans-serif  !important;
+
+
 
 
 }
@@ -22,10 +24,26 @@ h1 {
     width:100%
 }
 $color : black  !important;
-$color2 : #0f0f0f !important;
-$color3 : black !important;
+$color2 : #7eb0b0 !important;
+$color3 : #857a5a !important;
+
+
+
 .color3 {
+   
     color: $color3;
+}
+
+
+.nav-link {
+    text-transform: uppercase !important;
+    font-weight: 600;
+    font-size: .8em;
+    color: $color3 !important;
+    p {
+
+        color: $color;
+    }
 }
 .topd {
     object-position: top;
@@ -52,11 +70,18 @@ $color3 : black !important;
 .bg2 {
     background: $color3;
 }
+.bg3 {
+    background: $color2;
+
+}
 .borderColor {
     border-color: $color;
 }
 .borderColor2 {
     border-color: $color2;
+}
+.sectionTitle {
+    font-size: .8em !important;
 }
 .rounded {
     border-radius: 50% ;
@@ -136,9 +161,23 @@ button[disabled]{
     opacity:0.56
 }
 .swiper-button-next ,.swiper-button-prev {
-    // color : black !important;
+    color : #857a5a !important;
+    transform: scale(.7);
 }
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    color : #857a5a !important;
+::after {
+    color : #857a5a !important;
 
+}
+}
+.swiper-button-next {
+    color :#857a5a !important;
+    &::after {
+    color :#857a5a !important;
+
+    }
+}
 .justify-between {
     justify-content:space-between
 }
@@ -150,6 +189,9 @@ button[disabled]{
     text-align: center;
 }
 .clr {
+    color: $color;
+}
+.clr2 {
     color: $color;
 }
 .auto{

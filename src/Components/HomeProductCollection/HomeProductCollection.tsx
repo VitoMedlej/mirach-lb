@@ -11,42 +11,26 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
   return (
     <Box sx={{my:4}} className='center auto'>
         
-         <Box className="flex justify-between col auto" sx={{px:1,pt:8,pb:4,maxWidth:'lg'}}>
+         <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:4,maxWidth:'lg'}}>
 
-<Typography
-component={'h1'}
-    className='sectionTitle  center text-center box'
-    sx={{
- 
-    fontSize: {
-        xs: '2em',
-        sm: '3em'
-    },
-    padding:.5,
-    fontWeight: '900'
-}}>
-BROWSE OUR LATEST PRODUCTS
-</Typography>
-<Typography
-component={'p'}
-    className='sectionTitle  center text-center box'
-    sx={{
- 
-    fontSize: {
-        xs: '1em',
-        sm: '1.1em'
-    },
-    padding:.5,
-    fontWeight: '300'
-}}>
-Relax and unwind as you seamlessly create your own stunning diamond art.
-</Typography>
+         <Typography sx={{
+    pt:{xs:2,sm:6},
+    maxWidth:'1200px',
+    pb:1,
+    px:1,
+    fontWeight:'400',
+    fontSize:{xs:'1.5em',sm:'1.8em'},
+    }} component='h1' className='  color '>
+       Best Sellers
+    </Typography>
+
+
 
 <Btn 
 sx={{width:'fit-content',border:'1px solid black c',mt:1,mx:'auto'}}
 onClick={()=>router.push('/collections/products')}
 >
-   Explore More
+   View More
 </Btn>
 </Box>
 

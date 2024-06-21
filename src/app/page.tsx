@@ -8,7 +8,6 @@ const Home = async () => {
   const productsData = await Getproducts()
   const categories = categoriesData?.Categories[0]?.cateArray;
 
-  console.log('categories: ', categories);
   return (
     <PreLoader
     categories={categories}

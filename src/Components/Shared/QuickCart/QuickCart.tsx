@@ -87,7 +87,7 @@ export default function TemporaryDrawer() {
                         : <Box className='auto center col flex items-center ' sx={{py:5}}>
 
                         <Box sx={{width:'60px'}}>
-                            <img src="https://cdn-icons-png.flaticon.com/512/6533/6533851.png" alt="Empty Cart Image" className="img" />
+                            <img src="https://cdn-icons-png.flaticon.com/128/10837/10837821.png" alt="Empty Cart Image" className="img" />
                         </Box>
                         <Typography sx={{fontSize:'.98em',width:'80%',py:1,textAlign:'center'}}> 
                           You have not added any products.

@@ -6,6 +6,9 @@ import { IProduct } from '@/Types/Types'
 import Btn from '../Btn/Btn'
 import SwiperCarousel from './SwiperCarousel/SwiperCarousel'
 import { useRouter } from 'next/navigation'
+
+
+
 const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     delay : number,
@@ -23,44 +26,28 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
         <Box
         id='shop'
             sx={{
-            maxWidth: 'lg',
-            width :'99%',
+            maxWidth: '1200px',
+            // width :'99%',
             margin: '0 auto',
             // my: '3em',
             mt:'0em',
             mb:'3em',
             ...sx,
         }}>
-             <Box className="flex justify-between col center text-center auto" sx={{px:1,pt:8,pb:4,maxWidth:'lg'}}>
+             <Box className="flex justify-between col   "
+              sx={{pt:4,pb:4,maxWidth:'lg'}}>
 
-<Typography
-component={'h1'}
-    className='sectionTitle  center text-center box'
-    sx={{
- 
-    fontSize: {
-        xs: '.81em',
-        sm: '1em'
-    },
-    padding:.5,
-    fontWeight: '300'
-}}>
- NEW COLLECTION
-</Typography>
-<Typography
-component={'h1'}
-    className='sectionTitle  center text-center box'
-    sx={{
- 
-    fontSize: {
-        xs: '1.5em',
-        sm: '2em'
-    },
-    padding:.5,
-    fontWeight: '900'
-}}>
-Browse our latest products
-</Typography>
+
+<Typography sx={{
+    pt:{xs:2,sm:6},
+    maxWidth:'1200px',
+    pb:1,
+    px:1,
+    fontWeight:'400',
+    fontSize:{xs:'1.5em',sm:'1.8em'},
+    }} component='h1' className='  color '>
+       Best Sellers
+    </Typography>
 
 
 
@@ -80,7 +67,7 @@ Browse our latest products
                 && data?.slice(0,25) || []}/>
             </Box>
             <Btn 
-sx={{width:'fit-content',background:'transparent',color:'black',border:'1px solid white ',mt:1,mx:'auto'}}
+sx={{width:'fit-content',mt:1,mx:'auto'}}
 onClick={()=>router.push('/collections/products')}
 >
    Explore More

@@ -11,12 +11,9 @@ import {AiOutlineArrowUp} from 'react-icons/ai';
 import { DrawerContext, useCategoriesContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
 import SMicons from '../SMicons/SMicons';
-import { categories } from '../Navbar/Navbar';
-import Btn from '../Btn/Btn';
-import Link from 'next/link';
 
 
-export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
+export default function TemporaryDrawer() {
   
   const {open, setOpen} = useContext(DrawerContext);
   // const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
@@ -58,14 +55,8 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
       onKeyDown={toggleDrawer( false)}
     >
       <Box className='flex justify-between items-center '
-      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}
-      
-      >
-        <Box>
-          <Typography sx={{fontWeight:600}}>
-            Menu
-          </Typography>
-        </Box>
+      sx={{margin:'0 .5em',borderBottom:'1px solid #00000040',    justifyContent: 'flex-end'}}>
+    
 
               <IconButton 
         
@@ -142,7 +133,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
     aria-controls="panel1a-content"
     id="panel1a-header"
   >
- <Typography component='h1' sx={{fontWeight:600}}>
+ <Typography className='clr2' component='h1' sx={{fontWeight:600}}>
  {cate?.categoryName?.toUpperCase()}
 
       </Typography>

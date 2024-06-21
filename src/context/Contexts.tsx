@@ -26,9 +26,10 @@ export const LangContext = createContext < any > ('en');
                
         const [categories,
             setCategories] = useState([]);
-        const [cartOpen,
-            setCartOpen] = useState(false);
-   
+            const [cartOpen,
+                setCartOpen] = useState(false);
+                
+                console.log('categories context: ', categories);
             return (
                 
                 <DrawerContext.Provider value={{open,setOpen}}>

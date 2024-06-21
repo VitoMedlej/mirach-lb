@@ -37,10 +37,10 @@ export default function BasicModal({openModal,setOpenModal}:IModal) {
       >
         <Box sx={style}>
         <Typography className='center text-center'>
-            Search By name, type or category...
+           What are you looking for?
         </Typography>
         <SearchInput
-        sx={{width:'100%',mx:'auto',mt:1}}
+        sx={{width:'fit-content',mx:'auto',mt:1}}
          />
         </Box>
         {/* 

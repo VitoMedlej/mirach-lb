@@ -2,17 +2,17 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Oxygen", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 h1 {
   text-transform: uppercase;
   letter-spacing: 0px;
-  font-family: "Oswald", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 *, h2, h3, h4, h5, h6, p, button, input, select, textarea, a {
-  font-family: "Oxygen", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .w100 {
@@ -20,6 +20,16 @@ h1 {
 }
 
 .color3 {
+  color: #857a5a !important;
+}
+
+.nav-link {
+  text-transform: uppercase !important;
+  font-weight: 600;
+  font-size: 0.8em;
+  color: #857a5a !important !important;
+}
+.nav-link p {
   color: black !important;
 }
 
@@ -53,7 +63,11 @@ h1 {
 }
 
 .bg2 {
-  background: black !important;
+  background: #857a5a !important;
+}
+
+.bg3 {
+  background: #7eb0b0 !important;
 }
 
 .borderColor {
@@ -61,7 +75,11 @@ h1 {
 }
 
 .borderColor2 {
-  border-color: #0f0f0f !important;
+  border-color: #7eb0b0 !important;
+}
+
+.sectionTitle {
+  font-size: 0.8em !important;
 }
 
 .rounded {
@@ -69,7 +87,7 @@ h1 {
 }
 
 .color2 {
-  color: #0f0f0f !important;
+  color: #7eb0b0 !important;
 }
 
 .color {
@@ -157,6 +175,25 @@ button[disabled] {
   opacity: 0.56;
 }
 
+.swiper-button-next, .swiper-button-prev {
+  color: #857a5a !important;
+  transform: scale(0.7);
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+  color: #857a5a !important;
+}
+.swiper-button-next ::after, .swiper-rtl .swiper-button-prev ::after {
+  color: #857a5a !important;
+}
+
+.swiper-button-next {
+  color: #857a5a !important;
+}
+.swiper-button-next::after {
+  color: #857a5a !important;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -170,6 +207,10 @@ button[disabled] {
 }
 
 .clr {
+  color: black !important;
+}
+
+.clr2 {
   color: black !important;
 }
 
