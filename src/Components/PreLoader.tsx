@@ -171,6 +171,7 @@ component={'p'}
     {
       categories && categories?.map((category : any)=>{
         return <CategoryItem 
+        href={`/${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`}
         key={category?.categoryName}
         title={category?.categoryName}
         imgHeights={{xs:'200px',sm:'100%',md:'400px'}}

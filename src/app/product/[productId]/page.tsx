@@ -250,17 +250,8 @@ const Index = () => {
             
          </Box>}
 
-             {
-             data?.product?.chart ? 
-
-             <SizeChart categories={data?.product?.chart?.categories} 
-             chartName={data?.product?.chart?.chartName}/>
-            :
-            ''
-            }
-             {/* <Typography className='gray' sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}>
-   {data?.product?.description}
-             </Typography> */}
+           
+            
               <Typography 
       className='gray' 
       sx={{whiteSpace:'pre-wrap',maxWidth:'100%'}}
@@ -270,7 +261,7 @@ const Index = () => {
        </Grid>
        <Divider sx={{my:2}}></Divider>
          {/* <ProductReview/>  */}
-       <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} />
+       {/* <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} /> */}
    </Grid> : <Box className='flex auto center align-center' sx={{py:15}}>
 
      <CircularProgress />
