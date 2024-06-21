@@ -21,7 +21,7 @@ export default function TemporaryDrawer() {
   console.log('categories: ', categories);
 
 //   const fetchUserAndList = async () => {
-//     const user = localStorage.getItem('24j1i2cj4io-dadxzazd213')
+//     const user = localStorage.getItem('Usxer201-z51')
 //     if (user) {
 //            let parsedUser = JSON.parse(user)
 //            if (!parsedUser) {return}
