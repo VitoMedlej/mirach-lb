@@ -65,7 +65,7 @@ const ProductCard = ({
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {xs:'350px',sm:'350px',md:'400px'}
+                height: height || {sm:'100%',md:'400px'}
             }}>
                 <img
                     src={images
@@ -76,17 +76,19 @@ const ProductCard = ({
             </Box>
             
             <Box 
+            
             sx={{
                 px: .95,
                 mt:1.5,
+                alignItems: "left",
             }}>  <Typography
-            className=' cursor limited  center text-center '
+            className='flex cursor limited w100  left '
                     component='h1'
                     onClick={() => router.push(`/product/${_id}`)}
                     sx={{
                         color:'black'
-                    ,fontSize: {xs:'1em',sm:'1.15em',md:'1.32em'},
-                    fontWeight: '400'
+                    ,fontSize: {xs:'1em',sm:'1.05em',md:'1.12em'},
+                    fontWeight: '500'
                 }}>
                     {title}
                 </Typography>
@@ -99,6 +101,8 @@ const ProductCard = ({
                component='p'
                className="clr2"
     sx={{
+        display:'flex',
+        alignItems:"left",
         mb: 0.5,
         fontWeight: '400',
         fontSize: { xs: '.99em', sm: '1em' },
@@ -106,10 +110,10 @@ const ProductCard = ({
 >
     {newPrice ? (
         <>
-            <s>{price}$</s> {newPrice}$
+            <s>${Number(price)?.toFixed(2)}</s> ${Number(newPrice)?.toFixed(2)}
         </>
     ) : (
-        `${price}$`
+        `$${Number(price)?.toFixed(2)}`
     )}
 </Typography>
                {/* <Typography
@@ -121,17 +125,16 @@ const ProductCard = ({
                 }}>
                     {price}$
                 </Typography> */}
-                <Btn 
-            className='cursor bg black  gap1'
+                {/* <Btn 
+            className='cursor    gap1'
                 
                      onClick={()=>
                         sizes &&  sizes?.length > 0 ? 
                         router.push(`/product/${_id}`)
                         :
                         addToCart(1,_id,{title,category,img:images[0],_id,price:newPrice?Number(newPrice):price},true)}
-                    v2
+                    
                     sx={{
-                        color:'white !important',
 
                         margin:'0 auto'
                     // borderRadius:'8',
@@ -145,7 +148,7 @@ const ProductCard = ({
                     {sizes && sizes?.length > 0 ? 'Select Size' :  'ADD TO CART'}
                   
                     </Box>
-                </Btn>
+                </Btn> */}
                 
                </>
 

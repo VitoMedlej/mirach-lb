@@ -26,12 +26,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
 
 
 
-<Btn 
-sx={{width:'fit-content',border:'1px solid black c',mt:1,mx:'auto'}}
-onClick={()=>router.push('/collections/products')}
->
-   View More
-</Btn>
+
 </Box>
 
               <Box sx={{mb:2,mt:4}} className='flex wrap gap1 justify-center'>
@@ -46,7 +41,17 @@ onClick={()=>router.push('/collections/products')}
                        category={i?.category}/>
                   })}
               </Box>
-              
+
+
+
+
+              <Btn 
+              className='bg'
+sx={{width:'fit-content',color:'white',border:'1px solid black',mt:6,mx:'auto'}}
+onClick={()=>router.push('/collections/products')}
+>
+   View More
+</Btn>
             </Box>
   )
 }

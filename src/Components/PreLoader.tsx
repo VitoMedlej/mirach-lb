@@ -19,7 +19,7 @@ import HomeProductCollection from './HomeProductCollection/HomeProductCollection
 
 const 
 PreLoader = ({data,resImages,categories}:any) => {
-  console.log('categories ', categories);
+  console.log('data ', data);
 
 
   const {setCategories} = useCategoriesContext()
@@ -96,13 +96,15 @@ component={'p'}
 
 
       <Typography sx={{
-    pt:{xs:8},
+    pt:{xs:8,md:14},
+    mt:12,
+    mx:'auto',
     maxWidth:'1200px',
     pb:1,
     px:1,
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
-    }} component='h1' className=' auto color '>
+    }} component='h1' className='  color '>
        Explore
     </Typography>
         <Grid container className='flex auto space-evenly  row wrap' sx={{px:1, maxWidth:'1200px'}}>
@@ -155,7 +157,7 @@ component={'p'}
 
 <Grid className='auto' sx={{px:1,pt:8,maxWidth:'1200px'}}>
 <Typography sx={{
-    pt:{xs:2,sm:6},
+    pt:{xs:2,sm:8},
     maxWidth:'1200px',
     pb:1,
     px:1,

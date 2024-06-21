@@ -5,14 +5,14 @@ import React from 'react'
 
 const Home = async () => {
   const categoriesData = await Getcategories()
-  const productsData = await Getproducts()
+  const productsResponse = await Getproducts()
   const categories = categoriesData?.Categories[0]?.cateArray;
 
   return (
     <PreLoader
     categories={categories}
     resImages={null}
-    data={productsData}
+    data={productsResponse?.data?.featuredProducts}
   />
   )
 }
