@@ -53,15 +53,7 @@ const Preloader3 = () => {
           className="mySwiper swiper"
       >
           {imgs && imgs.map((item:any) => {
-              let imageSize;
-              if (window.innerWidth <= 640) {
-                  imageSize = '640x480';
-              } else if (window.innerWidth <= 1366) {
-                  imageSize = '1366x768';
-              } else {
-                  imageSize = '1920x1080';
-              }
-  
+            
               return (
                   <SwiperSlide className='ztop' key={`${item?.img}`}>
                       <Box sx={{position:'relative', height: '100%', width:'100%'}}>

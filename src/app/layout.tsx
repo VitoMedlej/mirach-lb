@@ -30,7 +30,7 @@ export default function Layout({children} : {
 
                 <ContextWrapper>
                     <Navbar/>
-                    <Sidebar cates={undefined}/>
+                    <Sidebar />
                     <QuickCart/>
                     <ScrollToTop/>
                     <main >
