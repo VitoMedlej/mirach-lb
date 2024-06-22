@@ -130,7 +130,7 @@ const Index = () => {
         // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:600,pt:1,fontSize:{xs:'1.8em',sm:'2em',md:'2em'}}}>
+             <Typography component={'h1'} sx={{fontWeight:600,pt:1,fontSize:{xs:'1.2em',sm:'1.7em',md:'2em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
            {/* { data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
@@ -195,6 +195,8 @@ const Index = () => {
              
               sx={{gap:.5,
                 borderRadius:0,
+                px:{xs:0.1,sm:2},
+                border:'1px solid black',
              width:{xs:'100%',sm:'100%'}}}>
                  ADD TO CART
                 

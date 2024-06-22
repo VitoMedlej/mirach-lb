@@ -1,16 +1,16 @@
 "use client";
 import {useContext, useEffect, useState} from 'react';
 import {Drawer,List,Divider,ListItem,ListItemButton,ListItemText,ListItemIcon,Box, Typography, Accordion, AccordionDetails, AccordionSummary} from '@mui/material';
-import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
+// import {IoShirtOutline,IoShirtSharp} from 'react-icons/io5';
 import { IconButton } from '@mui/material';
-import {AiOutlineHeart} from 'react-icons/ai'
+// import {AiOutlineHeart} from 'react-icons/ai'
 
 import { useRouter } from 'next/navigation';
 import {AiOutlineArrowUp} from 'react-icons/ai';
 
 import { DrawerContext, useCategoriesContext } from '@/context/Contexts';
 import {GrFormClose} from 'react-icons/gr'
-import SMicons from '../SMicons/SMicons';
+// import SMicons from '../SMicons/SMicons';
 
 
 export default function TemporaryDrawer() {
@@ -18,7 +18,6 @@ export default function TemporaryDrawer() {
   const {open, setOpen} = useContext(DrawerContext);
   // const [localUser,setLocalUser] = useState<{name?:string,email?:string} | null>(null)
   const {categories} = useCategoriesContext();
-  console.log('categories: ', categories);
 
 //   const fetchUserAndList = async () => {
 //     const user = localStorage.getItem('Usxer201-z51')
@@ -73,7 +72,7 @@ export default function TemporaryDrawer() {
       <ListItem
           sx={{fontWeight:400}}
 
-          onClick={()=>{router.push(`/`); toggleDrawer(false)}}
+          onClick={()=>{ setOpen(false);router.push(`/`);}}
            disablePadding>
             <ListItemButton>
             
@@ -88,7 +87,7 @@ export default function TemporaryDrawer() {
       <ListItem
           sx={{fontWeight:400}}
 
-          onClick={()=>{router.push(`/about`); toggleDrawer(false)}}
+          onClick={()=>{setOpen(false);router.push(`/about`);}}
            disablePadding>
             <ListItemButton>
             
@@ -148,12 +147,12 @@ export default function TemporaryDrawer() {
               key={cate?.categoryName}
               sx={{fontWeight:400}}
     
-              onClick={()=>{router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
+              onClick={()=>{setOpen(false);router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}}
                disablePadding>
 
 
 <ListItemButton
-  onClick={()=>{router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}
+  onClick={()=>{setOpen(false);router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}
             
 }
 >

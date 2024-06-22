@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
  const router = useRouter()
   return (
-    <Box sx={{mt:4}} className='center auto'>
+    <Box sx={{mt:4,maxWidth:'lg'}} className='center auto'>
         
          <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:0,maxWidth:'lg'}}>
 

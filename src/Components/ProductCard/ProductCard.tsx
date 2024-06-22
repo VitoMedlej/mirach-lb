@@ -65,14 +65,15 @@ const ProductCard = ({
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {sm:'100%',md:'400px'}
+                height: height || {sm:'300px',md:'400px'}
+                // height: height || {xs:'100%',sm:'300px',md:'400px'}
             }}>
                 <img
                     src={images
                     ? `${images[0]}/-/resize/500/`
                     : ''}
                     alt="Prdouct image"
-                    className="img contain"/>
+                    className="img contain "/>
             </Box>
             
             <Box 
@@ -88,7 +89,7 @@ const ProductCard = ({
                     sx={{
                         textAlign: 'left',
                         color:'black'
-                    ,fontSize: {xs:'1em',sm:'1.05em',md:'1.12em'},
+                    ,fontSize: {xs:'.85em',sm:'1.05em',md:'1.12em'},
                     fontWeight: '500'
                 }}>
                     {title}
@@ -100,7 +101,7 @@ const ProductCard = ({
                <>
               <Typography
     component='p'
-    className="clr2 cursor"
+    className="clr cursor"
     sx={{
         ':hover':{
             textDecoration:'underline',

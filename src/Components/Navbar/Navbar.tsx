@@ -19,6 +19,7 @@ export default function Navbar() {
     const { open, setOpen } = useDrawerContext(); // Assuming you have these context hooks
     const { cartOpen, setCartOpen } = useCartContext();
   const {categories} = useCategoriesContext()
+  console.log('categories: ', categories);
 
     const router = useRouter();
 
@@ -97,7 +98,7 @@ export default function Navbar() {
     </Link>
                        
                         {categories && categories?.slice(0,2)?.map((category : any,  index : any)  => (
-        <Link className=' decor-none nav-link' key={category?.categoryName} href={`/${category?.categoryName}/products`} >
+        <Link className=' decor-none nav-link' key={category?.categoryName} href={`/${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`} >
             <Box component="p" sx={{fontWeight:500, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
                 {category?.categoryName}
             </Box>

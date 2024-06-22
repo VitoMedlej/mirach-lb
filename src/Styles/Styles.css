@@ -211,7 +211,11 @@ button[disabled] {
 }
 
 .clr2 {
-  color: black !important;
+  color: #7eb0b0 !important;
+}
+
+.clr3 {
+  color: #857a5a !important;
 }
 
 .auto {

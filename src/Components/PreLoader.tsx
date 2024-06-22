@@ -1,18 +1,10 @@
 "use client"
 import React, { useEffect } from 'react'
 import { Box,  Container, Divider, Grid, Typography } from "@mui/material"
-// import ContactSection from './ContactSection/ContactSection'
-// import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
-// import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import MainCarousel from './MainCarousel/MainCarousel'
 import { useRouter } from 'next/navigation'
-import Perks from './Perks/Perks'
-// import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
-// import Testimonials from './Testimonials/Testimonials'
 import Btn from './Btn/Btn'
-import useLanguage from '@/Hooks/useLanguage'
 // import ContactSection from './ContactSection/ContactSection'
-import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import CategoryItem from './HomeCateogryList/CategoryItem'
 import { useCategoriesContext } from '@/context/Contexts'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
@@ -61,7 +53,7 @@ subcategories?: string[]
 
 <Typography
 component={'h1'}
-    className='  center text-center box'
+    className=' clr2 center text-center box'
     sx={{
  
     fontSize: {
@@ -97,7 +89,7 @@ component={'p'}
 
       <Typography sx={{
     pt:{xs:8,md:14},
-    mt:12,
+    mt:{xs:4,sm:12},
     mx:'auto',
     maxWidth:'1200px',
     pb:1,

@@ -58,11 +58,9 @@ const Footer = () => (
             </h1>
             
               </li>
-            {/* <li><Link href="mailto:sales@thecraftroom-lb.com">sales@petstown.com</Link></li> */}
-            
-            {/* <li><a href="https://www.facebook.com/profile.php?id=100076163602459/" target="_blank" rel="noreferrer" >Facebook</a></li> */}
+        
 
-            <li><a href="https://www.instagram.com/conceptual.wic/" target="_blank" rel="noreferrer" >@conceptual.wic</a></li>
+            <li><a href="https://www.instagram.com/mirach_lb_/" target="_blank" rel="noreferrer" >@mirach_lb_.wic</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>

@@ -42,9 +42,7 @@ const Perks = () => {
                        
             </Box>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1em' }}>
-                {/* {[{title:'Phone Number',value:"70873045",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
-                    return 
-                })} */}
+
 
                 <Box
 
@@ -63,7 +61,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='black' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/Conceptual/?utm_source=qr&igsh=MXF1ZDhsMmk5dGl4eA%3D%3D"}>
+                        {<a className='black' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/mirach_lb_/"}>
 
 
                             <Typography

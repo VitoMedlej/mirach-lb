@@ -1,5 +1,4 @@
 "use client"
-import FAQ from '@/Components/FAQ/FAQ'
 import { Container, Box, Typography, Divider } from '@mui/material'
 import React from 'react'
 
