@@ -41,7 +41,7 @@ import useDiscount from '@/Hooks/useDiscount';
 // }  
 export default function Review({setActiveStep}:{setActiveStep:any}) {
 
-  const products = loadState('2G184N24-JZ094512JIF12412')
+  const products = loadState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6')
  
   const info = loadState('2VI1H2OI-FJ04BJZ2X')
   const total = totalCal(products);
@@ -83,19 +83,21 @@ export default function Review({setActiveStep}:{setActiveStep:any}) {
 </ListItem>} */}
             <ListItem sx={{ px: 0 }}>
 
-<ListItemText primary="Total + $4 Delivery" />
+{/* <ListItemText primary="Total + $4 Delivery" /> */}
+<ListItemText primary="Total" />
 <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
   {/* ${Number(total) >= 60 ? total : Number(total) + 4} */}
-  ${Number(discountedPrice) + Number(4)}
+  ${Number(discountedPrice)}
+  {/* ${Number(discountedPrice) + Number(4)} */}
 </Typography>
 
 </ListItem>
-<Typography variant="subtitle1" sx={{color:'green', fontWeight: 400 }}>
+{/* <Typography variant="subtitle1" sx={{color:'green', fontWeight: 400 }}>
   {
     
     isFirstOrder ? `10% discount off your first order!` : ''
   }
-  </Typography>
+  </Typography> */}
 
       </List>
       <Grid container spacing={2}>

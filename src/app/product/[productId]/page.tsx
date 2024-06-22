@@ -206,7 +206,7 @@ const Index = () => {
 
              <a 
              className='center  text-center'
-             style={{textDecoration:'none',width:'100%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to know more about: ${data?.product?.title || 'Product Name'}`} target='_blank' rel='noopener'>
+             style={{textDecoration:'none',width:'100%'}} href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}?text=I would like to order ${data?.product?.title || 'a product'}`} target='_blank' rel='noopener'>
 
 
 <Btn      sx={{gap:.5,

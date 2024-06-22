@@ -70,7 +70,7 @@ const Cart = () => {
     const {discountedPrice,isFirstOrder} = useDiscount(total)
 
 
-    let localCart : ICartItem[] = loadState('2G184N24-JZ094512JIF12412') || []
+    let localCart : ICartItem[] = loadState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6') || []
     useEffect(() => {
         if (localCart) {
             
@@ -80,16 +80,15 @@ const Cart = () => {
     }, [])
     const refetchState = () => {
 
-        setCartItems(loadState('2G184N24-JZ094512JIF12412'))
+        setCartItems(loadState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6'))
         
     }
     const remove = (id:string) => {
         let state = cartItems.filter(x => `${x._id}` !== id);
-         saveState('2G184N24-JZ094512JIF12412', state);
+         saveState('Vtjx2j7-zni3651n2iuxf-G8sfv1zY6', state);
          setCartItems(state);
      }
      
-     console.log('NEXT_PUBLIC_FEE: ', process.env.NEXT_PUBLIC_FEE, typeof process.env.NEXT_PUBLIC_FEE );
     return (
         <Box sx={{
             pb: 5,
@@ -154,13 +153,13 @@ const Cart = () => {
                       justifyContent: 'space-between'
                   }}
                     className='flexed'> 
-{isFirstOrder &&     <Typography sx={{
+{/* {isFirstOrder &&     <Typography sx={{
             color:'green',
             pb:1,
                         fontWeight: '600'
                     }}>
                         Get 10% off your first order!
-                        </Typography>}
+                        </Typography>} */}
 
 
                         { discountedPrice &&    Number(discountedPrice) > 0 && <Typography sx={{
@@ -171,6 +170,7 @@ const Cart = () => {
                          ${cartItems?.length > 0  && Number(discountedPrice) > 0 ? discountedPrice : 0}                     
                         </Typography>}        
                         {<Typography sx={{
+                            pb:.5,
             color:'black',
                         fontWeight: '400'
                     }}>
@@ -181,6 +181,7 @@ const Cart = () => {
 
                     <Typography sx={{
                         fontWeight: '600',
+                        pt:.5,
                         borderTop:'1px solid',
                  }}>
                     {`Total`}:{' '}
