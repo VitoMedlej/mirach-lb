@@ -20,7 +20,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
     px:1,
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
-    }} component='h1' className='  color '>
+    }} component='h1' className='animate-on-scroll  color '>
        Best Sellers
     </Typography>
 
@@ -29,7 +29,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
 
 </Box>
 
-              <Box sx={{mb:2,mt:0}} className='flex wrap gap1 justify-center'>
+              <Box sx={{mb:2,mt:0}} className='flex animate-on-scroll wrap gap1 justify-center'>
                   {products && products?.length > 0 && products.map(i=>{
 
                       return <ProductCard 
@@ -46,8 +46,8 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
 
 
               <Btn 
-              className='bg'
-sx={{width:'fit-content',color:'white',border:'1px solid black',mt:6,mx:'auto'}}
+              className='bg3'
+sx={{width:'fit-content',border:'1px solid black',mt:6,mx:'auto'}}
 onClick={()=>router.push('/collections/products')}
 >
    View More

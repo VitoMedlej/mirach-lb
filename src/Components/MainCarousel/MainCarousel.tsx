@@ -46,16 +46,16 @@ const Preloader3 = () => {
           spaceBetween={0}
           loop={true}
           autoplay={{
-              delay: 4022222222200,
+              delay: 3000,
               disableOnInteraction: false
           }}
           modules={[Navigation,Autoplay]}
-          className="mySwiper swiper"
+          className="mySwiper swiper "
       >
           {imgs && imgs.map((item:any) => {
             
               return (
-                  <SwiperSlide className='ztop' key={`${item?.img}`}>
+                  <SwiperSlide className='ztop ' key={`${item?.img}`}>
                       <Box sx={{position:'relative', height: '100%', width:'100%'}}>
                           <img
                               className={`img contain`}

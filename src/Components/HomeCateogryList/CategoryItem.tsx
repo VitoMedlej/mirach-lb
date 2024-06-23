@@ -10,7 +10,7 @@ const CategoryItem = ({img, imgHeights,phone,sx, href, title} : any) => {
 
     return (
         <Box
-            className='box flex col'
+            className='box flex animate-on-scroll col'
             sx={{
             display : {xs:phone ? 'flex' : 'none',sm:'flex'},
 
