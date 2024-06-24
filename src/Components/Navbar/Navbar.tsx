@@ -85,7 +85,7 @@ export default function Navbar() {
 
                         <Box className='row' sx={{ display:{xs:'none',md:'flex'}, color: 'black' }}>
                        
-                        <Link className='decor-none nav-link' href="/home" >
+                        <Link className='decor-none nav-link' href="/" >
         <Box component="p" sx={{ fontWeight:500, color: 'black', ml: 2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>
             Home
         </Box>
