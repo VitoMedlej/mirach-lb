@@ -33,7 +33,9 @@ $color3 : #857a5a !important;
    
     color: $color3;
 }
-
+.animate-on-scroll {
+    opacity: 0;
+}
 
 .nav-link {
     text-transform: uppercase !important;

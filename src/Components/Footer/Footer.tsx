@@ -60,7 +60,7 @@ const Footer = () => (
               </li>
         
 
-            <li><a href="https://www.instagram.com/mirach_lb_/" target="_blank" rel="noreferrer" >@mirach_lb_.wic</a></li>
+            <li><a href="https://www.instagram.com/mirach_lb_/" target="_blank" rel="noreferrer" >@mirach_lb_</a></li>
             <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`} rel="noreferrer" target='_blank' >+{process.env.NEXT_PUBLIC_WA}</a></li>
             {/* <li><a href={`http://tiktok.com/@thecraftroomlb`} rel="noreferrer" target='_blank' >TikTok</a></li> */}
           </ul>

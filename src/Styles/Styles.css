@@ -23,6 +23,10 @@ h1 {
   color: #857a5a !important;
 }
 
+.animate-on-scroll {
+  opacity: 0;
+}
+
 .nav-link {
   text-transform: uppercase !important;
   font-weight: 600;

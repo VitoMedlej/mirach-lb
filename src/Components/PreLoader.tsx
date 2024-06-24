@@ -128,6 +128,8 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     sm={7.5}
                     md={6.6}>
                     <CategoryItem
+                        href='collection/products'
+
                         imgHeights={{
                         xs: `100%`,
                         md: '730px'
@@ -167,6 +169,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     md={4.8}>
 
                     <CategoryItem
+                        href='collection/products'
                         imgHeights={{
                         xs: `100%`,
                         sm: '230px',
@@ -186,6 +189,8 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     }}/>
 
                     <CategoryItem
+                        href='collection/products'
+
                         imgHeights={{
                         xs: `100%`,
                         sm: '230px',
@@ -239,7 +244,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     {categories && categories
                         ?.map((category : any) => {
                             return <CategoryItem
-                                href={`/${encodeURIComponent(category
+                                href={`${encodeURIComponent(category
                                 ?.categoryName
                                     ?.toLowerCase())}/products`}
                                 key={category

@@ -19,7 +19,6 @@ export default function Navbar() {
     const { open, setOpen } = useDrawerContext(); // Assuming you have these context hooks
     const { cartOpen, setCartOpen } = useCartContext();
   const {categories} = useCategoriesContext()
-  console.log('categories: ', categories);
 
     const router = useRouter();
 
@@ -54,11 +53,12 @@ export default function Navbar() {
                         margin: '0 auto'
                     }}
                 >
-                    <Box className='center bg3 w100 text-center' sx={{ minWidth: '90vw', background: 'white', width: '100%', py: 0.25 }}>
-                        <Typography className='uppercase' component='h1'
+                    <Box className='center bg3  w100 text-center' sx={{ minWidth: '90vw', background: 'white', width: '100%', py: 0.25 }}>
+                        <Typography className='uppercase clr' component='h1'
                          sx={{ textTransform: 'uppercase',
+                            fontWeight:500,
                           color: '#0f0f0f', py: 0.2, fontSize: { xs: '.65em', sm: '.75em' } }}>
-                        Shipping anywhere in Lebanon & Worldwide
+                        Shipping anywhere in Lebanon & Worldwide 📍
                         </Typography>
                     </Box>
 
