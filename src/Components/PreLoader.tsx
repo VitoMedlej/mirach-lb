@@ -46,7 +46,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
         <Box >
 
-            <MainCarousel/> 
+            <MainCarousel resImages={resImages}/> 
 
             <Box
                 className="flex justify-between col center text-center auto"
