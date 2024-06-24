@@ -1,7 +1,7 @@
 import PreLoader from '@/Components/PreLoader'
 import { Getcategories } from '@/Utils/Getcategories'
 import { Getproducts } from '@/Utils/Getproducts'
-import React from 'react'
+
 
 const Home = async () => {
   const categoriesData = await Getcategories()
@@ -17,8 +17,5 @@ const Home = async () => {
   )
 }
 
-
-
-
-// export const revalidate = 60
+// export const revalidate = 0
 export default Home
