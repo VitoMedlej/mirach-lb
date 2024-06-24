@@ -3,7 +3,7 @@ import { cache } from 'react';
 export const Getcategories = cache(async () => {
 try {
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-categories`,{next:{revalidate:5}});
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-categories`,{next:{revalidate:60}});
   const data = await res.json();
   return data;
 }

@@ -54,4 +54,4 @@ catch (error) {
 }
 }
 
-export const revalidate = 5
+export const revalidate = 60
