@@ -31,11 +31,10 @@ const SwiperCarousel = ({data, delay} : {
                 clickable: true,
               }}
              
-            //   autoplay={{
-            //     delay:  delay || 5000,
-            //     disableOnInteraction: true,
-            //   }}
-            autoplay={false}
+              autoplay={{
+                delay:  delay || 5000,
+                disableOnInteraction: true,
+              }}
               navigation={true}
             spaceBetween={10}
             slidesPerView={1}
@@ -43,17 +42,17 @@ const SwiperCarousel = ({data, delay} : {
             modules={[FreeMode,Navigation, Pagination]}
             breakpoints={{
                 200 : {
-                    slidesPerView:2,
+                    slidesPerView:1,
                 },
                 540: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                   },
                   
                   1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                   },
                   1640: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                   },
                 
                
@@ -61,15 +60,17 @@ const SwiperCarousel = ({data, delay} : {
         
         >
 
-                {data && data.length > 0 && data.map((item : any) => {
+                {data && data.length > 0 && [...data].reverse().map((item : any) => {
                     if (!item._id) 
                         return
                     return <SwiperSlide
+                    className='animate-on-scroll'
                         style={{
                         marginRight: '0 !important'
                     }}
                         key={item._id}>
                         <ProductCard
+                        sx={{pt:0,mt:0}}
                         sizes={item?.sizes}
                 newPrice={item?.newPrice}
 
@@ -82,18 +83,7 @@ const SwiperCarousel = ({data, delay} : {
                             _id={item._id}
                             category={item.category}/>
                     </SwiperSlide>
-                    // return <SwiperSlide className='swiper-wrapper1'
-                    // style={{width:'100%',height:'100%'}} key={item._id}>     {/* <HouseCard
-                    //   img={property.images[0] || property.images[1]}         width='95%'
-                    // id={property.id}         isFeatured={isFeatured !== undefined ? isFeatured :
-                    // true}         propertySize={property.propertySize}
-                    // type={property.type}         baths={property.bathrooms}
-                    // rooms={property.rooms}         currency={property.currency}
-                    // price={property.price}         title={property.title}
-                    // location={property.location}/> */}          <ProductCard
-                    // handleQuickView={handleQuickView}          title={item.title}
-                    // images={item.images}          price={item.price}          _id={item._id}
-                    //     category={item.category}          /> </SwiperSlide>
+
 
                 })
 }

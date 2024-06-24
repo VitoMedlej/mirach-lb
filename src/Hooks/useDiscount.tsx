@@ -7,7 +7,6 @@ const useDiscount = (price:number) => {
   // useEffect(() => {
   //   // Check if it's the first order
   //   const storedFirstOrderFlag = localStorage.getItem('isFirstOrder1');
-  //   console.log('storedFirstOrderFlag: ', storedFirstOrderFlag);
 
   //   if (storedFirstOrderFlag === null) {
   //     setIsFirstOrder(true);

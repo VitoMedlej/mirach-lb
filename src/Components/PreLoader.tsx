@@ -10,6 +10,7 @@ import {useCategoriesContext} from '@/context/Contexts'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
 gsap.registerPlugin(ScrollTrigger);
 const PreLoader = ({data, resImages, categories} : any) => {
@@ -45,7 +46,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
         <Box >
 
-            <MainCarousel/> {/* <HomeProductCollection  products={data}/> */}
+            <MainCarousel/> 
 
             <Box
                 className="flex justify-between col center text-center auto"
@@ -217,15 +218,19 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 className='auto'
                 sx={{
                 px: 1,
-                pt: 8,
+                pt: {
+                    xs: 8,
+                    md: 14
+                },
+                mt: {
+                    xs: 4,
+                    sm: 12
+                },
                 maxWidth: '1200px'
             }}>
                 <Typography
                     sx={{
-                    pt: {
-                        xs: 2,
-                        sm: 8
-                    },
+                     
                     maxWidth: '1200px',
                     pb: 1,
                     px: 1,
@@ -275,6 +280,11 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 </Box>
 
             </Grid>
+
+            <HomeProductsCarousel 
+                Collectiontitle="New Products"
+                data={data} 
+                delay={2500} />
 
             <Box
                 className="w100 "

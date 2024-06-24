@@ -19,7 +19,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
         productId: null | string;
     }>>
 }) => {
-    
+
     const router = useRouter()
 
     return (
@@ -35,18 +35,25 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             ...sx,
         }}>
              <Box className="flex justify-between col   "
-              sx={{pt:4,pb:4,maxWidth:'lg'}}>
+              sx={{pt:4,pb:0,maxWidth:'lg'}}>
 
 
 <Typography sx={{
-    pt:{xs:2,sm:6},
+      pt: {
+        xs: 8,
+        md: 14
+    },
+    mt: {
+        xs: 4,
+        sm: 12
+    },
     maxWidth:'1200px',
-    pb:1,
+    pb:0,
     px:1,
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
-    }} component='h1' className='  color '>
-       Best Sellers
+    }} component='h1' className='animate-on-scroll  clr '>
+       {Collectiontitle}
     </Typography>
 
 
@@ -67,10 +74,11 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
                 && data?.slice(0,25) || []}/>
             </Box>
             <Btn 
+            className='animate-on-scroll'
 sx={{width:'fit-content',mt:1,mx:'auto'}}
 onClick={()=>router.push('/collections/products')}
 >
-   Explore More
+   View More
 </Btn>
    
 {/* <Divider  light /> */}

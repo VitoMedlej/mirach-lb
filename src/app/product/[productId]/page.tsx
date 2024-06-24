@@ -49,7 +49,6 @@ const Index = () => {
     useEffect(() => {
       
       if (!selectedSize?.price && multiWeight?.price) {
-        console.log('selectedSize?.price && multiWeight?.price: ', selectedSize?.price, multiWeight?.price);
         setselectedSize(multiWeight)
         return
       }

@@ -22,7 +22,8 @@ const ProductCard = ({
     height,
     inStock
     ,
-    newPrice
+    newPrice,
+    sx
 
 } : {
     inStock?:boolean,
@@ -37,10 +38,10 @@ const ProductCard = ({
     images: string[],
     category: string,
     width?: string | number | any,
-    height?: string | number
+    height?: string | number,
+    sx?:any,
 }) => {
     const router = useRouter()
-    const {addToCart}= useCart()
     return (
         <Box
             className='  trans cardproduct center text-center'
@@ -57,8 +58,8 @@ const ProductCard = ({
                     xs: '48%',
                     sm: '32%',
                     md:'22%'
-                }
-            
+                },
+            ...sx,
         }}>
             <Box 
             className='cursor auto'
