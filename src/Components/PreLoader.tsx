@@ -17,6 +17,9 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
+    const collection = data?.slice(0, Number(data?.length / 2))
+    const carouselProducts = data?.slice(Number(data?.length / 2), 50)
+
 
     useEffect(() => {
 
@@ -82,7 +85,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             </Box>
 
-            <HomeProductCollection products={data}/>
+            <HomeProductCollection products={collection}/>
 
             <Typography
                 sx={{
@@ -109,110 +112,121 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 Explore
             </Typography>
             <Grid
-                container
-                className='flex auto space-evenly  row wrap'
-                sx={{
-                px: 1,
-                maxWidth: '1200px'
-            }}>
-
-                <Grid
-                    sx={{
-                    height: {
-                        xs: '100%',
-                        sm: '550px',
-                        md: '750px'
-                    }
-                }}
-                    item
-                    xs={12}
-                    sm={7.5}
-                    md={6.6}>
-                    <CategoryItem
-                        href='collection/products'
-
-                        imgHeights={{
-                        xs: `100%`,
-                        md: '730px'
-                    }}
-                        img='https://www.gabyandrea.com/cdn/shop/collections/Category_HpThumbnail-Pic-t2292501.png?v=1712420506&width=750'
-                        title='My Collection'
-                        sx={{
-                        width: '100%',
-                        height: {
-                            xs: '100%',
-                            sm: '100%',
-                            md: "730px"
-                        }
-                    }}/>
-                </Grid>
-
-                <Grid
-                    className='flex justify-between'
-                    sx={{
-                    height: {
-                        xs: '100%',
-                        sm: '550px',
-                        md: '750px'
-                    },
-                    mt: {
-                        xs: 1,
-                        sm: 0
-                    },
-                    flexDirection: {
-                        xs: 'row',
-                        sm: 'column'
-                    }
-                }}
-                    item
-                    xs={12}
-                    sm={4}
-                    md={4.8}>
-
-                    <CategoryItem
-                        href='collection/products'
-                        imgHeights={{
-                        xs: `100%`,
-                        sm: '230px',
-                        md: '325px'
-                    }}
-                        img='https://www.gabyandrea.com/cdn/shop/collections/BeautyPlus_20230807174248526_save.jpg?v=1712421292&width=750'
-                        title='My Collection'
-                        sx={{
-                        width: {
-                            xs: '49%',
-                            sm: '100%'
-                        },
-                        height: {
-                            xs: '100%',
-                            sm: '50%'
-                        }
-                    }}/>
-
-                    <CategoryItem
-                        href='collection/products'
-
-                        imgHeights={{
-                        xs: `100%`,
-                        sm: '230px',
-                        md: '325px'
-                    }}
-                        img='https://www.gabyandrea.com/cdn/shop/files/Untitled_design_19.png?v=1668010076&width=550'
-                        title='My Collection'
-                        sx={{
-                        width: {
-                            xs: '49%',
-                            sm: '100%'
-                        },
-                        height: {
-                            xs: '100%',
-                            sm: '50%'
-                        }
-                    }}/>
-
-                </Grid>
-
-            </Grid>
+  container
+  className='flex auto space-evenly row wrap'
+  sx={{
+    px: 1,
+    maxWidth: '1200px'
+  }}
+>
+  {categories && categories.slice(0, 3).map((category : any, index : any) => {
+    if (index === 0) {
+      return (
+        <Grid
+          key={category?.categoryName}
+          sx={{
+            height: {
+              xs: '100%',
+              sm: '550px',
+              md: '750px'
+            }
+          }}
+          item
+          xs={12}
+          sm={7.5}
+          md={6.6}
+        >
+          <CategoryItem
+            href={`${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`}
+            title={category?.categoryName}
+            imgHeights={{
+              xs: '100%',
+              md: '730px'
+            }}
+            img={category?.img}
+            sx={{
+              width: '100%',
+              height: {
+                xs: '100%',
+                sm: '100%',
+                md: '730px'
+              }
+            }}
+          />
+        </Grid>
+      );
+    } else if (index === 1) {
+      return (
+        <Grid
+          key="small-items-container"
+          className='flex justify-between'
+          sx={{
+            height: {
+              xs: '100%',
+              sm: '550px',
+              md: '750px'
+            },
+            mt: {
+              xs: 1,
+              sm: 0
+            },
+            flexDirection: {
+              xs: 'row',
+              sm: 'column'
+            }
+          }}
+          item
+          xs={12}
+          sm={4}
+          md={4.8}
+        >
+          <CategoryItem
+            href={`${encodeURIComponent(category?.categoryName?.toLowerCase())}/products`}
+            title={category?.categoryName}
+            imgHeights={{
+              xs: '100%',
+              sm: '230px',
+              md: '325px'
+            }}
+            img={category?.img}
+            sx={{
+              width: {
+                xs: '49%',
+                sm: '100%'
+              },
+              height: {
+                xs: '100%',
+                sm: '50%'
+              }
+            }}
+          />
+          {categories[2] && (
+            <CategoryItem
+              href={`${encodeURIComponent(categories[2]?.categoryName?.toLowerCase())}/products`}
+              title={categories[2]?.categoryName}
+              imgHeights={{
+                xs: '100%',
+                sm: '230px',
+                md: '325px'
+              }}
+              img={categories[2]?.img}
+              sx={{
+                width: {
+                  xs: '49%',
+                  sm: '100%'
+                },
+                height: {
+                  xs: '100%',
+                  sm: '50%'
+                }
+              }}
+            />
+          )}
+        </Grid>
+      );
+    }
+  })}
+</Grid>
 
             <Grid
                 className='auto'
@@ -246,7 +260,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 </Typography>
                 <Box className="flex space-evenly auto wrap gap gap1">
 
-                    {categories && categories
+                    {categories && categories.slice(3,25)
                         ?.map((category : any) => {
                             return <CategoryItem
                                 href={`${encodeURIComponent(category
@@ -283,7 +297,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             <HomeProductsCarousel 
                 Collectiontitle="New Products"
-                data={data} 
+                data={carouselProducts} 
                 delay={2500} />
 
             <Box
