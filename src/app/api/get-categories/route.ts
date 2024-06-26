@@ -17,9 +17,6 @@ try {
     .toArray()
 
 
-    
-    
-
     if (!Categories || Categories?.length === 0) {
         return NextResponse.json({success: false});
     }
