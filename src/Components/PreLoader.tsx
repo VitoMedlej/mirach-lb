@@ -71,7 +71,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     padding: .5,
                     fontWeight: '700'
                 }}>
-                    Never out of style
+                   Twinkle like star
                 </Typography>
 
                 <Typography
@@ -80,7 +80,10 @@ const PreLoader = ({data, resImages, categories} : any) => {
                     sx={{
                     fontWeight: '200'
                 }}>
-                    {`The perfect way to elevate your style is with a personalized, handcrafted bag from Mirach.`}
+                    {/* {`The perfect way to elevate your style is with a personalized, handcrafted bag from Mirach.`} */}
+                    {
+                      `Mirach is a Lebanese handbag line that creates unique and luxury hand crafted bags and accessories. Proudly crafted and produced in Lebanon, our pieces are manufactured with high quality materials, making each item a unique presentation.`
+                    }
                 </Typography>
 
             </Box>
