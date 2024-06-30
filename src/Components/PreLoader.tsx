@@ -17,8 +17,10 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
-    const collection = data?.slice(0, Number(data?.length / 2))
-    const carouselProducts = data?.slice(Number(data?.length / 2), 50)
+    // const collection = data?.slice(0, Number(data?.length / 2))
+    const collection = data?.slice(0, 3)
+    // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
+    const carouselProducts : any = null
 
 
     useEffect(() => {

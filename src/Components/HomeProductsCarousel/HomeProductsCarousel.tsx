@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
     delay : number,
-    data: IProduct[],
+    data?: IProduct[],
     sx ?: any;
     setQuickView ?: Dispatch<SetStateAction<{
         isOpen: boolean;
