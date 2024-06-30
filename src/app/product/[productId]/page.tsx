@@ -5,8 +5,8 @@ import ProductImageCarousel from '@/Components/ProductImageCarousel/ProductImage
 // import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
 // import ProductReview from '@/Components/ProductReview/ProductReview'
 import {  Box, CircularProgress, Divider, Grid, Typography } from '@mui/material'
-import {BsWhatsapp} from 'react-icons/bs'
-import {AiOutlineShoppingCart} from 'react-icons/ai'
+// import {BsWhatsapp} from 'react-icons/bs'
+// import {AiOutlineShoppingCart} from 'react-icons/ai'
 // import BreadCrumb from '@/Components/BreadCrumb/BreadCrumb'
 // import  Head from 'next/head'
 import useCart from '@/Hooks/useCart'
@@ -15,14 +15,16 @@ import { IProduct } from '@/Types/Types'
 import { useParams } from 'next/navigation'
 import { server } from '@/Utils/Server'
 import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker'
-import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
+// import ProductOptionSelect from '@/Components/ProductOptionSelect/ProductOptionSelect'
 import SelectWeight from '@/Components/SelectWeight/SelectWeight'
-import SizeChart from '@/Components/SizeChart/SizeChart'
-import TableVisual from '@/Components/SizeChart/TableVisual'
+// import SizeChart from '@/Components/SizeChart/SizeChart'
+// import TableVisual from '@/Components/SizeChart/TableVisual'
+import { gsap } from 'gsap';
+
 
 const Index = () => {
     const {productId} = useParams()
-    const {incrementQty} = useCart()
+    // const {incrementQty} = useCart()
  
     const {addToCart}= useCart()
     const [loading,setLoading] = useState(false)
@@ -81,10 +83,36 @@ const Index = () => {
       useEffect(() => {
         
         InitialFetch()
-        
+        gsap.utils.toArray('.animate-on-scroll').forEach((element: any)  => {
+          gsap.fromTo(element,
+            {
+              opacity: 0,
+              y:20,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              scrollTrigger: {
+                  trigger: element,
+                  start: 'top 70%',
+                  markers:false,
+              },
+          });
+      });  
         return  ()=> setLoading(false)
 
       }, [])
+
+
+ 
+
+
+
+
+
+
+
       const [swiper, setSwiper] = useState<any>(null);
 
       // const goToSlide  = (index: number) => {
@@ -117,12 +145,12 @@ const Index = () => {
           })}
         
                 </Box> */}
-           {data?.product?.chart ?     <Box sx={{mx:'auto',width:{xs:'0px',md:'100%'},display:{xs:'none',md:' flex'}}}>
+           {/* {data?.product?.chart ?     <Box sx={{mx:'auto',width:{xs:'0px',md:'100%'},display:{xs:'none',md:' flex'}}}>
 
           <TableVisual categories={data?.product?.chart?.categories} chartName={data?.product?.chart?.chartName}/>
                 </Box>
               :''  
-              }
+              } */}
 
        </Grid>
        <Grid sx={{
@@ -262,7 +290,8 @@ const Index = () => {
        </Grid>
        <Divider sx={{my:2}}></Divider>
          {/* <ProductReview/>  */}
-       {/* <HomeProductsCarousel Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} /> */}
+       {/* <HomeProductsCarousel 
+       Collectiontitle={"Shop More Products"} delay={3000} data={data?.moreProducts} /> */}
    </Grid> : <Box className='flex auto center align-center' sx={{py:15}}>
 
      <CircularProgress />

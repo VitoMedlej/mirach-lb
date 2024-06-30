@@ -18,12 +18,12 @@ const SwiperCarousel = ({data, delay} : {
                 xs: '.5em',
                 sm: '2em'
             },
-            width: '100%',
             maxWidth: 'lg',
             margin: '0em auto',
             display: {
                 xs: 'flex'
             },
+            width:'100%',
             height: '100%'
         }}>
   <Swiper

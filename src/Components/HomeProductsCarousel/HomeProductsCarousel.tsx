@@ -62,6 +62,7 @@ const ProductCollection = ({sx,delay,Collectiontitle,data,setQuickView} : {
             
             <Box
                 sx={{
+            width: '100%',
                 display: {
                     xs: "flex",
                  
