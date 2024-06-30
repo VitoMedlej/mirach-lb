@@ -51,6 +51,19 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 Home
 </Typography>
 </Link>
+<Link className='white decor-none ' href={`/about`}>
+
+<Typography 
+className=' cursor center flex gap1 white decor-none captialize'
+
+component='h1' sx={{width:'max-content',
+mx:'1em',
+alignItems: 'center',
+
+fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+About
+</Typography>
+</Link>
 {/* <Link className='white decor-none ' href={`/#shop`}>
 
 <Typography 
@@ -97,7 +110,7 @@ fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 {/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'collections'} subcategories={['22','33']} /> */}
 
 
-<Link className='white decor-none ' href={`/about`}>
+{/* <Link className='white decor-none ' href={`/about`}>
 
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
@@ -109,7 +122,7 @@ alignItems: 'center',
 fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
 About US
 </Typography>
-</Link>
+</Link> */}
 
 {/* {
     // [  `Oversized Outfits`,

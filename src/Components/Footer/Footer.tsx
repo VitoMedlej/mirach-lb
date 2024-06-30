@@ -24,7 +24,10 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='p' sx={{ fontSize: '.85em',color:"black" }}  className='footer-p '>
-         We offer a unique selection of personalized, handcrafted bags, proudly made in Lebanon. From the elegant IVY and versatile tote bags to the culturally inspired A La Libanaise and Koufiya designs, each piece is a testament to Lebanese craftsmanship and style. Customize your clutch, Vera, Vee, or any other design to reflect your personal taste. Visit us in our physical stores to experience the beauty and quality of Mirach bags. Shop local, embrace authenticity, and carry a piece of Lebanon with you.
+         We offer a unique selection of personalized, handcrafted bags,
+          proudly made in Lebanon. From the elegant IVY and vera tote bags to the culturally inspired A La Libanaise and Koufiya designs, each piece is a statement of Lebanese craftsmanship and style.
+           Customize your clutch, Vera, Vee, or any other design to reflect your personal taste. 
+           Visit us in our atelier to experience the beauty and quality of Mirach bags. Shop local, embrace authenticity, and carry a piece of Lebanon with you.
           </Typography>
           <SMicons/>
 
