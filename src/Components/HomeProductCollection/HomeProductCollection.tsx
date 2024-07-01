@@ -45,13 +45,13 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
 
 
 
-              <Btn 
+              {/* <Btn 
               className='bg3'
 sx={{width:'fit-content',border:'1px solid black',mt:6,mx:'auto'}}
 onClick={()=>router.push('/collections/products')}
 >
    View More
-</Btn>
+</Btn> */}
             </Box>
   )
 }

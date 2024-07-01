@@ -92,7 +92,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             <HomeProductCollection products={collection}/>
 
-            <Typography
+            {/* <Typography
                 sx={{
                 pt: {
                     xs: 8,
@@ -115,7 +115,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 component='h1'
                 className=' animate-on-scroll color '>
                 Explore
-            </Typography>
+            </Typography> */}
             <Grid
   container
   className='flex auto space-evenly row wrap'
@@ -301,7 +301,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
             </Grid>
 
             <HomeProductsCarousel 
-                Collectiontitle="New Products"
+                Collectiontitle="A la Libanaise"
                 data={carouselProducts} 
                 delay={2500} />
 
