@@ -15,7 +15,7 @@ import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import ImageZoom from "react-image-zooom";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper";
-import { Box } from "@mui/material";
+// import { Box } from "@mui/material";
 
 export default function App({images,index,setSwiper}:{setSwiper?:any,index?:number,images:string[] | []| undefined}) {
   return (
@@ -60,10 +60,11 @@ export default function App({images,index,setSwiper}:{setSwiper?:any,index?:numb
 } */}
 {
      images && images.map(img=>{
-      return  <SwiperSlide key={img}>
+      if (!img) return;
+      return  <SwiperSlide key={`${img}`}>
   
       
-      <ImageZoom  src={img} zoom={200} />
+      <ImageZoom  src={`${img}`} zoom={200} />
       </SwiperSlide>
       }) 
    
