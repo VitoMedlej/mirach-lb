@@ -3,10 +3,10 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import { IProduct } from '@/Types/Types'
-import Btn from '../Btn/Btn'
+// import Btn from '../Btn/Btn'
 import { useRouter } from 'next/navigation'
 
-const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => {
+const HomeProductCollection = ({products,title} : {title?:string,products:IProduct[] | never[]}) => {
  const router = useRouter()
   return (
     <Box sx={{mt:4,maxWidth:'lg'}} className='center auto'>
@@ -21,7 +21,7 @@ const HomeProductCollection = ({products} : {products:IProduct[] | never[]}) => 
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
     }} component='h1' className='animate-on-scroll  color '>
-       Best Sellers
+       {title || 'Best Sellers'}
     </Typography>
 
 

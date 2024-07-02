@@ -18,7 +18,9 @@ const PreLoader = ({data, resImages, categories} : any) => {
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
     // const collection = data?.slice(0, Number(data?.length / 2))
-    const collection = data?.slice(0, 8)
+    const collection = data?.slice(0, 5)
+    const collection1 = data?.slice(5, 7)
+    const collection2 = data?.slice(7, 10)
     // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
     const carouselProducts : any = null
 
@@ -91,7 +93,13 @@ const PreLoader = ({data, resImages, categories} : any) => {
             </Box>
 
             <HomeProductCollection products={collection}/>
+            {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
+                      
+                      <HomeProductCollection title={`A LA LIBANAISE`} products={collection1}/>
+                    
+                      <HomeProductCollection title={`Clutch`} products={collection2}/>
+                      
             {/* <Typography
                 sx={{
                 pt: {
@@ -114,8 +122,10 @@ const PreLoader = ({data, resImages, categories} : any) => {
             }}
                 component='h1'
                 className=' animate-on-scroll color '>
-                Explore
-            </Typography> */}
+                {
+                      `A LA LIBANAISE`
+                    }
+            </Typography>
             <Grid
   container
   className='flex auto space-evenly row wrap'
@@ -231,9 +241,9 @@ const PreLoader = ({data, resImages, categories} : any) => {
       );
     }
   })}
-</Grid>
+</Grid> */}
 
-            <Grid
+            {/* <Grid
                 className='auto'
                 sx={{
                 px: 1,
@@ -261,7 +271,9 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 }}
                     component='h1'
                     className=' auto animate-on-scroll color '>
-                    Collections
+                    {
+                      `A LA LIBANAISE`
+                    }
                 </Typography>
                 <Box className="flex space-evenly auto wrap gap gap1">
 
@@ -298,12 +310,12 @@ const PreLoader = ({data, resImages, categories} : any) => {
 }
                 </Box>
 
-            </Grid>
+            </Grid> */}
 
-            <HomeProductsCarousel 
+            {/* <HomeProductsCarousel 
                 Collectiontitle="A la Libanaise"
                 data={carouselProducts} 
-                delay={2500} />
+                delay={2500} /> */}
 
             <Box
                 className="w100 "
