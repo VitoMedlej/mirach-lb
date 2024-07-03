@@ -12,17 +12,49 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
+function getCategorizedProducts(data : any, categories : any) {
+  return categories
+    .map((category:any) => {
+      const productsInCategory = data.filter((product : any) => `${product?.category?.toLowerCase()}` === `${category?.categoryName?.toLowerCase()}`);
+      return productsInCategory.length ? { categoryName: category.categoryName, data: productsInCategory } : null;
+    })
+    .filter((categoryProducts:any) => categoryProducts !== null);
+}
+
+const ids = [
+  '66814a77bfb7cfd8bc18e46b',
+  '66814c15657cbf644b6ca4be',
+  '66814cac657cbf644b6ca4bf',
+  '6681a64e88894bbf2dcf8557',
+  '6681a6c788894bbf2dcf8558'
+];
+
+function divideProducts(data: any) {
+  if (!data) return {includedProducts: [], excludedProduct: []};
+  const includedProducts = data?.filter((product: any) => ids.includes(product?._id));
+  const excludedProducts = data?.filter((product: any) => !ids.includes(product?._id));
+
+  return { includedProducts, excludedProducts };
+}
+
+
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 const PreLoader = ({data, resImages, categories} : any) => {
 
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
     // const collection = data?.slice(0, Number(data?.length / 2))
-    const collection = data?.slice(0, 5)
-    const collection1 = data?.slice(5, 7)
-    const collection2 = data?.slice(7, 10)
+    // const collection1 = data?.slice(5, 7)
+    // const collection2 = data?.slice(7, 10)
     // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
-    const carouselProducts : any = null
+
+  const {includedProducts, excludedProducts} = divideProducts(data)
+  console.log('includedProducts, excludedProducts: ', includedProducts, excludedProducts);
+
+    const categorizedProducts = getCategorizedProducts(excludedProducts, categories);
 
 
     useEffect(() => {
@@ -92,13 +124,19 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             </Box>
 
-            <HomeProductCollection products={collection}/>
+            <HomeProductCollection products={includedProducts}/>
             {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
-                      
-                      <HomeProductCollection title={`A LA LIBANAISE`} products={collection1}/>
+                  {
+                    categorizedProducts && categorizedProducts.map((i:any)=> {
+                      if (!i?.categoryName || !i?.data) return;
+                      return <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data}/> 
+                       
+                    })
+                  }
+                      {/* <HomeProductCollection title={`A LA LIBANAISE`} products={collection1}/> */}
                     
-                      <HomeProductCollection title={`Clutch`} products={collection2}/>
+                      {/* <HomeProductCollection title={`Clutch`} products={collection2}/> */}
                       
             {/* <Typography
                 sx={{
