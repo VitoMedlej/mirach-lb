@@ -13,14 +13,19 @@ const HomeProductCollection = ({products,title} : {title?:string,products:IProdu
         
          <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:0,maxWidth:'lg'}}>
 
-         <Typography sx={{
+         <Typography
+         onClick={()=>router.push(`/${encodeURIComponent(`${title ? title : 'collection'}`)?.toLocaleLowerCase()}/products`)}
+         sx={{
     pt:{xs:2,sm:6},
     maxWidth:'1200px',
     pb:0,
     px:1,
+    ':hover':{
+      textDecoration:'underline',
+    },
     fontWeight:'400',
     fontSize:{xs:'1.5em',sm:'1.8em'},
-    }} component='h1' className='animate-on-scroll  color '>
+    }} component='h1' className='color2 cusror pointer animate-on-scroll   '>
        {title || 'Best Sellers'}
     </Typography>
 
