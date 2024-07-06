@@ -10,12 +10,14 @@ import {useCategoriesContext} from '@/context/Contexts'
 import HomeProductCollection from './HomeProductCollection/HomeProductCollection'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
+// import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 
 function getCategorizedProducts(data : any, categories : any) {
-  return categories
-    .map((category:any) => {
-      const productsInCategory = data.filter((product : any) => `${product?.category?.toLowerCase()}` === `${category?.categoryName?.toLowerCase()}`);
+  // console.log('data: ', data);
+  if (!data || !categories) return;
+   return categories.map((category:any) => {
+      if (!category || !data) return;
+      const productsInCategory =data && data?.filter((product : any) => `${product?.category?.toLowerCase()}` === `${category?.categoryName?.toLowerCase()}`);
       return productsInCategory.length ? { categoryName: category.categoryName, data: productsInCategory } : null;
     })
     .filter((categoryProducts:any) => categoryProducts !== null);

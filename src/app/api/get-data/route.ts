@@ -15,7 +15,7 @@ try {
 
     const featuredProductsQuery = await ProductsCollection
         .find({isFeatured: true})
-        .find({})
+        // .find({})
         .limit(30)
     // const ProductsQuery = await ProductsCollection
     //     // .find({isFeatured: false})
