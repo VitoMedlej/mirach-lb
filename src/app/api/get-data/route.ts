@@ -14,7 +14,7 @@ try {
     let products : any = []
 
     const featuredProductsQuery = await ProductsCollection
-        // .find({isFeatured: true})
+        .find({isFeatured: true})
         .find({})
         .limit(30)
     // const ProductsQuery = await ProductsCollection
@@ -35,14 +35,15 @@ try {
 
     })
 
-    if (!featuredProducts || !products || featuredProducts.length < 0 || products.length < 0) {
+    if (!featuredProducts  || featuredProducts.length < 0) {
+        // if (!featuredProducts || !products || featuredProducts.length < 0 || products.length < 0) {
         return NextResponse.json({success: false});
     }
 
     return NextResponse.json({
         success: true,
         data: {
-            products,
+            // products,
             featuredProducts
         }
     });
