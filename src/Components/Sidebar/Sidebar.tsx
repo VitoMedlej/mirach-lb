@@ -152,7 +152,8 @@ export default function TemporaryDrawer() {
 
 
 <ListItemButton
-  onClick={()=>{setOpen(false);router.push(`/${cate?.categoryName?.toLocaleLowerCase()}/products`); toggleDrawer(false)}
+  onClick={()=>{setOpen(false);
+    router.push(`/${encodeURIComponent(cate?.categoryName)?.toLocaleLowerCase()}/products`); toggleDrawer(false)}
             
 }
 >

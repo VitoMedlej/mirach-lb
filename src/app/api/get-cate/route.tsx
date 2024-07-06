@@ -38,7 +38,7 @@ export async function GET(req : NextRequest, res : NextApiResponse) {
         // let page=  searchParams.get('page') || 0
     
         
-        let filterByCate = !category || category === 'collection' || category === 'collections' || category === 'category' ? null : `${category}`.replace(/-/g, ' ').toLocaleLowerCase()
+        let filterByCate = !category || category === 'collection' || category === 'collections' || category === 'category' ? null : `${decodeURIComponent(category)}`.toLocaleLowerCase()
         let filterByType = !type || type === null || type == 'null'  ? null : decodeURIComponent(type).toLocaleLowerCase()
         let filterBySearch = search  && search != 'null' && search != null && search?.length > 1; 
         
