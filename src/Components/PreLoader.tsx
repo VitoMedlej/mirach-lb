@@ -357,7 +357,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                 data={carouselProducts} 
                 delay={2500} /> */}
 
-            <Box
+            {/* <Box
                 className="w100 "
                 sx={{
                 my: 4,
@@ -399,7 +399,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
                         </Box>
                     </Grid>
 
-                    {/* <Grid item xs={12} md={6} sx={{}}>
+                     <Grid item xs={12} md={6} sx={{}}>
                         <Container
                             className='wrap col  auto flex'
                             sx={{
@@ -457,11 +457,11 @@ const PreLoader = ({data, resImages, categories} : any) => {
                             </Btn>
                         </Container>
 
-                    </Grid> */}
+                    </Grid>
 
                 </Grid>
 
-            </Box>
+            </Box> */}
 
         </Box>
     )
