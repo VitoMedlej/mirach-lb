@@ -78,7 +78,7 @@ export default function Navbar() {
                             }}
                         >
                             <img 
-                            src="https://ucarecdn.com/83ee755f-e11f-40b6-9761-65b4b5ecd627/mirach_logosmall.png" alt="MIRACH-LBLOGO" className="img contain" />
+                            src="https://ucarecdn.com/83ee755f-e11f-40b6-9761-65b4b5ecd627/-/resize/200/" alt="MIRACH-LBLOGO" className="img contain" />
                         </Box>
 
 

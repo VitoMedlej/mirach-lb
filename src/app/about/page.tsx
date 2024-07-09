@@ -14,7 +14,7 @@ const Index = () => {
             ABOUT US
         </Typography>
         <Box sx={{width:'100%',height:'200px'}}>
-            <img src="https://ucarecdn.com/818e1f50-5bc9-427c-b93c-63cc1389844c/mirach_logopng1.png" alt="" className="img contain" />
+            <img src="https://ucarecdn.com/83ee755f-e11f-40b6-9761-65b4b5ecd627/-/resize/200/" alt="" className="img contain" />
         </Box>
     
         <Box sx={{my:4}}>
