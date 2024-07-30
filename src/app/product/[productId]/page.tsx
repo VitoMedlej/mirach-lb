@@ -157,7 +157,8 @@ const Index = () => {
         // border:'1px solid #00000029',
         px:{xs:1,sm:1.5}}} item xs={12}  md={5}>
          <Box sx={{pt:{xs:3,sm:0}}}>
-             <Typography component={'h1'} sx={{fontWeight:600,pt:1,fontSize:{xs:'1.2em',sm:'1.7em',md:'2em'}}}>
+             <Typography component={'h1'} 
+             sx={{fontWeight:600,pt:1,fontSize:{xs:'1.2em',sm:'1.27em',md:'1.5em'}}}>
               {data?.product?.title || 'Loading Product Details'}
              </Typography>
            {/* { data?.product?.inStock !== false ? <Typography className='green' component={'h1'} sx={{fontSize:'1.25em',fontWeight:300}}>
@@ -168,11 +169,13 @@ const Index = () => {
                Out of stock
              </Typography>
             } */}
+            
           {data?.product?.inStock !== false &&   <Typography 
                  component={'h1'} sx={{
           color:'green',
                   my:.25,fontWeight:500,fontSize:{xs:'1em',sm:'1.55em'}}}>
                  ${
+                  data?.product?.newPrice ? data?.product?.newPrice :
                  selectedSize?.price ||
                  data?.product?.price || 0}
              </Typography>}
@@ -180,8 +183,11 @@ const Index = () => {
                   <Divider></Divider>
                 <Box sx={{pt:2}} className="flex row ">
 
-             {data?.product?.size || data?.product?.sizes ? 'Size:' : ''}
+             {data?.product?.size || data?.product?.sizes?.length > 0 ? 'Size:' : ''}
              {' '}
+             {
+               data?.product?.size || data?.product?.sizes?.length > 0 ?
+            
                <SelectWeight
               selectedSize={selectedSize}
               setselectedSize={setselectedSize}
@@ -189,6 +195,8 @@ const Index = () => {
                  [{price:Number(data?.product?.price),size:data?.product?.size}]
                   
                 }/> 
+              : ''
+              }
               </Box>
          </Box>
    
@@ -218,7 +226,7 @@ const Index = () => {
                     min={1} max={10} value={selectedQuantity}/>
             
              <Btn 
-                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price:selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size,productselectedColor: productselectedColor || null},true,true)}
+                     onClick={()=>addToCart(selectedQuantity,`${data?.product?._id}`,{title : data.product.title ,category: data.product.category,img:data.product.images[0], _id : data.product._id,price: data?.product?.newPrice ? data?.product?.newPrice : selectedSize?.price ? selectedSize?.price : data?.product?.price, productselectedSize:selectedSize?.size,productselectedColor: productselectedColor || null},true,true)}
              
               sx={{gap:.5,
                 borderRadius:0,
