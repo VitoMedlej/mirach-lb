@@ -126,7 +126,6 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             </Box>
 
-            <HomeProductCollection products={includedProducts}/>
             {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
             {
@@ -142,6 +141,8 @@ const PreLoader = ({data, resImages, categories} : any) => {
     return <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data} />;
   })
 }
+
+
                       {/* <HomeProductCollection title={`A LA LIBANAISE`} products={collection1}/> */}
                     
                       {/* <HomeProductCollection title={`Clutch`} products={collection2}/> */}
