@@ -129,13 +129,19 @@ const PreLoader = ({data, resImages, categories} : any) => {
             <HomeProductCollection products={includedProducts}/>
             {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
-                  {
-                    categorizedProducts && categorizedProducts.map((i:any)=> {
-                      if (!i?.categoryName || !i?.data) return;
-                      return <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data}/> 
-                       
-                    })
-                  }
+            {
+  categorizedProducts &&
+  [...categorizedProducts].sort((a: any, b: any) => {
+    const nameA = a?.categoryName?.trim().toLowerCase();
+    const nameB = b?.categoryName?.trim().toLowerCase();
+    if (nameA === "new collection") return -1;
+    if (nameB === "new collection") return 1;
+    return 0;
+  }).map((i: any) => {
+    if (!i?.categoryName || !i?.data) return;
+    return <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data} />;
+  })
+}
                       {/* <HomeProductCollection title={`A LA LIBANAISE`} products={collection1}/> */}
                     
                       {/* <HomeProductCollection title={`Clutch`} products={collection2}/> */}
