@@ -68,7 +68,7 @@ const Preloader3 = ({resImages} : any) => {
                   <SwiperSlide className='ztop ' key={`${item?.img}`}>
                       <Box sx={{position:'relative', height: '100%', width:'100%'}}>
                           <img
-                              className={`img contain`}
+                              className={`img cover`}
                               src={`${item?.img}-/resize/600/`}
                             //   src={`${item?.img}/-/resize/${imageSize}/`}
                               alt="Main Carousel Image"
