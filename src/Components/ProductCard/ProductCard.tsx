@@ -66,7 +66,7 @@ const ProductCard = ({
                onClick={() => router.push(`/product/${_id}`)}
             sx={{
                 width:{xs:'98%',sm:'100%',md:'auto'},
-                height: height || {sm:'300px',md:'400px'}
+                height: height || {xs:'250px',md:'400px'}
                 // height: height || {xs:'100%',sm:'300px',md:'400px'}
             }}>
                 <img
@@ -74,7 +74,7 @@ const ProductCard = ({
                     ? `${images[0]}/-/resize/500/`
                     : ''}
                     alt="Prdouct image"
-                    className="img contain "/>
+                    className="img cover "/>
             </Box>
             
             <Box 
