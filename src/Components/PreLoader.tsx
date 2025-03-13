@@ -126,7 +126,6 @@ const PreLoader = ({data, resImages, categories} : any) => {
 
             </Box>
 
-            {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
             {
   categorizedProducts &&
@@ -136,11 +135,20 @@ const PreLoader = ({data, resImages, categories} : any) => {
     if (nameA === "new collection") return -1;
     if (nameB === "new collection") return 1;
     return 0;
-  }).map((i: any) => {
+  }).map((i: any, index: number) => {
     if (!i?.categoryName || !i?.data) return;
-    return <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data} />;
+    return index === 0 ? (
+      <>
+        <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data} />
+        <HomeProductCollection products={includedProducts} />
+      </>
+    ) : (
+      <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data} />
+    );
   })
 }
+
+  {/* <HomeProductsCarousel delay={4000} Collectiontitle={'Best Sellers'}  data={collection}/> */}
 
 
                       {/* <HomeProductCollection title={`A LA LIBANAISE`} products={collection1}/> */}
