@@ -53,10 +53,16 @@ const PreLoader = ({data, resImages, categories} : any) => {
     // const collection2 = data?.slice(7, 10)
     // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
 
+
+  // Get all products in 'new collection' category (case-insensitive)
+  const newCollectionProducts = data?.filter((product: any) =>
+    product?.category?.toLowerCase() === 'new collection'
+  ) || [];
+
   const {includedProducts, excludedProducts} = divideProducts(data)
   console.log('includedProducts, excludedProducts: ', includedProducts, excludedProducts);
 
-    const categorizedProducts = getCategorizedProducts(excludedProducts, categories);
+  const categorizedProducts = getCategorizedProducts(excludedProducts, categories);
 
 
     useEffect(() => {
@@ -147,7 +153,7 @@ const PreLoader = ({data, resImages, categories} : any) => {
           <HomeProductCollection 
             key="the-new-edit" 
             title="The New Edit" 
-            products={includedProducts} 
+            products={newCollectionProducts} 
             href="/new%20collection/products"
           />
           <HomeProductCollection key={i?.categoryName} title="Statement bags" products={i?.data} />
