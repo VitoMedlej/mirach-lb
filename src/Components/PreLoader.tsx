@@ -132,19 +132,36 @@ const PreLoader = ({data, resImages, categories} : any) => {
   [...categorizedProducts].sort((a: any, b: any) => {
     const nameA = a?.categoryName?.trim().toLowerCase();
     const nameB = b?.categoryName?.trim().toLowerCase();
+    if (nameA === "statement bags") return -1;
+    if (nameB === "statement bags") return 1;
     if (nameA === "new collection") return -1;
     if (nameB === "new collection") return 1;
     return 0;
   }).map((i: any, index: number) => {
     if (!i?.categoryName || !i?.data) return;
-    return index === 0 ? (
-      <>
+    const categoryLower = i?.categoryName?.trim().toLowerCase();
+    
+    if (categoryLower === "statement bags" && index === 0) {
+      return (
+        <>
+          <HomeProductCollection 
+            key="the-new-edit" 
+            title="The New Edit" 
+            products={includedProducts} 
+            href="/new%20collection/products"
+          />
+          <HomeProductCollection key={i?.categoryName} title="Statement bags" products={i?.data} />
+        </>
+      );
+    } else if (categoryLower === "new collection") {
+      // Skip rendering new collection here as it's handled above as "The New Edit"
+      return null;
+    } else if (categoryLower !== "statement bags") {
+      return (
         <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data} />
-        <HomeProductCollection products={includedProducts} />
-      </>
-    ) : (
-      <HomeProductCollection key={i?.categoryName} title={`${i?.categoryName}`} products={i?.data} />
-    );
+      );
+    }
+    return null;
   })
 }
 

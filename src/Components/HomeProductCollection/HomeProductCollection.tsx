@@ -6,7 +6,7 @@ import { IProduct } from '@/Types/Types'
 // import Btn from '../Btn/Btn'
 import { useRouter } from 'next/navigation'
 
-const HomeProductCollection = ({products,title} : {title?:string,products:IProduct[] | never[]}) => {
+const HomeProductCollection = ({products,title,href} : {title?:string,products:IProduct[] | never[], href?:string}) => {
  const router = useRouter()
   return (
     <Box sx={{mt:4,maxWidth:'lg'}} className='center auto'>
@@ -14,7 +14,7 @@ const HomeProductCollection = ({products,title} : {title?:string,products:IProdu
          <Box className="flex justify-between col auto" sx={{px:1,pt:4,pb:0,maxWidth:'lg'}}>
 
          <Typography
-         onClick={()=>router.push(`/${encodeURIComponent(`${title ? title : 'collection'}`)?.toLocaleLowerCase()}/products`)}
+         onClick={()=>router.push(href || `/${encodeURIComponent(`${title ? title : 'collection'}`)?.toLocaleLowerCase()}/products`)}
          sx={{
     pt:{xs:2,sm:6},
     maxWidth:'1200px',
